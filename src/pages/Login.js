@@ -14,6 +14,32 @@ const Login = () => {
         history.replace("/");
     }
 
+    const { naver } = window;
+    // const location = React.useLocation();
+    const NAVER_CALLBACK_URL = 'http://localhost:3000';
+    const NAVER_CLIENT_ID = '';
+
+    const initializeNaverLogin = () => {
+        const naverLogin = new naver.LoginWithNaverId({
+            clientId: NAVER_CLIENT_ID,
+            callbackUrl: NAVER_CALLBACK_URL,
+            isPopup: false,
+            loginButton: { color: 'white', type: 1, height: '47' },
+        });
+        naverLogin.init();
+    };
+
+    // const getNaverToken = () => {
+    //     if (!location.hash) return;
+    //     const token = location.hash.split('=')[1].split('&')[0];
+    //     console.log(token);
+    // };
+
+    React.useEffect(() => {
+        initializeNaverLogin();
+        // getNaverToken();
+    }, []);
+
     return(
         <React.Fragment>
             <h2>로그인</h2>
@@ -22,6 +48,10 @@ const Login = () => {
             <Grid>
                 <Button _onClick={login} text="로그인" marign="0 0 10px 0"></Button>
                 <Button _onClick={()=> {history.push("/signup")}} text="회원가입"></Button>
+            </Grid>
+            <Grid>
+                <Button text="카카오 로그인"></Button>
+                <Button text="네이버 로그인"></Button>
             </Grid>
         </React.Fragment>
     )

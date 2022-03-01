@@ -24,6 +24,7 @@ const logInDB = (userID, password) =>{
             setCookie('is_login', `${accessToken}`);
             dispatch(setUser())
             window.alert(res.data.success)
+            console.log(res.data)
         })
         .catch((err) => {
             console.log(err)
@@ -41,7 +42,7 @@ const signUpDB = (userID, email, nickname, password, confirmPassword) => {
         confirmPassword: confirmPassword,
         })
         .then((res)=>{
-            console.log(res)
+            window.alert(res.data.success)
         })
         .catch((err)=>{
            console.log(err) 
