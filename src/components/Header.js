@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
 import {history} from "../redux/configStore"
 import {Button, Grid, Input, Text} from "../elements/Index"
+import KakaoFunction from "../shared/kakao";
 
 const Header = ()=> {
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Header = ()=> {
                 <Head>
                     <h1 onClick={()=> {history.push("/");}}>logo</h1>
                     <div>
-                        <Button _onClick={()=> {dispatch(userActions.logOut());}} text="로그아웃" width="100px" padding="10px 0" font-size="15px"></Button>
+                        <Button _onClick={()=> {dispatch(userActions.logOut()); KakaoFunction.kakaoLogout();}} text="로그아웃" width="100px" padding="10px 0" font-size="15px"></Button>
                     </div>
                 </Head>
             </React.Fragment>  

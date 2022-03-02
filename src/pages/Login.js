@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
-import {actionCreators as userActions} from "../redux/modules/user"
-import {Button, Grid, Input, Text} from "../elements/Index"
+import {actionCreators as userActions} from "../redux/modules/user";
+import {Button, Grid, Input, Text} from "../elements/Index";
 import { history } from "../redux/configStore";
+import KakaoFunction from "../shared/kakao";
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const Login = () => {
                 <Button _onClick={()=> {history.replace("/signup")}} text="회원가입"></Button>
             </Grid>
             <Grid>
-                <Button text="카카오 로그인"></Button>
+                <Button _onClick={KakaoFunction.KakaoLogin} text="카카오 로그인"></Button>
                 <Button text="네이버 로그인"></Button>
             </Grid>
         </React.Fragment>
