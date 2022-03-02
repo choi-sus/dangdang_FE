@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 
-function MainMap() {
+const MainMap = ()=> {
     const kakaoAPI = window.kakao.maps
     const [map, setMap] = useState()
 
