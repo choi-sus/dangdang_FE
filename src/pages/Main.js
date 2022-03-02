@@ -1,10 +1,11 @@
 import React from "react";
+import MainMap from "../components/MainMap";
 
 const Main = () => {
 
     return(
         <React.Fragment>
-            <div>하이룽</div>
+            <MainMap></MainMap>
         </React.Fragment>
     )
 }
