@@ -11,34 +11,7 @@ const Login = () => {
 
     const login =()=>{
         dispatch(userActions.logInDB(id,pwd))
-        history.replace("/");
     }
-
-    const { naver } = window;
-    // const location = React.useLocation();
-    const NAVER_CALLBACK_URL = 'http://localhost:3000';
-    const NAVER_CLIENT_ID = '';
-
-    const initializeNaverLogin = () => {
-        const naverLogin = new naver.LoginWithNaverId({
-            clientId: NAVER_CLIENT_ID,
-            callbackUrl: NAVER_CALLBACK_URL,
-            isPopup: false,
-            loginButton: { color: 'white', type: 1, height: '47' },
-        });
-        naverLogin.init();
-    };
-
-    // const getNaverToken = () => {
-    //     if (!location.hash) return;
-    //     const token = location.hash.split('=')[1].split('&')[0];
-    //     console.log(token);
-    // };
-
-    React.useEffect(() => {
-        initializeNaverLogin();
-        // getNaverToken();
-    }, []);
 
     return(
         <React.Fragment>
@@ -46,8 +19,11 @@ const Login = () => {
             <Input placeholder="아이디를 입력해주세요." _onChange={(e)=> {setId(e.target.value);}}></Input>
             <Input placeholder="비밀번호를 입력해주세요." _onChange={(e)=> {setPwd(e.target.value);}} type="password"></Input>
             <Grid>
+                <Text _onClick={()=> {history.replace("/find")}}>아이디/ 비밀번호 찾기</Text>
+            </Grid>
+            <Grid>
                 <Button _onClick={login} text="로그인" marign="0 0 10px 0"></Button>
-                <Button _onClick={()=> {history.push("/signup")}} text="회원가입"></Button>
+                <Button _onClick={()=> {history.replace("/signup")}} text="회원가입"></Button>
             </Grid>
             <Grid>
                 <Button text="카카오 로그인"></Button>

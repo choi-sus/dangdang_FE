@@ -1,7 +1,8 @@
 import { createAction, handleActions } from "redux-actions";
 import { produce } from "immer";
-import { getCookie, setCookie, deleteCookie } from "../../shared/Cookie";
+import {setCookie, deleteCookie } from "../../shared/Cookie";
 import {api, api_token} from "../../shared/Api"
+import jwt_decode from "jwt-decode";
 
 const SET_USER = "SET_USER";
 const LOG_OUT = "LOG_OUT";
@@ -22,15 +23,22 @@ const logInDB = (userID, password) =>{
         }).then((res) => {
             const accessToken = "Bearer " + res.data.token;
             setCookie('is_login', `${accessToken}`);
-            dispatch(setUser())
             window.alert(res.data.success)
-            console.log(res.data)
+            history.replace("/");
+            const {userID, nickname} = jwt_decode(res.data.token)
+            dispatch(
+                setUser({
+                    userID: userID,
+                    nickname: nickname
+                })
+            )
         })
         .catch((err) => {
             console.log(err)
         })
     }
 } 
+
 const signUpDB = (userID, email, nickname, password, confirmPassword) => {
    return async (dispatch, getState, { history }) => {
        await api.post(`/users/signup`,
@@ -43,13 +51,13 @@ const signUpDB = (userID, email, nickname, password, confirmPassword) => {
         })
         .then((res)=>{
             window.alert(res.data.success)
+            history.push("/login");
         })
         .catch((err)=>{
            console.log(err) 
         })
    }
 }
-
 
 const loginCheckDB = () => {
     return async (dispatch, getState, { history }) => {
@@ -65,6 +73,39 @@ const loginCheckDB = () => {
         .catch((err)=>{
             console.log(err)
         })
+    }
+}
+
+const idFindDB = (email) => {
+    return async (dispatch, getState, { history }) => {
+        await api.post(`/users/find`,
+        {
+         email: email
+         })
+         .then((res)=>{
+            window.alert(res.data.success)
+            history.push("/login");
+         })
+         .catch((err)=>{
+            console.log(err) 
+         })
+    }
+}
+
+const pwdFindDB = (email, userID) => {
+    return async (dispatch, getState, { history }) => {
+        await api.post(`/users/find`,
+        {
+         email: email,
+         userID: userID
+         })
+         .then((res)=>{
+            window.alert(res.data.success)
+            history.push("/login");
+         })
+         .catch((err)=>{
+            console.log(err) 
+         })
     }
 }
 
@@ -90,6 +131,8 @@ const actionCreators = {
     logInDB,
     signUpDB,
     loginCheckDB,
+    idFindDB,
+    pwdFindDB
 }
 
 export {actionCreators}

@@ -21,8 +21,7 @@ const SignUp = () => {
         if (pwd !== confirmPwd){
           window.alert("비밀번호가 다릅니다 다시 확인해 주세요")
         }
-        dispatch(userActions.signUpDB(id,email,nickname,pwd,confirmPwd));
-        history.push("/login");
+        dispatch(userActions.signUpDB(id, email, nickname, pwd, confirmPwd));
       };
 
     return (
