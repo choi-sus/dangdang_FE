@@ -28,7 +28,6 @@ const Login = () => {
             </Grid>
             <Grid>
                 <Button _onClick={KakaoFunction.KakaoLogin} text="카카오 로그인"></Button>
-                <Button _onClick={KakaoFunction.kakaoLogout} text="카카오 로그아웃"></Button>
                 <Button text="네이버 로그인"></Button>
             </Grid>
         </React.Fragment>
