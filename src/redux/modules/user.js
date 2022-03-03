@@ -37,8 +37,7 @@ const logInDB = (userID, password) =>{
             console.log(err)
         })
     }
-} 
-
+}
 const signUpDB = (userID, email, nickname, password, confirmPassword) => {
    return async (dispatch, getState, { history }) => {
        await api.post(`/users/signup`,

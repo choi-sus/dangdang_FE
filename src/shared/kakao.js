@@ -1,69 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {api, api_token} from "../shared/Api";
-import { useDispatch } from "react-redux";
-import {actionCreators as userActions} from "../redux/modules/user";
-import { getCookie, setCookie, deleteCookie } from "../shared/Cookie";
 
-// const REST_API_KEY = "e7e7a555f24784e43f5f6a91c16e3861";
-// const REDIRECT_URI = "http://localhost:3000/"
+const Kakao = () => {
+    let authorization_code = new URL(window.location.href).searchParams.get("code");
 
-window.Kakao.init("7c18ae3111a426ceb542f08d21e143b8");
-// console.log(Kakao.isInitialized());
+    const kakaoLogin = async (authorization_code) => {
+            console.log('함수 호출되나 인가코드는', authorization_code);
+            // await axios.get(``)
+            //   .then((response) => {
+            //     const token = response.data.data.token;
+            //     const user = response.data.data.user;
+            //     console.log("response 받음");
+            //     console.log('유저', response.data);
+            //   })
+            //   .catch((error) => {
+            //     console.log("카카오 로그인실패", error);
+            //   });
+          };
 
-const KakaoLogin = ()=> {
-  window.Kakao.Auth.login({
-    success: (res) => {
-      window.Kakao.API.request({
-        url: '/v2/user/me',
-        success: (res) => {
-          const kakaoEmail = res.kakao_account.email;
-          const kakaoNickname = res.kakao_account.profile.nickname;
-          api.post(`/users/social`,
-            {email:kakaoEmail,
-            nickname:kakaoNickname}
-          )
-          .then((res) => {
-            const accessToken = "Bearer " + res.data.token;
-            setCookie('is_login', `${accessToken}`);
-            // dispatch(userActions.setUser({email:kakaoEmail,
-            //   nickname:kakaoNickname}))
-            window.alert(res.data.success)
-          })
-          .catch((err) => {
-                    console.log(err)
-          });
+            useEffect(() => {
+    kakaoLogin(authorization_code);
+  }, []);
 
-        },
-        fail: (err) => {
-          console.log(err)
-        },
-      })
-    },
-    fail: (err) => {
-      console.log(err)
-    },
-  })
+  return (
+    <div>
+      <h3>카카오 로그인 리다이렉트 페이지</h3>
+    </div>
+  );
 }
-
-
-const kakaoLogout = ()=> {
-  if (window.Kakao.Auth.getAccessToken()) {
-    window.Kakao.API.request({
-      url: '/v1/user/unlink',
-      success: (res) => {
-        console.log(res)
-      },
-      fail: (err) => {
-        console.log(err)
-      },
-    })
-    window.Kakao.Auth.setAccessToken(undefined)
-  }
-  localStorage.clear();
-}  
-const KakaoFunction = {
-  KakaoLogin, kakaoLogout
-}
-
-export default KakaoFunction
+export default Kakao;

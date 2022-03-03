@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import {actionCreators as userActions} from "../redux/modules/user";
 import {Button, Grid, Input, Text} from "../elements/Index";
 import { history } from "../redux/configStore";
-import KakaoFunction from "../shared/kakao";
+import KakaoLogin from "../components/KakaoLogin";
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const Login = () => {
     const login =()=>{
         dispatch(userActions.logInDB(id,pwd))
     }
-
+    
     return(
         <React.Fragment>
             <h2>로그인</h2>
@@ -27,8 +27,10 @@ const Login = () => {
                 <Button _onClick={()=> {history.replace("/signup")}} text="회원가입"></Button>
             </Grid>
             <Grid>
-                <Button _onClick={KakaoFunction.KakaoLogin} text="카카오 로그인"></Button>
                 <Button text="네이버 로그인"></Button>
+            </Grid>
+            <Grid>
+                <KakaoLogin/>
             </Grid>
         </React.Fragment>
     )
