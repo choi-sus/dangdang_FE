@@ -8,7 +8,6 @@ import Main from "../pages/Main";
 import Login from '../pages/Login';
 import SignUp from "../pages/SignUp"
 import UserFind from '../pages/UserFind';
-import Kakao from './Kakao';
 import './App.css';
 import { useDispatch, useSelector } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
@@ -32,8 +31,8 @@ function App() {
           <Route path="/login" component={Login} exact/>
           <Route path="/signup" component={SignUp} exact/>
           <Route path="/find" component={UserFind} exact/>
-          <Route path="/oauth" component={Kakao}/>
           <Route path="/main" exact component={Main}/>
+          
         </ConnectedRouter>
     </React.Fragment>
   );
