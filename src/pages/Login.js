@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import {actionCreators as userActions} from "../redux/modules/user";
 import {Button, Grid, Input, Text} from "../elements/Index";
 import { history } from "../redux/configStore";
+import styled from "styled-components";
 import KakaoLogin from "../components/KakaoLogin";
 
 const Login = () => {
@@ -15,25 +16,31 @@ const Login = () => {
     }
     
     return(
-        <React.Fragment>
-            <h2>로그인</h2>
-            <Input placeholder="아이디를 입력해주세요." _onChange={(e)=> {setId(e.target.value);}}></Input>
-            <Input placeholder="비밀번호를 입력해주세요." _onChange={(e)=> {setPwd(e.target.value);}} type="password"></Input>
-            <Grid>
-                <Text _onClick={()=> {history.replace("/find")}}>아이디/ 비밀번호 찾기</Text>
+        <LonginContainer>
+            <img src="img/logo.jpg" alt="로고 이미지"></img>
+            <Grid margin="0 0 20px 0">
+                <Input margin="0 0 25px 0" placeholder="아이디를 입력해주세요." _onChange={(e)=> {setId(e.target.value);}}></Input>
+                <Input placeholder="비밀번호를 입력해주세요." _onChange={(e)=> {setPwd(e.target.value);}} type="password"></Input>
             </Grid>
-            <Grid>
-                <Button _onClick={login} text="로그인" marign="0 0 10px 0"></Button>
-                <Button _onClick={()=> {history.replace("/signup")}} text="회원가입"></Button>
+            <Grid margin="0 0 65px 0">
+                <Text color="#828282" right _onClick={()=> {history.replace("/find")}}>아이디/ 비밀번호 찾기</Text>
             </Grid>
-            <Grid>
-                <Button text="네이버 로그인"></Button>
-            </Grid>
-            <Grid>
+                <Button padding="15px 0" margin="0 0 25px 0" _onClick={login} text="로그인"></Button>
                 <KakaoLogin/>
-            </Grid>
-        </React.Fragment>
+                <Text margin="65px 0 0 0" center color="#828282" _onClick={()=> {history.replace("/signup")}}>회원가입</Text>
+        </LonginContainer>
     )
 }
 
 export default Login
+
+const LonginContainer = styled.div`
+    padding: 150px 5% 75px;
+    & > img {
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        width: 30%;
+        margin: 0px auto 100px;
+        display: block;
+    }
+`

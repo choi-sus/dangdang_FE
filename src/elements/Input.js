@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { Text, Grid } from "./Index";
 
 const Input = (props) => {
-  const { label, placeholder, _onChange, type, multiLine, value, radio ,name, _onClick } = props;
+  const { label, placeholder, _onChange, type, multiLine, value, radio ,name, _onClick, margin } = props;
+  const styles = {margin};
 
   if (multiLine) {
     return (
@@ -32,7 +33,7 @@ const Input = (props) => {
     <React.Fragment>
       <Grid>
         {label && <Text margin="0px">{label}</Text>}
-        <ElInput type={type} placeholder={placeholder} onChange={_onChange} />
+        <ElInput {...styles} type={type} placeholder={placeholder} onChange={_onChange} />
       </Grid>
     </React.Fragment>
   );
@@ -46,6 +47,7 @@ Input.defaultProps = {
   type: "text",
   value: "",
   name:"name",
+  margin: false,
   _onChange: () => {},
   _onClick: () => {},
 };
@@ -65,10 +67,16 @@ const ElRadio = styled.input`
 `;
 
 const ElInput = styled.input`
-  border: 1px solid #212121;
+  border: none;
+  border-bottom: 2px solid #BDBDBD;
   width: 100%;
-  padding: 12px 4px;
+  padding: 15px 5px;
   box-sizing: border-box;
+  outline: none;
+  ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
+  &::placeholder {
+    color: #BDBDBD;
+  }
 `;
 
 export default Input;

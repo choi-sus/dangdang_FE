@@ -24,7 +24,7 @@ const logInDB = (userID, password) =>{
             const accessToken = "Bearer " + res.data.token;
             setCookie('is_login', `${accessToken}`);
             window.alert(res.data.success)
-            history.replace("/");
+            history.replace("/main");
             const {userID, nickname} = jwt_decode(res.data.token)
             dispatch(
                 setUser({
@@ -50,7 +50,7 @@ const signUpDB = (userID, email, nickname, password, confirmPassword) => {
         })
         .then((res)=>{
             window.alert(res.data.success)
-            history.push("/login");
+            history.replace("/login");
         })
         .catch((err)=>{
            console.log(err) 
@@ -83,7 +83,7 @@ const idFindDB = (email) => {
          })
          .then((res)=>{
             window.alert(res.data.success)
-            history.push("/login");
+            history.replace("/login");
          })
          .catch((err)=>{
             console.log(err) 
@@ -100,7 +100,7 @@ const pwdFindDB = (email, userID) => {
          })
          .then((res)=>{
             window.alert(res.data.success)
-            history.push("/login");
+            history.replace("/login");
          })
          .catch((err)=>{
             console.log(err) 
