@@ -7,7 +7,7 @@ const Weather = ()=> {
     const [temp, setTemp] = React.useState();
     const [weather, setWeather] = React.useState();
 
-    const nickname = useSelector((state) => state.user.user.nickname);
+    const user = useSelector((state) => state.user.user);
 
     function handleGeoSucc(position) {
         console.log(position);
@@ -49,7 +49,9 @@ const Weather = ()=> {
         <React.Fragment>
             <div>{city}</div>
             <div>{temp}°</div>
-            <div>산책하기 {weather}한 날이에요! <br></br> {`${nickname} 님!`}</div>
+            {
+                user ? <div>산책하기 {weather}한 날이에요! <br></br> {`${user.nickname} 님!`}</div> : null
+            }
         </React.Fragment>
     )
 }
