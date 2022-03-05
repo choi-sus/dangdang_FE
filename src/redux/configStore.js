@@ -4,11 +4,13 @@ import { createBrowserHistory } from "history";
 import { connectRouter } from "connected-react-router";
 
 import User from "./modules/user";
+import Geolocation from "./modules/geolocation";
 
 export const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
     user: User,
+    geolocation: Geolocation,
     router: connectRouter(history),
   });
 

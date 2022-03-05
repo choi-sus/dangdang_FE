@@ -5,7 +5,7 @@ const Kakao = () => {
   let authorization_code = new URL(window.location.href).searchParams.get("code");
 
   const kakaoLogin = async (authorization_code) => {
-          console.log('함수 호출되나 인가코드는', authorization_code);
+          // console.log('함수 호출되나 인가코드는', authorization_code);
           // await axios.get(``)
           //   .then((response) => {
           //     const token = response.data.data.token;

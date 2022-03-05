@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Map, MapMarker } from "react-kakao-maps-sdk"
 
-const MainMap = ()=> {
+const MainMap = (props)=> {
+
   const [state, setState] = useState({
       center: {
         lat: 33.450701,
@@ -44,11 +45,15 @@ const MainMap = ()=> {
       }))
     }
   }, [])
-
+  const sendLoca = () => {
+    const loca=state.center
+    props.defaultLoca(loca)
+  }
   return (
     <>
       <Map // 지도를 표시할 Container
         center={state.center}
+        onCreate={sendLoca}
         style={{
           // 지도의 크기
           width: "100%",

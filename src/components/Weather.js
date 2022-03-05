@@ -10,7 +10,6 @@ const Weather = ()=> {
     const user = useSelector((state) => state.user.user);
 
     function handleGeoSucc(position) {
-        console.log(position);
         const latitude = position.coords.latitude;  // 경도  
         const longitude = position.coords.longitude;  // 위도
         const coordsObj = {latitude, longitude}
@@ -30,7 +29,6 @@ const Weather = ()=> {
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${'bc70ba3421bed731e561284325ac18dc'}&units=metric`)
           .then(res => res.json())
           .then(data => {
-            console.log(data);
             const city = data.name;
             const temp = data.main.temp;
             const weathers = data.weather[data.weather.length - 1];

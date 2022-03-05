@@ -4,7 +4,7 @@ const Stopwatch = () => {
     //시간표시 부분
     const [time, setTime] = useState({ms:0,s:0,m:0,h:0});
     const [interv, setInterv] = useState();
-    const [status, setStatus] = useState(0);
+    const [status, setStatus] = useState(1);
     // Not started = 0
     // started = 1
     // stopped = 2
@@ -48,8 +48,6 @@ const Stopwatch = () => {
 
     const timeRef = useRef(null);
     const getTime = ()=> {
-        // const element = document.getElementById('my_div');
-        // alert(element.innerText);
         alert(timeRef.current.innerText)  
       } 
       
@@ -64,9 +62,9 @@ const Stopwatch = () => {
             <div>
 
             </div>
-            {(status === 0)?
+            {/* {(status === 0)?
                 <button onClick={start}>산책시작</button> : ""
-            }
+            } */}
             {(status === 1)?
                 <div>
                     <button onClick={stop}>일시정지</button>
