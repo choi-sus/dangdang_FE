@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const KakaoLogin = () => {
     const REST_API_KEY = "e7e7a555f24784e43f5f6a91c16e3861";
-    const REDIRECT_URI = "https://green-bat-26.loca.lt/main";
+    const REDIRECT_URI = "https://bad-panda-93.loca.lt/main";
 
     return (
      <Kakao

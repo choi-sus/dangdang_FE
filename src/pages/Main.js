@@ -16,7 +16,6 @@ const Main = () => {
             <MainMap defaultLoca={reciveLoca}></MainMap>
             <Weather></Weather>
             <Kakao></Kakao>
-            {/* <Text _onClick={()=> {history.push("/walk");}}>지금 바로 산책가기</Text> */}
             <Link to={{pathname:'/walk', state:{nowLoca}}}>지금바로산책</Link>
         </React.Fragment>
     )
