@@ -5,12 +5,14 @@ import { connectRouter } from "connected-react-router";
 
 import User from "./modules/user";
 import Geolocation from "./modules/geolocation";
+import Walk from "./modules/walk";
 
 export const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
     user: User,
     geolocation: Geolocation,
+    walk: Walk,
     router: connectRouter(history),
   });
 

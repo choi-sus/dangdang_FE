@@ -29,6 +29,7 @@ const Stopwatch = (props) => {
   }
   useEffect(() => {
     setInterv(setInterval(run, 1000));
+    clearInterval(interv);
   },[]);
 
   //버튼

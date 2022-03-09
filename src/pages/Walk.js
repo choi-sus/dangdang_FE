@@ -5,6 +5,7 @@ import Stopwatch from "../components/Stopwatch";
 import {actionCreators as locaActions} from "../redux/modules/geolocation"
 import { useLocation } from "react-router-dom";
 import {Button} from "../elements/Index"
+import { getDistanceBetween } from 'geolocation-distance-between';
 
 
 const Walk = (props) => {
@@ -100,12 +101,23 @@ const Walk = (props) => {
       const walkEnd = ()=> {
         clearTimeout(centers.current);
         setStop(true)
-      }
-      if (0 <  polylinePath.length) {
-        console.log([polylinePath[0].lat, polylinePath[0].lng])
+        if (1 < polylinePath.length) {
+          let distanceBetween = 0;
+          
+          for (let i = 0; i < polylinePath.length; i++){
+            console.log(`폴리라인패스 : ${i}` + polylinePath[i].lat, polylinePath.length);
+
+            if (polylinePath.length - 1 === i){
+              distanceBetween += getDistanceBetween({latitude: polylinePath[i]?.lat, longitude: polylinePath[i]?.lng}, {latitude: polylinePath[i]?.lat, longitude: polylinePath[i]?.lng});
+            }else{
+              distanceBetween += getDistanceBetween({latitude: polylinePath[i]?.lat, longitude: polylinePath[i]?.lng}, {latitude: polylinePath[i + 1]?.lat, longitude: polylinePath[i + 1]?.lng});
+            }
+          }
+   
+          console.log(distanceBetween);
+        }
       }
       
-
       return (
           <>
         <Stopwatch stop={stop}/>
