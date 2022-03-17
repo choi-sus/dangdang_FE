@@ -9,7 +9,6 @@ const Header = ()=> {
     const dispatch = useDispatch();
     const is_login = useSelector((state) => state.user.is_login);
     const is = useSelector((state) => state.user);
-    console.log(is)
 
     if(is_login){
         return(

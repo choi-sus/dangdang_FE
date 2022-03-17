@@ -21,36 +21,38 @@ const UserFind = () => {
         dispatch(userActions.pwdFindDB(mail, id))
     }
 
-    const style = {color: "#BDBDBD"}
+    const style = {color: "#E0E0E0"}
 
     return(
         <FindContainer>
             <Head>
-              <Grid width="auto" _onClick={()=> {history.replace("/login")}}>
+              <Grid width="auto" height="auto" _onClick={()=> {history.replace("/login")}}>
                 <FontAwesomeIcon icon={faAngleLeft}/>
               </Grid>
               <Text center color="#4F4F4F" size="18px">아이디/비밀번호 찾기</Text>
             </Head>
-            <Grid margin="0 0 65px 0" is_start>
-                { idFind === true ? <h2>아이디</h2> : <h2 style={style} onClick={()=> setIdFind(true)}>아이디</h2>}
-                { idFind === true ? <h2 style={style} onClick={()=> setIdFind(false)}>비밀번호</h2> : <h2>비밀번호</h2>}
-            </Grid>
-            <Grid>
-                {
-                    idFind === true ?
-                    <Grid>
-                        <Text margin="0 0 45px 0" bold size="18px">댕댕한바퀴에 가입한 이메일을 입력해 주세요. <br></br> 가입한 아이디를 메일로 보내드립니다.</Text>
-                        <Input margin="0 0 65px 0" placeholder="이메일을 입력해주세요." _onChange={(e)=> {setMail(e.target.value);}}></Input>
-                        <Button _onClick={idFined} text="보내기"></Button>
-                    </Grid>
-                    : <Grid>
-                        <Text margin="0 0 45px 0" bold size="18px">댕댕한바퀴에 가입한 아이디, 이메일을 입력해 주세요. <br></br> 가입한 비밀번호를 메일로 보내드립니다.</Text>
-                        <Input margin="0 0 25px 0" placeholder="이메일을 입력해주세요." _onChange={(e)=> {setMail(e.target.value);}}></Input>
-                        <Input margin="0 0 65px 0" placeholder="아이디를 입력해주세요." _onChange={(e)=> {setId(e.target.value);}}></Input>
-                        <Button _onClick={pwdFined} text="보내기"></Button>
-                    </Grid>
-                }
-            </Grid>
+            <FindContent>
+              <Grid margin="0 0 60px 0" is_start height="auto">
+                  { idFind === true ? <h2>아이디</h2> : <h2 style={style} onClick={()=> setIdFind(true)}>아이디</h2>}
+                  { idFind === true ? <h2 style={style} onClick={()=> setIdFind(false)}>비밀번호</h2> : <h2>비밀번호</h2>}
+              </Grid>
+              <Grid height="auto">
+                  {
+                      idFind === true ?
+                      <Grid height="auto">
+                          <Text margin="0 0 30px 0" size="14px" color="#4F4F4F" height="25px">댕댕한바퀴에 가입한 정보를 입력해 주세요. <br></br> 가입한 아이디를 메일로 보내드립니다.</Text>
+                          <Input margin="0 0 70px 0" placeholder="이메일을 입력해주세요." _onChange={(e)=> {setMail(e.target.value);}}></Input>
+                          <Button _onClick={idFined} text="보내기"></Button>
+                      </Grid>
+                      : <Grid height="auto">
+                          <Text margin="0 0 30px 0" size="14px" color="#4F4F4F" height="25px">댕댕한바퀴에 가입한 정보를 입력해 주세요. <br></br> 가입한 비밀번호를 메일로 보내드립니다.</Text>
+                          <Input margin="0 0 15px 0" placeholder="이메일을 입력해주세요." _onChange={(e)=> {setMail(e.target.value);}}></Input>
+                          <Input margin="0 0 70px 0" placeholder="아이디를 입력해주세요." _onChange={(e)=> {setId(e.target.value);}}></Input>
+                          <Button _onClick={pwdFined} text="보내기"></Button>
+                      </Grid>
+                  }
+              </Grid>
+            </FindContent>
         </FindContainer>
     )
 }
@@ -58,9 +60,14 @@ const UserFind = () => {
 export default UserFind
 
 const FindContainer = styled.div`
-    padding: 10px 5% 0;
+    height: 100vh;
+    background-color: #FFFBF1;
+    padding: 15.5% 0;
+    box-sizing: border-box;
     h2 {
-      font-size: 28px;
+      font-size: 30px;
+      line-height: 35px;
+      color: #FFD04C;
       margin: 0;
     }
     h2:last-child{
@@ -68,7 +75,9 @@ const FindContainer = styled.div`
     }
 `
 const Head = styled.div`
-  margin-bottom: 80px;
+  margin-bottom: 60px;
+  box-sizing: border-box;
+  padding: 0 4.35%;
   &::after {
     content: ""; display: block; visibility: hidden; clear: both;
   }
@@ -76,10 +85,19 @@ const Head = styled.div`
     float: left;
   }
   & > p {
-    line-height: 45px;
-  }
-  svg{
-    font-size: 45px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.5px;
     color: #4F4F4F;
   }
+  svg{
+    font-size: 25px;
+    color: #4F4F4F;
+  }
+`
+
+const FindContent = styled.div`
+  padding: 0 10.25%;
+  box-sizing: border-box;
 `

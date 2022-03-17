@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import styled from "styled-components"
 import { Map, MapMarker } from "react-kakao-maps-sdk"
 
 const MainMap = (props)=> {
@@ -16,7 +17,6 @@ const MainMap = (props)=> {
 
   useEffect(() => {
     if (navigator.geolocation) {
-      // GeoLocation을 이용해서 접속 위치를 얻어옵니다
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setState((prev) => ({
@@ -37,42 +37,35 @@ const MainMap = (props)=> {
         }
       )
     } else {
-      // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
       setState((prev) => ({
         ...prev,
-        errMsg: "geolocation을 사용할수 없어요..",
+        errMsg: "현재 위치를 표시할 수 없어요.",
         isLoading: false,
       }))
     }
   }, [])
+
   const sendLoca = () => {
     const loca=state.center
     props.defaultLoca(loca)
   }
+
   return (
-    <>
-      <Map // 지도를 표시할 Container
-        center={state.center}
-        onCreate={sendLoca}
-        style={{
-          // 지도의 크기
-          width: "100%",
-          height: "450px",
-        }}
-        level={3} // 지도의 확대 레벨
-        draggable={draggable}
-        zoomable={zoomable}
-      >
+    <MainContent>
+      <Map center={state.center} onCreate={sendLoca} style={{width: "100vw",height: "100vh",}}
+        level={3} draggable={draggable} zoomable={zoomable}>
         {!state.isLoading && (
-          <MapMarker position={state.center}>
-            <div style={{ padding: "5px", color: "#000" }}>
-              {state.errMsg ? state.errMsg : "여기에 계신가요?!"}
-            </div>
-          </MapMarker>
+          <MapMarker position={state.center}></MapMarker>
         )}
       </Map>
-    </>
+    </MainContent>
   )
 }
 
 export default MainMap
+
+const MainContent = styled.div`
+  opacity: 0.5;
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+`

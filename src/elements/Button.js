@@ -32,18 +32,20 @@ Button.defaultProps = {
   is_float: false,
   margin: false,
   width: '100%',
-  padding: "12px 0px",
+  padding: "15px 0px",
 }
 
 const ElButton = styled.button`
   width: ${(props) => props.width};
-  background-color: #C4C4C4;
+  background-color: #FFD04C;
   color: #333;
   box-sizing: border-box;
   border: none;
   padding: ${(props) => props.padding};
   ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
   border-radius: 25px;
+  font-family: inherit;
+  font-size: 16px;
 `;
 
 const FloatButton = styled.button`

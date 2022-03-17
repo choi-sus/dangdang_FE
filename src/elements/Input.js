@@ -61,21 +61,22 @@ const ElTextarea = styled.textarea`
 
 const ElRadio = styled.input`
   border: 1px solid #212121;
-  /* width: 10p; */
-  /* margin: */
   box-sizing: border-box;
 `;
 
 const ElInput = styled.input`
   border: none;
-  border-bottom: 2px solid #BDBDBD;
   width: 100%;
-  padding: 15px 5px;
+  padding: 15px 20px;
   box-sizing: border-box;
   outline: none;
   ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
+  border-radius: 25px;
+  box-shadow: 0px 1px 4px rgb(158 158 158 / 25%);
+  font-family: inherit;
+  font-size: 16px;
   &::placeholder {
-    color: #BDBDBD;
+    color: #BDBDBD; font-family: inherit;
   }
 `;
 

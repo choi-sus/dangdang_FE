@@ -34,7 +34,7 @@ const logInDB = (userID, password) =>{
             )
         })
         .catch((err) => {
-            console.log(err)
+            window.alert(err.response.data.fail);
         })
     }
 }
@@ -53,7 +53,7 @@ const signUpDB = (userID, email, nickname, password, confirmPassword) => {
             history.replace("/login");
         })
         .catch((err)=>{
-           console.log(err) 
+           window.alert(err.response.data.fail);
         })
    }
 }
@@ -86,7 +86,7 @@ const idFindDB = (email) => {
             history.replace("/login");
          })
          .catch((err)=>{
-            console.log(err) 
+            window.alert(err.response.data.fail);
          })
     }
 }
@@ -103,7 +103,7 @@ const pwdFindDB = (email, userID) => {
             history.replace("/login");
          })
          .catch((err)=>{
-            console.log(err) 
+            window.alert(err.response.data.fail);
          })
     }
 }

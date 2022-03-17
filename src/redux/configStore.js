@@ -6,6 +6,8 @@ import { connectRouter } from "connected-react-router";
 import User from "./modules/user";
 import Geolocation from "./modules/geolocation";
 import Walk from "./modules/walk";
+import Guide from "./modules/guide";
+import Profile from "./modules/profile";
 
 export const history = createBrowserHistory();
 
@@ -13,6 +15,8 @@ const rootReducer = combineReducers({
     user: User,
     geolocation: Geolocation,
     walk: Walk,
+    guide: Guide,
+    profile: Profile,
     router: connectRouter(history),
   });
 
