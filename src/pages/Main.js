@@ -3,8 +3,10 @@ import styled from "styled-components"
 import MainMap from "../components/MainMap";
 import Weather from "../components/Weather";
 import { Link } from 'react-router-dom';
-import {Text} from "../elements/Index"
-import {history} from "../redux/configStore"
+import {Text} from "../elements/Index";
+import {history} from "../redux/configStore";
+import { api} from "../shared/Api"
+import { useEffect } from "react";
 
 const Main = () => {
     const [nowLoca,setNowLoca] = useState();

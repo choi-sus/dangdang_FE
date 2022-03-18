@@ -10,16 +10,23 @@ import { actionCreators as userActions } from "../redux/modules/user";
 import { actionCreators as walkActions } from "../redux/modules/walk";
 import Nav from "../components/Nav";
 import moment from "moment-timezone";
+// import { nonWhiteSpace } from "html2canvas/dist/types/css/syntax/parser";
 
 const Profile = () => {
   const dispatch = useDispatch();
   const petInfo = useSelector((state)=> state.profile.pet);
   const is_login = useSelector((state) => state.user.is_login);
+  //일단 하나만 띄울게요
   const lastWalk = useSelector((state) => state.walk.walkList[0]);
+  const walkList = useSelector((state) => state.walk.walkList);
+  // const lastWalk = [];
+  // for(let i=0; i<2; i++){
+  //   lastWalk.push(walkList[i])
+  // }
 
   useEffect(()=>{
-    dispatch(profileActions.getPetDB())
     dispatch(walkActions.WalkListDB())
+    dispatch(profileActions.getPetDB())
   },[])
   
   const LogOut = () => {
@@ -51,26 +58,28 @@ const Profile = () => {
                 <p>{petInfo.petBirth}</p>
               </PetBirth>
             </ProfileCard>
-              <LastWalk>
-                <LastTitle>
-                  <h4>최근 산책 내역</h4>
-                  <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace(`/walkdetail/${lastWalk?._id}`)}}/>
-                </LastTitle>
+            <BtnBox>
+              <p>최근 산책 내역</p>
+              <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/walklist")}}/>
+            </BtnBox>
                 {!lastWalk ? 
-                  <div>
+                  <LastWalk style={{display: "block", textAlign:"center"}}>
                     <p>산책 내역이 없어요</p>
                     <p>첫 산책을 시작해주세요!</p>
-                  </div>
+                  </LastWalk>
                 : 
-                  <div>
-                    <p>날짜 {moment.tz(lastWalk.createdAt,'Asia/seoul').format('YYYY.MM.DD A h:mm')}</p>
-                    <p>시간 {lastWalk.time}</p>
-                    <p>거리 {lastWalk.distance}km</p>
-                  </div>
+                <div>
+                  {lastWalk && (lastWalk.map((e,i) => {
+                    return(
+                  <LastWalk key={i} onClick={()=> {history.replace(`/walkdetail/${e._id}`)}}>
+                    <p>{moment.tz(e.createdAt,'Asia/seoul').format('YYYY / MM / DD')}</p>
+                    <p>{moment.tz(e.createdAt,'Asia/seoul').format(' A h:mm')}</p>
+                  </LastWalk>
+                  )}))}
+                </div>
                 }
-              </LastWalk>
               <BtnBox>
-                {petInfo ? <p>펫 프로필 수정하기</p> : <p>펫 프로필 추가하기</p>}
+                {petInfo ? <p>반려동물 정보 수정</p> : <p>반려동물 정보 추가</p>}
                 <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/profilewrite")}}/>
               </BtnBox>
               <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
@@ -100,19 +109,11 @@ const Profile = () => {
     }else{
       return(
         <ProfileContainer>
-            <HeadColor>
-              <Head>
-                <Text center color="#4F4F4F" size="18px">펫 프로필</Text>
-              </Head>
-              </HeadColor>
-            <ProfileCard>
-              <PetImg></PetImg>
-              <p>로그인 후 반려견 정보를 확인해주세요!</p>
-              <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px"}} onClick={()=> {history.replace("/login")}}>
-                <p>로그인 페이지로 이동</p>
-                <FontAwesomeIcon icon={faAngleRight}/>
-              </BtnBox>
-            </ProfileCard>
+            <NotList>
+              <p>로그인이 필요한 서비스입니다.</p>
+              <p>로그인 후 이용해주세요.</p>
+              <Button margin= "58px 0 0" _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
+            </NotList>
             <Nav></Nav>
          </ProfileContainer>
         )
@@ -124,9 +125,10 @@ export default Profile;
 const ProfileContainer = styled.div`
 width: 100vW;
 height: 100vh;
+overflow: auto;
 background-color: #FFFBF1;
 box-sizing: border-box;
-padding: 0 30px;
+padding: 0 30px 120px;
   h2 {
     font-size: 30px;
     line-height: 35px;
@@ -188,6 +190,7 @@ const PetImg = styled.div`
 const PetName = styled.div`
   font-size: 24px;
   margin: 10px;
+  font-weight: 600;
 `;
 
 const PetDetail = styled.div`
@@ -211,41 +214,28 @@ const PetBirth = styled.div`
   p{
     margin: 3px;
     font-size: 20px;
-    font-weight: 500;
   }
 `;
 
 const LastWalk = styled.div`
-height: 140px;
-margin: 15px 0px;
-padding: 20px;
+padding: 19px 15px;
 box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
 background-color: #fff;
 border-radius: 13px;
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
 p{
   font-size: 16px;
+  color: #4f4f4f;
+  margin:0;
+}
+p:nth-child(2){
   color: #bdbdbd;
 }
 `;
-const LastTitle = styled.div`
-display: flex;
-justify-content: space-between;
-h4{
-  margin:0px;
-  font-size: 16px;
-  text-align: left;
-  color: #4f4f4f;
-}
-svg{
-  font-size: 20px;
-    color: #828282;
-}
-`;
 const BtnBox = styled.div`
-  margin: 0 0 15px;
-  padding: 19px 20px;
-  box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
-  background-color: #ffffff;
+  padding: 20px;
   font-size: 16px;
   border-radius: 13px;
   color: #4f4f4f;
@@ -260,8 +250,16 @@ const BtnBox = styled.div`
   }
 `;
 const LogoutBtn = styled.div`
-  color: #828282;
+  color: #4f4f4f;
   font-size: 16px;
-  text-align: right;
-  margin-right: 30px;
+  margin-left: 20px;
+  text-align: left;
+`;
+const NotList = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -82%);
+  width: calc(100% - 60px);
+  text-align: center;
+  color:#bdbdbd;  
 `;

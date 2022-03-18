@@ -17,13 +17,13 @@ import ProfileWrite from '../pages/ProfileWrite';
 import WalkList from '../pages/WalkList';
 import WalkDetail from '../pages/WalkDetail';
 import Icon from '../pages/icon';
+import Kakao from './Kakao';
 import './App.css';
 import { useDispatch, useSelector } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
 import {getCookie} from "./Cookie";
 
 function App() {
-
   const dispatch = useDispatch();
   const is_login = getCookie("is_login")? true : false;
   
@@ -52,6 +52,7 @@ function App() {
           <Route path="/walklist" exact component={WalkList}/>
           <Route path="/walkdetail/:id" exact component={WalkDetail}/>
           <Route path="/icon" exact component={Icon}/>
+          <Route path="/kakao" component={Kakao}/>
         </ConnectedRouter>
       </div>
     </React.Fragment>

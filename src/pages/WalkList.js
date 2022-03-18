@@ -20,23 +20,19 @@ const Profile = () => {
   if(!walkList[0]){
     return(
       <ListContainer>
-          <Head>
-            <Text center color="#4F4F4F" size="18px">산책 일지</Text> 
-          </Head>
           {is_login ? 
           <NotList>
             <p>반려견과 함께한 산책기록이 없으시군요?</p>
             <p>지금 산책하러 갈까요?</p>
-            <Button margin="30px 0 0" width="35%" _onClick={()=> {history.replace("/main")}} text="산책하러 가기"></Button>
+            <Button margin= "58px 0 0"_onClick={()=> {history.replace("/main")}} text="산책하러 가기"></Button>
           </NotList>
           : 
           <NotList>
-            <p>로그인 또는 회원가입이 필요한 서비스입니다.</p>
-            <Button margin="30px 0 0" width="35%" _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
+            <p>로그인이 필요한 서비스입니다.</p>
+            <p>로그인 후 이용해주세요.</p>
+            <Button margin= "58px 0 0" _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
           </NotList>
           }
-          
-          
           <Nav/>
      </ListContainer>
   )
@@ -71,7 +67,7 @@ position: relative;
 background-color: #FFFBF1;
 width: 100vW;
 height: 100vh;
-padding: 54px 0 0;
+padding: 54px 0 96px;
 box-sizing: border-box;
 `;
 const Head = styled.div`
@@ -97,18 +93,20 @@ const Head = styled.div`
   }
 `
 const NotList = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -82%);
+  padding: 0 30px;
+  width: calc(100% - 60px);
   text-align: center;
-  color:#bdbdbd;
-  height: 300px;
-  padding: 100px 0;
+  color:#bdbdbd;  
 `;
 const ListWrap = styled.div`
-  height: 90%;
+  height: calc(100% - 50px);
   overflow: scroll;
 `;
 const WalkCard = styled.div`
 height: 52px;
-height: calc(100%-92px);
 background: #FFFFFF;
 box-shadow: 0px 1px 4px rgba(158, 158, 158, 0.25);
 border-radius: 11px;

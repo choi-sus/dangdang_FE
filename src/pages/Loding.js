@@ -16,8 +16,6 @@ const Loding = () => {
         return () => {clearTimeout(timeout);};
     });
 
-    
-
     return(
         <Load>
             <Grid height="auto" center padding="0 15%;">
@@ -78,7 +76,7 @@ const ProgressBar = styled.div`
     height: 12px;
     margin: 120px 0 0;
     border-radius: 36px;
-    background-color: #ffd04c;
+    background-color: #ebebeb;
 `
 
 const Bar = styled.div`
@@ -86,8 +84,9 @@ const Bar = styled.div`
     left: 0; 
     top: 0;
     bottom: 0; 
-    background-color: #ebebeb;
+    background-color: #ffd04c;
     width: 0%;
     height: 12px;
     animation: ${BarWidth} 3s 1 linear;
+    border-radius: 36px;
 `

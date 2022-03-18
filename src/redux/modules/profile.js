@@ -18,7 +18,8 @@ const addPetDB = (formData) => {
             history.replace("/profile")
         })
         .catch((err)=>{
-           console.log(err) 
+           console.log(err)
+           window.alert(err.data.fail)
         })
     }
 }

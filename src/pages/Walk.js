@@ -102,8 +102,8 @@ const Walk = (props) => {
     let updatedS = time.s, updatedM = time.m, updatedH = time.h;
 
     const run = () => {
-      if (updatedM === 60) { updatedH++; updatedM = 0;}
-      if (updatedS === 60) { updatedM++; updatedS = 0;} 
+      if (updatedM === 59) { updatedH++; updatedM = -1;}
+      if (updatedS === 59) { updatedM++; updatedS = -1;}
       updatedS++;
       return setTime({ s: updatedS, m: updatedM, h: updatedH });
     };
@@ -133,10 +133,10 @@ const Walk = (props) => {
               distanceBetween += getDistanceBetween({latitude: polylinePath[i]?.lat, longitude: polylinePath[i]?.lng}, {latitude: polylinePath[i + 1]?.lat, longitude: polylinePath[i + 1]?.lng});
             }
           }
-          console.log(distanceBetween); 
+          // console.log(distanceBetween); 
         }
         const totalDistance = String(distanceBetween).substr(0, 3);
-        console.log(totalDistance);
+        // console.log(totalDistance);
         if(lastTime){
           dispatch(walkActions.addWalkDB(polylinePath, lastTime, totalDistance, water, yellow, brown, danger));
         }

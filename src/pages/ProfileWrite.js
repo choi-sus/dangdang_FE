@@ -49,16 +49,17 @@ const ProfileWrite = () => {
     
     const sendPetInfo = (e) => {
       const petBirth = selYear + " / " + selMonth+" / "+selDay;
-      if (petImage ==="" || petName ==="" || selGender ==="" || petBirth ==="" || selBreed ==="" ){
-        window.alert("모든 사항은 필수내역입니다. 모두 입력해주세요!")
+      if (petImage ==="" || petName ==="" ||  selGender ==="" ||  petBirth ==="" || selBreed ==="" ){
+        window.alert("입력하지 않은 항목이 있는지 확인 후 다시 시도해주세요!")
+      }else{
+        formData.append("petImage",petImage);
+        formData.append("petName",petName)
+        formData.append("petGender",selGender)
+        formData.append("petBirth",petBirth)
+        formData.append("petBreed",selBreed)
+        dispatch(profileActions.addPetDB(formData))
+        history.replace("/profile");
       }
-      formData.append("petImage",petImage);
-      formData.append("petName",petName)
-      formData.append("petGender",selGender)
-      formData.append("petBirth",petBirth)
-      formData.append("petBreed",selBreed)
-      dispatch(profileActions.addPetDB(formData))
-      history.replace("/profile");
     };
     useEffect(()=>{
       dispatch(profileActions.getPetDB())
@@ -84,6 +85,7 @@ const ProfileWrite = () => {
       dispatch(profileActions.editPetDB(formData))
       history.replace("/profile");
     };
+    // console.log(petImage,petName,selYear,selMonth,selDay,selGender,selBreed)
 
     return(
         <PageBody>
@@ -114,20 +116,20 @@ const ProfileWrite = () => {
             <BirthInput>
                 <h5>생일</h5>
                 <div>
-                  <select name="year" onChange={selectedYear} value={selYear ? selYear : year} style={{margin:"0px"}}>
+                  <select name="year" onChange={selectedYear} value={selYear ? selYear : setSelYear(year)} style={{margin:"0px"}}>
                     {yearList.map((y) => (<option key={y} value={y}>{y}</option>))}
                   </select>
-                  <select name="month" onChange={selectedMonth} value={selMonth ? selMonth : mon}>
+                  <select name="month" onChange={selectedMonth} value={selMonth ? selMonth : setSelMonth(mon)}>
                     {monthList.map((m) => (<option key={m} value={m}>{m}</option>))}
                   </select>
-                  <select name="day" onChange={selectedDay} value={selDay ? selDay : day}>
+                  <select name="day" onChange={selectedDay} value={selDay ? selDay : setSelDay(day)}>
                     {dayList.map((d) => (<option key={d} value={d}>{d}</option>))}
                   </select>
                 </div>
             </BirthInput>
             <RadioBox>
               <h5>분류</h5>
-              <div onChange={selectedBreed}>
+              <div onChange={selectedBreed} defaultChecked={"소형견"}>
                 <label>
                   <input type="radio" name="breed" value={"소형견"} checked={selBreed === "소형견"}/>
                   <span>소형견</span>
@@ -172,7 +174,7 @@ export default ProfileWrite;
 const PageBody = styled.div`
 background-color: #FFFBF1;
 width: 100vW;
-height: 100vh;
+/* height: 100vh; */
 `;
 const Head = styled.div`
   margin-bottom: 25px;

@@ -20,7 +20,7 @@ const Weather = ()=> {
     }
 
     function handleGeoErr(err) {
-        console.log("geo err! " + err);
+        // console.log("geo err! " + err);
     }
 
     function requestCoords() {

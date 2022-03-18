@@ -1,9 +1,12 @@
 import React, {useState} from "react";
 import styled from "styled-components"
-import {Text} from "../elements/Index"
+import {Text, Grid} from "../elements/Index"
 import { useDispatch, useSelector } from "react-redux"
 import { actionCreators as walkActions } from "../redux/modules/walk"; 
 import { Map , Polyline} from "react-kakao-maps-sdk"
+import {history} from "../redux/configStore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const WalkEnd = () => {
     const dispatch = useDispatch()
@@ -20,7 +23,12 @@ const WalkEnd = () => {
 
     return(
         <EndContainer>
-            <Text color="#4f4f4f" center size="18px" margin="0 0 20px 0">산책 종료</Text>
+            <Head>
+                <Grid width="auto" _onClick={()=> {history.replace("/main")}}>
+                  <FontAwesomeIcon icon={faAngleLeft}/>
+                </Grid>
+                <Text center color="#4F4F4F" size="18px">산책 종료</Text>
+            </Head>
             <ImgContent>
                 <svg width="197" height="180" viewBox="0 0 197 180" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M34.628 109.657C31.4522 114.783 27.2744 119.746 24.6267 125.164C21.9659 130.609 22.5706 137.179 22.1507 143.046C21.8532 147.204 21.4341 151.272 21.5196 155.452C21.5504 156.96 22.0177 157.979 23.5587 158.287C30.0528 159.584 33.7326 154.16 36.3757 148.958C40.739 140.372 41.0455 130.083 41.1579 120.657C41.2491 113.01 41.1308 105.134 38.5605 97.8321C37.2794 94.1925 35.6149 92.0502 32.3704 95.2152C23.9704 103.409 24.3682 119.408 27.6125 129.695C29.4425 135.497 32.6247 142.471 37.2496 146.656C42.6176 151.515 50.8726 153.66 57.8832 154.386C68.5944 155.495 79.3837 154.84 90.0959 154.168C93.539 153.952 96.9665 153.816 100.413 153.708C101.771 153.665 103.293 153.69 102.112 152.011C97.6724 145.7 90.5225 140.497 84.1971 136.31C76.4374 131.173 68.3318 126.905 58.8785 126.691C55.7118 126.619 53.3278 126.26 53.0768 129.962C52.7152 135.296 53.6942 140.462 56.7666 144.912C64.8065 156.556 83.6549 157.179 96.1403 155.161C100.454 154.464 107.721 153.075 108.375 147.771C109.084 142.017 111.245 143.506 107.549 139.442C105 136.64 99.4636 133.548 95.7416 132.132C91.8059 131.008 82.7238 129.959 88.9946 131.008C90.3505 134.153 95.153 132.581 97.4269 135.147C103.619 142.134 111.237 148.518 119.833 152.302C123.628 153.973 127.595 154.093 131.339 155.452C136.319 157.26 140.729 160.951 146.389 161.122C146.884 161.137 150.132 161.637 148.283 161.461C141.374 160.804 134.475 159.057 127.698 157.633" stroke="#FFD04C" stroke-width="32.6104" stroke-linecap="round"/>
@@ -115,7 +123,7 @@ const WalkEnd = () => {
                         {walk_list && <IconNum>{walk_list.danger}</IconNum>}
                     </IconArea>
                 </IconContent>
-                {walk_list && <Map center={walk_list.path[0]} style={{width: "100%", height: "450px"}} level={3} draggable={draggable} zoomable={zoomable}>
+                {walk_list && <Map center={walk_list.path[0]} style={{width: "100%", height: "450px"}} level={3}>
                 <Polyline path={walk_list.path} strokeWeight={5} strokeColor={"#FFAE00"} strokeOpacity={0.7} strokeStyle={"solid"}/>
                 </Map>}
             </WalkReport>
@@ -130,6 +138,28 @@ const EndContainer = styled.div`
     padding: 15.5% 4.35%;
     box-sizing: border-box;
 `
+
+const Head = styled.div`
+  margin-bottom: 40px; 
+  &::after {
+    content: ""; display: block; visibility: hidden; clear: both;
+  }
+  & > div {
+    float: left;
+  }
+  & > p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.5px;
+    color: #4F4F4F;
+  }
+  svg{
+    font-size: 25px;
+    color: #4F4F4F;
+  }
+`
+
 const ImgContent = styled.div`
     text-align: center;
     position: relative;

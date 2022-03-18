@@ -334,7 +334,7 @@ const WalkDetail = () => {
             </WalkInfo>
           </WalkRecord>
           {walk &&
-          <Map center={walk.path[0]} style={{width: "100%", height: "400px", borderRadius: "15px"}} level={3} draggable={draggable} zoomable={zoomable}>
+          <Map center={walk.path[0]} style={{width: "100%", height: "400px", borderRadius: "15px"}} level={3}>
             <Polyline path={walk.path} strokeWeight={5} strokeColor={"#FFAE00"} strokeOpacity={0.7} strokeStyle={"solid"}/>
           </Map>}
         </WalkDetailContainer>
@@ -353,7 +353,6 @@ const WalkDetail = () => {
   const Head = styled.div`
     margin-bottom: 25px;
     box-sizing: border-box;
-    padding: 0 4.35%;
     &::after {
       content: ""; display: block; visibility: hidden; clear: both;
     }
@@ -370,6 +369,7 @@ const WalkDetail = () => {
     svg{
       font-size: 25px;
       color: #4F4F4F;
+      transform: translate(-10px, 0px);
     }
   `
 const SvgFrame = styled.div`

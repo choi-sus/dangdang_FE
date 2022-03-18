@@ -6,9 +6,11 @@ import jwt_decode from "jwt-decode";
 
 const SET_USER = "SET_USER";
 const LOG_OUT = "LOG_OUT";
+const SET_KAKAO = "SET_KAKAO";
 
 const setUser = createAction(SET_USER,(user)=> ({user}));
 const logOut = createAction(LOG_OUT,(user)=>({user}));
+const setKakao = createAction(SET_USER,()=> ({}));
 
 const initialState = {
     user: null,
@@ -24,7 +26,7 @@ const logInDB = (userID, password) =>{
             const accessToken = "Bearer " + res.data.token;
             setCookie('is_login', `${accessToken}`);
             window.alert(res.data.success)
-            history.replace("/main");
+            window.location.replace("/main");
             const {userID, nickname} = jwt_decode(res.data.token)
             dispatch(
                 setUser({
@@ -108,6 +110,23 @@ const pwdFindDB = (email, userID) => {
     }
 }
 
+const kakaoLoginDB  = (authorization_code) => {
+    return async (dispatch, getState, { history }) => {
+        console.log("디스패치 진입했고 코드는?",authorization_code)
+        await api.get(`auth/kakao/callback?code=${authorization_code}`)
+            .then((res) => {
+                // console.log(res, " 토큰왔음?")
+                const accessToken = "Bearer " + res.data.token;
+                setCookie('is_login', `${accessToken}`);
+                window.location.replace("/main");
+                dispatch(setKakao())
+            })
+            .catch((error) => {
+                console.log("카카오 로그인실패", error);
+            });
+    }
+}
+
 export default handleActions ({
     [SET_USER]: (state, action) =>
     produce(state, (draft) => {
@@ -120,6 +139,10 @@ export default handleActions ({
         draft.user = null;
         draft.is_login = false;
     }),
+    [SET_KAKAO]: (state, action) =>
+    produce(state, (draft) => {
+        draft.is_login = true;
+    }),
 },
 initialState
 );
@@ -131,7 +154,9 @@ const actionCreators = {
     signUpDB,
     loginCheckDB,
     idFindDB,
-    pwdFindDB
+    pwdFindDB,
+    kakaoLoginDB,
+    setKakao,
 }
 
 export {actionCreators}

@@ -19,7 +19,7 @@ const Guide = () => {
     return(
         <GuideContainer>
             <Head>
-                <Grid width="auto" _onClick={()=> {history.replace("/walk")}}>
+                <Grid width="auto" _onClick={()=> {history.replace("/main")}}>
                   <FontAwesomeIcon icon={faAngleLeft}/>
                 </Grid>
                 <Text center color="#4F4F4F" size="18px">가이드북</Text>

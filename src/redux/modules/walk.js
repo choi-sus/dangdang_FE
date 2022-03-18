@@ -47,7 +47,7 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
     return async (dispatch, getState, { history }) => {
         await api_token.get(`/maps/endwalk`)
         .then((res) => {
-            console.log(res.data)
+            // console.log(res.data)
             dispatch(endWalk(res.data))
           })
           .catch((err) => {
