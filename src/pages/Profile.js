@@ -16,13 +16,12 @@ const Profile = () => {
   const dispatch = useDispatch();
   const petInfo = useSelector((state)=> state.profile.pet);
   const is_login = useSelector((state) => state.user.is_login);
-  //일단 하나만 띄울게요
-  const lastWalk = useSelector((state) => state.walk.walkList[0]);
   const walkList = useSelector((state) => state.walk.walkList);
-  // const lastWalk = [];
-  // for(let i=0; i<2; i++){
-  //   lastWalk.push(walkList[i])
-  // }
+  const lastWalk = [];
+  for(let i=0; i<2; i++){
+    if (walkList[i]) {lastWalk.push(walkList[i])}
+    else break;
+  }
 
   useEffect(()=>{
     dispatch(walkActions.WalkListDB())
