@@ -74,7 +74,6 @@ const Walk = (props) => {
               isLoading: false,
             }))
             dispatch(locaActions.setPath(state.center))
-            console.log("하이룽")
           },
           (err) => {
             setState((prev) => ({
@@ -169,7 +168,6 @@ const Walk = (props) => {
                 isLoading: false,
               }))
               dispatch(locaActions.setPath(state.center))
-              console.log("하이룽2")
             },
             (err) => {
               setState((prev) => ({
@@ -239,9 +237,3 @@ const TimeContent = styled.div`
   color: #333;
   z-index: 5;
 `
-
-// 월: 일시정지, 삭제, 파비콘, 웹 타이틀 수정
-// 화: 닉네임 수정, 비밀번호 수정, 로그인 된 상태에 가이드 안 나오게 하기, 가이드 페이지 전환 에러 해결하기
-// 수: pwa, 반응형 디테일, 사이트 목업 적용
-// 목: 이벤트 페이지
-// 금: 이벤트 페이지
