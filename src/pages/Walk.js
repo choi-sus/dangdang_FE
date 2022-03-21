@@ -96,44 +96,6 @@ const Walk = (props) => {
        return () => clearTimeout(centers.current); 
     }, [state]);
 
-    useEffect(() => {
-      if (restart === true){
-        centers.current = setTimeout(()=>{ 
-          if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              setState((prev) => ({
-                ...prev,
-                center: {
-                  lat: position.coords.latitude, // 위도
-                  lng: position.coords.longitude, // 경도
-                },
-                isLoading: false,
-              }))
-              dispatch(locaActions.setPath(state.center))
-              console.log("하이룽")
-            },
-            (err) => {
-              setState((prev) => ({
-                ...prev,
-                errMsg: err.message,
-                isLoading: false,
-              }))
-            }
-          )
-        } else {
-          setState((prev) => ({
-            ...prev,
-            errMsg: "현재 위치를 표시할 수 없어요.",
-            isLoading: false,
-          }))
-        }
-         }, 5000);
-        
-         return () => clearTimeout(centers.current); 
-      }
-    }, [state]);
-
     const polylinePath = useSelector((state) => state.geolocation.polylinePath);
 
     const [time, setTime] = useState({ s: 0, m: 0, h: 0 });
@@ -194,8 +156,37 @@ const Walk = (props) => {
 
       const walkRestart = () => {
         setInterv(setInterval(run, 1000));
-        setRestart(true);
-        console.log(restart);
+        centers.current = setTimeout(()=>{ 
+          if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              setState((prev) => ({
+                ...prev,
+                center: {
+                  lat: position.coords.latitude, // 위도
+                  lng: position.coords.longitude, // 경도
+                },
+                isLoading: false,
+              }))
+              dispatch(locaActions.setPath(state.center))
+              console.log("하이룽2")
+            },
+            (err) => {
+              setState((prev) => ({
+                ...prev,
+                errMsg: err.message,
+                isLoading: false,
+              }))
+            }
+          )
+        } else {
+          setState((prev) => ({
+            ...prev,
+            errMsg: "현재 위치를 표시할 수 없어요.",
+            isLoading: false,
+          }))
+        }
+         }, 5000);
       }
 
       return (
