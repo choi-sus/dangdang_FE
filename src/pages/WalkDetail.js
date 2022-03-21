@@ -22,7 +22,8 @@ const WalkDetail = () => {
     const DelWalk = () => {
       dispatch(walkActions.DelWalkDB(params.id));
       history.replace('/walklist')
-    } 
+    }
+    const at = (moment.tz(walk.createdAt,'Asia/seoul').format('A')==="AM"? "오전 " : "오후 ")
       return (
         <WalkDetailContainer>
           <Head>
@@ -30,7 +31,7 @@ const WalkDetail = () => {
               <FontAwesomeIcon icon={faAngleLeft} />
             </Grid>
             {walk &&( 
-              <Text center color="#4F4F4F" size="18px">{moment.tz(walk.createdAt,'Asia/seoul').format('YYYY.MM.DD A h:mm')}</Text>)}
+              <Text center color="#4F4F4F" size="18px">{moment.tz(walk.createdAt,'Asia/seoul').format('YYYY.MM.DD')+"  ·  "+at+moment.tz(walk.createdAt,'Asia/seoul').format('h:mm')}</Text>)}
           </Head>
           <SvgFrame>
             <svg

@@ -69,10 +69,11 @@ const Profile = () => {
                 : 
                 <div>
                   {lastWalk && (lastWalk.map((e,i) => {
+                    const at = (moment.tz(e.createdAt,'Asia/seoul').format('A')==="AM"? "오전 " : "오후 ")
                     return(
                   <LastWalk key={i} onClick={()=> {history.replace(`/walkdetail/${e._id}`)}}>
                     <p>{moment.tz(e.createdAt,'Asia/seoul').format('YYYY / MM / DD')}</p>
-                    <p>{moment.tz(e.createdAt,'Asia/seoul').format(' A h:mm')}</p>
+                    <p>{at+moment.tz(e.createdAt,'Asia/seoul').format('h:mm')}</p>
                   </LastWalk>
                   )}))}
                 </div>

@@ -73,6 +73,7 @@ const Walk = (props) => {
               isLoading: false,
             }))
             dispatch(locaActions.setPath(state.center))
+            console.log("하이룽")
           },
           (err) => {
             setState((prev) => ({
@@ -154,38 +155,7 @@ const Walk = (props) => {
 
       const walkRestart = () => {
         setInterv(setInterval(run, 1000));
-
-        centers.current = setTimeout(()=>{ 
-            if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-              (position) => {
-                setState((prev) => ({
-                  ...prev,
-                  center: {
-                    lat: position.coords.latitude, // 위도
-                    lng: position.coords.longitude, // 경도
-                  },
-                  isLoading: false,
-                }))
-                dispatch(locaActions.setPath(state.center))
-                console.log(locaActions.setPath(state.center))
-              },
-              (err) => {
-                setState((prev) => ({
-                  ...prev,
-                  errMsg: err.message,
-                  isLoading: false,
-                }))
-              }
-            )
-          } else {
-            setState((prev) => ({
-              ...prev,
-              errMsg: "현재 위치를 표시할 수 없어요.",
-              isLoading: false,
-            }))
-          }
-           }, 5000);
+        setTimeout(centers.current);
       }
 
       return (
