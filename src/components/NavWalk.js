@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components"
-import {Text} from "../elements/Index"
+import {Text, Grid} from "../elements/Index"
 import {history} from "../redux/configStore"
 
 const NavWalk = (props) => {
@@ -76,20 +76,20 @@ const NavWalk = (props) => {
                 <NavList onClick={()=> {setPause(!pause);}}>
                     {
                         pause === false ?
-                        <React.Fragment>
+                        <Grid _onClick={()=>{props.walkPause();}}>
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                                 <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                             </svg>
-                            <ListTitle onClick={()=>{props.walkPause();}}>일시정지</ListTitle>
-                        </React.Fragment> :
-                        <React.Fragment>
+                            <ListTitle>일시정지</ListTitle>
+                        </Grid> :
+                        <Grid _onClick={()=>{props.walkRestart();}}>
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                                 <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                             </svg>
-                            <ListTitle onClick={()=>{props.walkRestart();}}>시작</ListTitle>
-                        </React.Fragment>
+                            <ListTitle>시작</ListTitle>
+                        </Grid>
                     }
                 </NavList>
                 <NavList onClick={()=> {history.replace("/guide")}}>
