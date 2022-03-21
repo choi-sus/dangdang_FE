@@ -8,7 +8,7 @@ const Kakao = () => {
   useEffect(() => {
     // console.log("카카오페이지로 왔니", authorization_code);
     dispatch(userActions.kakaoLoginDB(authorization_code))
-  }, []);
+  }, []); 
   return (
     <React.Fragment></React.Fragment>
   )
