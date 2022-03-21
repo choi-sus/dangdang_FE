@@ -24,12 +24,6 @@ const NavWalk = (props) => {
         }
     }
 
-    const playStop = ()=> {
-        props.walkPause();
-
-    }
-    console.log(pause);
-
     return(
         <React.Fragment>
             <NavBar>
@@ -87,14 +81,14 @@ const NavWalk = (props) => {
                                 <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                                 <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                             </svg>
-                            <ListTitle onClick={()=>{playStop();}}>일시정지</ListTitle>
+                            <ListTitle onClick={()=>{props.walkPause();}}>일시정지</ListTitle>
                         </React.Fragment> :
                         <React.Fragment>
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                                 <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                             </svg>
-                            <ListTitle onClick={()=>{playStop();}}>시작</ListTitle>
+                            <ListTitle onClick={()=>{props.walkRestart();}}>시작</ListTitle>
                         </React.Fragment>
                     }
                 </NavList>

@@ -149,6 +149,42 @@ const Walk = (props) => {
       }
       const walkPause = () => {
         clearInterval(interv);
+        clearTimeout(centers.current);
+      }
+
+      const walkRestart = () => {
+        setInterv(setInterval(run, 1000));
+
+        centers.current = setTimeout(()=>{ 
+            if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                setState((prev) => ({
+                  ...prev,
+                  center: {
+                    lat: position.coords.latitude, // 위도
+                    lng: position.coords.longitude, // 경도
+                  },
+                  isLoading: false,
+                }))
+                dispatch(locaActions.setPath(state.center))
+              },
+              (err) => {
+                setState((prev) => ({
+                  ...prev,
+                  errMsg: err.message,
+                  isLoading: false,
+                }))
+              }
+            )
+          } else {
+            setState((prev) => ({
+              ...prev,
+              errMsg: "현재 위치를 표시할 수 없어요.",
+              isLoading: false,
+            }))
+          }
+           }, 5000);
       }
 
       return (
@@ -169,7 +205,7 @@ const Walk = (props) => {
             options: {offset: {x: 35.5, y: 35.5,},},}}/>
           )}
           </Map>
-          <NavWalk walkEnd={walkEnd} walkPause={walkPause}></NavWalk>
+          <NavWalk walkEnd={walkEnd} walkPause={walkPause} walkRestart={walkRestart}></NavWalk>
         </WalkContainer>
       );
 }
