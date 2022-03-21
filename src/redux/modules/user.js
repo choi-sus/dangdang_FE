@@ -112,10 +112,8 @@ const pwdFindDB = (email, userID) => {
 
 const kakaoLoginDB  = (authorization_code) => {
     return async (dispatch, getState, { history }) => {
-        console.log("디스패치 진입했고 코드는?",authorization_code)
         await api.get(`auth/kakao/callback?code=${authorization_code}`)
             .then((res) => {
-                // console.log(res, " 토큰왔음?")
                 const accessToken = "Bearer " + res.data.token;
                 setCookie('is_login', `${accessToken}`);
                 window.location.replace("/main");

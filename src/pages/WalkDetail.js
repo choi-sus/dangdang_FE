@@ -19,10 +19,14 @@ const WalkDetail = () => {
     },[])
     const [draggable, setDraggable] = useState(false)
     const [zoomable, setZoomable] = useState(false)
+    const DelWalk = () => {
+      dispatch(walkActions.DelWalkDB(params.id));
+      history.replace('/walklist')
+    } 
       return (
         <WalkDetailContainer>
           <Head>
-            <Grid width="auto" _onClick={() => {history.replace("/walklist")}}>
+            <Grid width="auto" _onClick={() => {history.replace('/walklist')}}>
               <FontAwesomeIcon icon={faAngleLeft} />
             </Grid>
             {walk &&( 
@@ -337,6 +341,7 @@ const WalkDetail = () => {
           <Map center={walk.path[0]} style={{width: "100%", height: "400px", borderRadius: "15px"}} level={3}>
             <Polyline path={walk.path} strokeWeight={5} strokeColor={"#FFAE00"} strokeOpacity={0.7} strokeStyle={"solid"}/>
           </Map>}
+          <Button _onClick={()=>{DelWalk();}}>일지 삭제</Button>
         </WalkDetailContainer>
       );
   }

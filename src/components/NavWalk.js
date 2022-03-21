@@ -23,6 +23,9 @@ const NavWalk = (props) => {
         }
     }
 
+    const playStop = ()=> {
+    }
+
     return(
         <React.Fragment>
             <NavBar>
@@ -77,7 +80,7 @@ const NavWalk = (props) => {
                         <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                         <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
                     </svg>
-                    <ListTitle>일시정지</ListTitle>
+                    <ListTitle onClick={()=>{playStop(); props.walkPause();}}>일시정지</ListTitle>
                 </NavList>
                 <NavList onClick={()=> {history.replace("/guide")}}>
                     <svg width="39" height="31" viewBox="0 0 39 31" fill="none" xmlns="http://www.w3.org/2000/svg">

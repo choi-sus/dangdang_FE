@@ -6,12 +6,14 @@ const END_WALK = "END_WALK";
 const GET_TIME = "GET_TIME";
 const LOAD_WALKLIST = "LOAD_WALKLIST";
 const LOAD_WALK = "LOAD_WALK";
+const DEL_WALK = "DEL_WALK";
 
 
 const endWalk = createAction(END_WALK,(endList)=> ({endList}));
 const getRcdTime = createAction(GET_TIME,(time)=> ({time}));
-const loadWalkList = createAction(LOAD_WALKLIST,(walks)=>({walks}))
-const loadWalkOne = createAction(LOAD_WALK,(walk)=>({walk}))
+const loadWalkList = createAction(LOAD_WALKLIST,(walks)=>({walks}));
+const loadWalkOne = createAction(LOAD_WALK,(walk)=>({walk}));
+const deleteWalk = createAction(DEL_WALK,()=>({}));
 
 const initialState = {
     endList:[],
@@ -79,6 +81,19 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
          })
     }
  }
+ 
+ const DelWalkDB = (mapsId) => {
+    return async (dispatch, getState, { history }) => {
+        await api_token.delete(`/maps/delete/${mapsId}`)
+          .then((res)=>{
+            console.log()
+              dispatch(deleteWalk());
+          })
+          .catch((err)=>{
+             console.log(err) 
+          })
+     }
+ }
 
 export default handleActions ({
     [END_WALK]: (state, action) =>
@@ -110,6 +125,8 @@ const actionCreators = {
     WalkListDB,
     loadWalkOne,
     WalkOneDB,
+    DelWalkDB,
+    deleteWalk,
 }
 
 export {actionCreators}

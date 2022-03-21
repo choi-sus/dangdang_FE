@@ -147,6 +147,9 @@ const Walk = (props) => {
         clearInterval(interv);
         walkDB();
       }
+      const walkPause = () => {
+        clearInterval(interv);
+      }
 
       return (
         <WalkContainer>
@@ -166,7 +169,7 @@ const Walk = (props) => {
             options: {offset: {x: 35.5, y: 35.5,},},}}/>
           )}
           </Map>
-          <NavWalk walkEnd={walkEnd}></NavWalk>
+          <NavWalk walkEnd={walkEnd} walkPause={walkPause}></NavWalk>
         </WalkContainer>
       );
 }
@@ -198,3 +201,9 @@ const TimeContent = styled.div`
   color: #333;
   z-index: 5;
 `
+
+// 월: 일시정지, 삭제, 파비콘, 웹 타이틀 수정
+// 화: 닉네임 수정, 비밀번호 수정, 로그인 된 상태에 가이드 안 나오게 하기, 가이드 페이지 전환 에러 해결하기
+// 수: pwa, 반응형 디테일, 사이트 목업 적용
+// 목: 이벤트 페이지
+// 금: 이벤트 페이지
