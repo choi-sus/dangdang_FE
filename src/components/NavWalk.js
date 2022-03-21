@@ -6,6 +6,7 @@ import {history} from "../redux/configStore"
 const NavWalk = (props) => {
 
     const [trans, setTrans] = useState(false);
+    const [pause, setPause] = useState(false);
 
     const goList = ()=> {
         if (window.confirm("산책 기록이 사라집니다. 그래도 산책일지를 보러 가시겠습니까?")) {
@@ -24,6 +25,8 @@ const NavWalk = (props) => {
     }
 
     const playStop = ()=> {
+        props.walkPause();
+        setPause(!pause);
     }
 
     return(
@@ -76,11 +79,23 @@ const NavWalk = (props) => {
                     <ListTitle>산책종료</ListTitle>
                 </NavList>
                 <NavList>
-                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
-                        <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
-                    </svg>
-                    <ListTitle onClick={()=>{playStop(); props.walkPause();}}>일시정지</ListTitle>
+                    {
+                        pause === false ?
+                        <React.Fragment>
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
+                                <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
+                            </svg>
+                            <ListTitle onClick={()=>{playStop();}}>일시정지</ListTitle>
+                        </React.Fragment> :
+                        <React.Fragment>
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
+                                <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
+                            </svg>
+                            <ListTitle onClick={()=>{playStop();}}>시작</ListTitle>
+                        </React.Fragment>
+                    }
                 </NavList>
                 <NavList onClick={()=> {history.replace("/guide")}}>
                     <svg width="39" height="31" viewBox="0 0 39 31" fill="none" xmlns="http://www.w3.org/2000/svg">
