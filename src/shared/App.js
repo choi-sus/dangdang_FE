@@ -17,7 +17,7 @@ import ProfileWrite from '../pages/ProfileWrite';
 import WalkList from '../pages/WalkList';
 import WalkDetail from '../pages/WalkDetail';
 import Icon from '../pages/icon';
-import Kakao from './Kakao';
+import Kakao from './kakao';
 import './App.css';
 import { useDispatch, useSelector } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
