@@ -26,8 +26,9 @@ const NavWalk = (props) => {
 
     const playStop = ()=> {
         props.walkPause();
-        setPause(!pause);
+
     }
+    console.log(pause);
 
     return(
         <React.Fragment>
@@ -78,7 +79,7 @@ const NavWalk = (props) => {
                     </svg>
                     <ListTitle>산책종료</ListTitle>
                 </NavList>
-                <NavList>
+                <NavList onClick={()=> {setPause(!pause);}}>
                     {
                         pause === false ?
                         <React.Fragment>
