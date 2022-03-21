@@ -195,7 +195,7 @@ const Walk = (props) => {
       const walkRestart = () => {
         setInterv(setInterval(run, 1000));
         setRestart(true);
-        console(restart)
+        console.log(restart);
       }
 
       return (
