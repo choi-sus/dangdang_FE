@@ -168,7 +168,7 @@ const Walk = (props) => {
                   isLoading: false,
                 }))
                 dispatch(locaActions.setPath(state.center))
-                console.log("ㅎㅇ")
+                console.log(locaActions.setPath(state.center))
               },
               (err) => {
                 setState((prev) => ({
