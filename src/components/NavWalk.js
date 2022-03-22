@@ -85,8 +85,7 @@ const NavWalk = (props) => {
                         </Grid> :
                         <Grid _onClick={()=>{props.walkRestart();}}>
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="5" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
-                                <rect x="18.7705" y="3" width="6.2295" height="24" rx="1" fill="#FFD04C"/>
+                                <path d="M6.73359 26.8257L25.5951 15.6307C26.135 15.3102 26.135 14.6932 25.5951 14.3693L6.73359 3.17435C6.03025 2.75845 5 3.13344 5 3.805L5 26.195C5 26.8666 6.03025 27.2415 6.73359 26.8257Z" fill="#FFD04C"/>
                             </svg>
                             <ListTitle>시작</ListTitle>
                         </Grid>
