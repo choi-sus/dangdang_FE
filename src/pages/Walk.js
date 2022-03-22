@@ -4,7 +4,6 @@ import { useDispatch , useSelector} from "react-redux";
 import { Map , Polyline, MapMarker} from "react-kakao-maps-sdk"
 import {actionCreators as locaActions} from "../redux/modules/geolocation"
 import { useLocation } from "react-router-dom";
-import {Button, Text} from "../elements/Index"
 import { getDistanceBetween } from 'geolocation-distance-between';
 import {actionCreators as walkActions} from "../redux/modules/walk";
 import NavWalk from "../components/NavWalk";
@@ -26,7 +25,6 @@ const Walk = (props) => {
 
     const [draggable, setDraggable] = useState(false)
     const [zoomable, setZoomable] = useState(false)
-    const [restart, setRestart] = useState(false)
     const centers = useRef(); 
 
     useEffect(() => {

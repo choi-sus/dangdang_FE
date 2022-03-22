@@ -1,27 +1,32 @@
-import React from "react";
+import React ,{useState} from "react";
 import styled from "styled-components"
 import { actionCreators as guideActions } from "../redux/modules/guide"
 import { useDispatch, useSelector } from "react-redux"
 import {history} from "../redux/configStore";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import {Button, Grid, Input, Text} from "../elements/Index"
+import {Grid, Text} from "../elements/Index"
+import { Link } from 'react-router-dom';
 
 const Guide = () => {
     const dispatch = useDispatch()
+
+    const [nowLoca,setNowLoca] = useState();
 
     React.useEffect(()=>{
         dispatch(guideActions.guideDB())
       },[]);
 
     const guide_list = useSelector((state) => state.guide.list)
-
+    const polylinePath = useSelector((state) => state.geolocation.polylinePath);
+    const lastIndex = polylinePath[polylinePath.length - 1]
+    setNowLoca(lastIndex);
     return(
         <GuideContainer>
             <Head>
-                <Grid width="auto" _onClick={()=> {history.replace("/walk")}}>
+                <Link to={{pathname:'/walk', state:{nowLoca}}}>
                   <FontAwesomeIcon icon={faAngleLeft}/>
-                </Grid>
+                </Link>
                 <Text center color="#4F4F4F" size="18px">가이드북</Text>
             </Head>
             <GuideContent>

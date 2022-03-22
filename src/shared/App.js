@@ -18,6 +18,9 @@ import WalkList from '../pages/WalkList';
 import WalkDetail from '../pages/WalkDetail';
 import Icon from '../pages/icon';
 import Kakao from './kakao';
+import UserInfo from '../pages/UserInfo';
+import ModifyPwd from '../pages/ModifyPwd';
+import ModifyNick from '../pages/ModifyNick';
 import './App.css';
 import { useDispatch, useSelector } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
@@ -53,6 +56,9 @@ function App() {
           <Route path="/walkdetail/:id" exact component={WalkDetail}/>
           <Route path="/icon" exact component={Icon}/>
           <Route path="/kakao" component={Kakao}/>
+          <Route path="/userinfo" exact component={UserInfo}/>
+          <Route path="/modifypwd" exact component={ModifyPwd}/>
+          <Route path="/modifynick" exact component={ModifyNick}/>
         </ConnectedRouter>
       </div>
     </React.Fragment>

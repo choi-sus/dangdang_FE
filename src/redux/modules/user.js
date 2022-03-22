@@ -125,6 +125,35 @@ const kakaoLoginDB  = (authorization_code) => {
     }
 }
 
+const modifyNickDB = (nickname) => {
+    return async (dispatch, getState, { history }) => {
+        await api.patch(`/users/modifyNic`,{
+            nickname: nickname
+        })
+            .then((res) => {
+                // console.log("닉네임 변경 성공", res)
+            })
+            .catch((err) => {
+                console.log("닉네임 변경 실패", err);
+            });
+    }
+}
+
+const modifyPwdDB = (oldPwd,newPwd,confirmNewPwd) => {
+    return async (dispatch, getState, { history }) => {
+        await api.patch(`/users/modifyPW`,{
+            password: oldPwd,
+            newPassword: newPwd,
+            confirmNewPassword: confirmNewPwd
+        })
+            .then((res) => {
+                // console.log("비밀번호 변경 성공", res)
+            })
+            .catch((err) => {
+                console.log("비밀번호 변경 실패", err);
+            });
+    }
+}
 export default handleActions ({
     [SET_USER]: (state, action) =>
     produce(state, (draft) => {
@@ -155,6 +184,8 @@ const actionCreators = {
     pwdFindDB,
     kakaoLoginDB,
     setKakao,
+    modifyNickDB,
+    modifyPwdDB,
 }
 
 export {actionCreators}
