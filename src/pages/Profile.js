@@ -10,7 +10,6 @@ import { actionCreators as userActions } from "../redux/modules/user";
 import { actionCreators as walkActions } from "../redux/modules/walk";
 import Nav from "../components/Nav";
 import moment from "moment-timezone";
-// import { nonWhiteSpace } from "html2canvas/dist/types/css/syntax/parser";
 
 const Profile = () => {
   const dispatch = useDispatch();
