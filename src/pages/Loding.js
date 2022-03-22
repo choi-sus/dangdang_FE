@@ -5,16 +5,16 @@ import styled, {keyframes} from "styled-components";
 
 const Loding = () => {
 
-    const timeout = () => {
-        setTimeout(() => {
-            history.replace("/guideslide");
-        }, 3000);
-    };
+    // const timeout = () => {
+    //     setTimeout(() => {
+    //         history.replace("/guideslide");
+    //     }, 3000);
+    // };
 
-    React.useEffect(() => {
-        timeout();
-        return () => {clearTimeout(timeout);};
-    });
+    // React.useEffect(() => {
+    //     timeout();
+    //     return () => {clearTimeout(timeout);};
+    // });
 
     return(
         <Load>
