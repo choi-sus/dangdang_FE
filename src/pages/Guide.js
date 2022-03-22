@@ -18,9 +18,9 @@ const Guide = () => {
       },[]);
 
     const guide_list = useSelector((state) => state.guide.list)
-    const polylinePath = useSelector((state) => state.geolocation.polylinePath);
-    const lastIndex = polylinePath[polylinePath.length - 1]
-    setNowLoca(lastIndex);
+    // const polylinePath = useSelector((state) => state.geolocation.polylinePath);
+    // const lastIndex = polylinePath[polylinePath.length - 1]
+    // setNowLoca(lastIndex);
     return(
         <GuideContainer>
             <Head>

@@ -61,7 +61,7 @@ const Profile = () => {
               <p>최근 산책 내역</p>
               <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/walklist")}}/>
             </BtnBox>
-                {!lastWalk ? 
+                {!lastWalk[0] ? 
                   <LastWalk style={{display: "block", textAlign:"center"}}>
                     <p>산책 내역이 없어요</p>
                     <p>첫 산책을 시작해주세요!</p>
@@ -78,9 +78,13 @@ const Profile = () => {
                   )}))}
                 </div>
                 }
-              <BtnBox>
+              <BtnBox  style={{paddingBottom:"0px"}}>
                 {petInfo ? <p>반려동물 정보 수정</p> : <p>반려동물 정보 추가</p>}
                 <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/profilewrite")}}/>
+              </BtnBox>
+              <BtnBox>
+                <p>회원 정보</p>
+                <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
               </BtnBox>
               <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
               <Nav></Nav>
@@ -100,6 +104,10 @@ const Profile = () => {
             <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px"}} onClick={()=> {history.replace("/profilewrite")}}>
               <p>나의 반려견 정보 입력하기</p>
               <FontAwesomeIcon icon={faAngleRight}/>
+            </BtnBox>
+            <BtnBox>
+                <p>회원 정보</p>
+                <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
             </BtnBox>
             <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
           </ProfileCard>
