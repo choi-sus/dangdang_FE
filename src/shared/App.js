@@ -94,14 +94,14 @@ const Container = styled.div`
 `;
 
 const Wrap = styled.div`
-  @media screen and (min-width: 1120px){
+  @media screen and (min-width: 800px){
     left: 10%;
     top: 50%;
     transform: translate(0%, -50%);
   }
   background: url(img/iphone_mockup.png) no-repeat center / cover;
   width: 368px;
-  height: 94%;
+  height: 90%;
   min-height: 750px;
   position: fixed;
   left: 50%;
