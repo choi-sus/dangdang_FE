@@ -85,7 +85,6 @@ const ProfileWrite = () => {
       dispatch(profileActions.editPetDB(formData))
       history.replace("/profile");
     };
-    // console.log(petImage,petName,selYear,selMonth,selDay,selGender,selBreed)
 
     return(
         <PageBody>

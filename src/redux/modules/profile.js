@@ -18,8 +18,7 @@ const addPetDB = (formData) => {
             history.replace("/profile")
         })
         .catch((err)=>{
-           console.log(err)
-           window.alert(err.data.fail)
+           window.alert(err.response.data.fail);
         })
     }
 }
@@ -43,7 +42,7 @@ const editPetDB = (formData) => {
             history.replace("/profile")
         })
         .catch((err)=>{
-           console.log(err) 
+            window.alert(err.response.data.fail);
         })
     }
 }

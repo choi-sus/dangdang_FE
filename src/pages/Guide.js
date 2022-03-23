@@ -9,22 +9,18 @@ import {Grid, Text} from "../elements/Index"
 import { Link } from 'react-router-dom';
 
 const Guide = () => {
-    const dispatch = useDispatch()
-
-    const [nowLoca,setNowLoca] = useState();
-
+    const dispatch = useDispatch();
     React.useEffect(()=>{
-        dispatch(guideActions.guideDB())
+        dispatch(guideActions.guideDB());
       },[]);
 
-    const guide_list = useSelector((state) => state.guide.list)
-    // const polylinePath = useSelector((state) => state.geolocation.polylinePath);
-    // const lastIndex = polylinePath[polylinePath.length - 1]
-    // setNowLoca(lastIndex);
+    const guide_list = useSelector((state) => state.guide.list);
+    const rewalk = useSelector((state) => state.walk.pauseWalk);
+    const nowLoca = rewalk.path;
     return(
         <GuideContainer>
             <Head>
-                <Link to={{pathname:'/walk', state:{nowLoca}}}>
+                <Link to={{pathname:'/walk', state:{nowLoca, rewalk}}}>
                   <FontAwesomeIcon icon={faAngleLeft}/>
                 </Link>
                 <Text center color="#4F4F4F" size="18px">가이드북</Text>

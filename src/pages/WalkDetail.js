@@ -327,7 +327,7 @@ const WalkDetail = () => {
                 {walk && (
                 <InfoDetail>
                     <p>시간</p>
-                    <p>{walk.time.split(":").reverse()[2]?(walk.time.split(":").reverse()[2]<10 ? walk.time.split(":").reverse()[2].split('').reverse()[0] : walk.time.split(":").reverse()[2]):null}<span>{walk.time.split(":").reverse()[2]?"시간":null}</span>{walk.time.split(":").reverse()[1]=== "00"? null : (walk.time.split(":").reverse()[1] <10 ? walk.time.split(":").reverse()[1].split('').reverse()[0] : walk.time.split(":").reverse()[1])}<span>{walk.time.split(":").reverse()[1]=== "00"?null: "분"}</span>{walk.time.split(":").reverse()[2]?null:(walk.time.split(":").reverse()[0])}<span>{walk.time.split(":").reverse()[2]?null:"초"}</span></p>
+                    <p>{walk.time.split(":").reverse()[2]?(walk.time.split(":").reverse()[2]<10 ? walk.time.split(":").reverse()[2].split('').reverse()[0] : walk.time.split(":").reverse()[2]):null}<span>{walk.time.split(":").reverse()[2]?"시간":null}</span>{walk.time.split(":").reverse()[1]=== "00"? null : (walk.time.split(":").reverse()[1] <10 ? walk.time.split(":").reverse()[1].split('').reverse()[0] : walk.time.split(":").reverse()[1])}<span>{walk.time.split(":").reverse()[1]=== "00"?null: "분"}</span>{walk.time.split(":").reverse()[2]?null:(walk.time.split(":").reverse()[0] <10 ? walk.time.split(":").reverse()[0].split('').reverse()[0] : walk.time.split(":").reverse()[0])}<span>{walk.time.split(":").reverse()[2]?null:"초"}</span></p>
                 </InfoDetail>
                 )}
                 {walk && (

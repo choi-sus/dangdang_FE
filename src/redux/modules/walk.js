@@ -3,24 +3,21 @@ import { produce } from "immer";
 import { api_token} from "../../shared/Api"
 
 const END_WALK = "END_WALK";
-const GET_TIME = "GET_TIME";
 const LOAD_WALKLIST = "LOAD_WALKLIST";
 const LOAD_WALK = "LOAD_WALK";
-const DEL_WALK = "DEL_WALK";
+const PAUSE_WALK = "PAUSE_WALK";
 
 
 const endWalk = createAction(END_WALK,(endList)=> ({endList}));
-const getRcdTime = createAction(GET_TIME,(time)=> ({time}));
 const loadWalkList = createAction(LOAD_WALKLIST,(walks)=>({walks}));
 const loadWalkOne = createAction(LOAD_WALK,(walk)=>({walk}));
-const deleteWalk = createAction(DEL_WALK,()=>({}));
+const pauseWalk = createAction(PAUSE_WALK,(pauseWalk)=>({pauseWalk}));
 
 const initialState = {
     endList:[],
     walkList:[],
     walk:"",
-    time:"",
-    petImage:"",
+    pauseWalk:[],
 }
 
 const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
@@ -49,7 +46,6 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
     return async (dispatch, getState, { history }) => {
         await api_token.get(`/maps/endwalk`)
         .then((res) => {
-            // console.log(res.data)
             dispatch(endWalk(res.data))
           })
           .catch((err) => {
@@ -86,8 +82,7 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
     return async (dispatch, getState, { history }) => {
         await api_token.delete(`/maps/delete/${mapsId}`)
           .then((res)=>{
-            console.log()
-              dispatch(deleteWalk());
+            window.alert(res.data.success)
           })
           .catch((err)=>{
              console.log(err) 
@@ -100,10 +95,6 @@ export default handleActions ({
     produce(state, (draft) => {
         draft.endList = action.payload.endList
     }),
-    [GET_TIME]: (state, action) =>
-    produce(state, (draft) => {
-        draft.time = action.payload.time
-    }),
     [LOAD_WALKLIST]: (state, action) =>
     produce(state, (draft) => {
         draft.walkList=action.payload.walks.reverse()
@@ -111,6 +102,10 @@ export default handleActions ({
     [LOAD_WALK]: (state, action) =>
     produce(state, (draft) => {
         draft.walk=action.payload.walk
+    }),
+    [PAUSE_WALK]: (state, action) =>
+    produce(state, (draft) => {
+        draft.pauseWalk = action.payload.pauseWalk
     }),
 },
 initialState
@@ -120,13 +115,12 @@ const actionCreators = {
     endWalk,
     endWalkDB,
     addWalkDB,
-    getRcdTime,
     loadWalkList,
     WalkListDB,
     loadWalkOne,
     WalkOneDB,
     DelWalkDB,
-    deleteWalk,
+    pauseWalk,
 }
 
 export {actionCreators}

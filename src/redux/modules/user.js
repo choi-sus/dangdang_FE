@@ -67,7 +67,8 @@ const loginCheckDB = () => {
             dispatch(
                 setUser({
                     userID: res.data.userID,
-                    nickname: res.data.nickname
+                    nickname: res.data.nickname,
+                    email: res.data.email,
                 })
             )
         })
@@ -119,8 +120,8 @@ const kakaoLoginDB  = (authorization_code) => {
                 window.location.replace("/main");
                 dispatch(setKakao())
             })
-            .catch((error) => {
-                console.log("카카오 로그인실패", error);
+            .catch((err) => {
+                window.alert(err.response.data.fail);
             });
     }
 }
@@ -131,10 +132,10 @@ const modifyNickDB = (nickname) => {
             nickname: nickname
         })
             .then((res) => {
-                // console.log("닉네임 변경 성공", res)
+                window.alert(res.data.success)
             })
             .catch((err) => {
-                console.log("닉네임 변경 실패", err);
+                window.alert(err.response.data.fail);
             });
     }
 }
@@ -147,10 +148,10 @@ const modifyPwdDB = (oldPwd,newPwd,confirmNewPwd) => {
             confirmNewPassword: confirmNewPwd
         })
             .then((res) => {
-                // console.log("비밀번호 변경 성공", res)
+                window.alert(res.data.success)
             })
             .catch((err) => {
-                console.log("비밀번호 변경 실패", err);
+                window.alert(err.response.data.fail);
             });
     }
 }

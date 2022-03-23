@@ -2,12 +2,14 @@ import React from "react";
 import {history} from "../redux/configStore"
 import {Grid} from "../elements/Index"
 import styled, {keyframes} from "styled-components";
+import { useSelector } from "react-redux";
 
 const Loding = () => {
-
+    const is_login = useSelector((state) => state.user.is_login);
     const timeout = () => {
         setTimeout(() => {
-            history.replace("/guideslide");
+            if(is_login){history.replace("/main")}
+            else{history.replace("/guideslide")}
         }, 3000);
     };
 

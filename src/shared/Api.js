@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const accessToken = document.cookie.split("=")[1];
-// console.log(accessToken);
 
 export const api = axios.create({
   baseURL: "https://dengroundserver.com/api",

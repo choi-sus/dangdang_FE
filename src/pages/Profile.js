@@ -16,6 +16,7 @@ const Profile = () => {
   const petInfo = useSelector((state)=> state.profile.pet);
   const is_login = useSelector((state) => state.user.is_login);
   const walkList = useSelector((state) => state.walk.walkList);
+  const user = useSelector((state) => state.user.user);
   const lastWalk = [];
   for(let i=0; i<2; i++){
     if (walkList[i]) {lastWalk.push(walkList[i])}
@@ -56,7 +57,7 @@ const Profile = () => {
                 <p>{petInfo.petBirth}</p>
               </PetBirth>
             </ProfileCard>
-            <BtnBox>
+            <BtnBox style={{paddingBottom:"20px"}}>
               <p>최근 산책 내역</p>
               <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/walklist")}}/>
             </BtnBox>
@@ -77,14 +78,16 @@ const Profile = () => {
                   )}))}
                 </div>
                 }
-              <BtnBox  style={{paddingBottom:"0px"}}>
+              <BtnBox>
                 {petInfo ? <p>반려동물 정보 수정</p> : <p>반려동물 정보 추가</p>}
                 <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/profilewrite")}}/>
               </BtnBox>
+              {user && (user.email?
               <BtnBox>
                 <p>회원 정보</p>
                 <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
               </BtnBox>
+              : null)}
               <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
               <Nav></Nav>
        </ProfileContainer>
@@ -100,14 +103,16 @@ const Profile = () => {
           <ProfileCard>
             <PetImg></PetImg>
             <p>반려견 정보가 없습니다!</p>
-            <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px"}} onClick={()=> {history.replace("/profilewrite")}}>
+            <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px",paddingBottom:"20px"}} onClick={()=> {history.replace("/profilewrite")}}>
               <p>나의 반려견 정보 입력하기</p>
               <FontAwesomeIcon icon={faAngleRight}/>
             </BtnBox>
-            <BtnBox>
+            {user && (user.email?
+              <BtnBox>
                 <p>회원 정보</p>
                 <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
-            </BtnBox>
+              </BtnBox>
+              : null)}
             <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
           </ProfileCard>
           <Nav></Nav>
@@ -242,7 +247,7 @@ p:nth-child(2){
 }
 `;
 const BtnBox = styled.div`
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   font-size: 16px;
   border-radius: 13px;
   color: #4f4f4f;
@@ -259,7 +264,7 @@ const BtnBox = styled.div`
 const LogoutBtn = styled.div`
   color: #4f4f4f;
   font-size: 16px;
-  margin-left: 20px;
+  margin: 20px 0 0 20px;
   text-align: left;
 `;
 const NotList = styled.div`

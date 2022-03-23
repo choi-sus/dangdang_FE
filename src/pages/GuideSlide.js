@@ -14,7 +14,6 @@ const GuideSlide = () => {
         pagination: true,
         onSwiper: setSwiper,
     }
-
     return (
         <React.Fragment>
             <StyledSwiper {...swiperOption} ref={setSwiper}>

@@ -8,7 +8,7 @@ import { getDistanceBetween } from 'geolocation-distance-between';
 import {actionCreators as walkActions} from "../redux/modules/walk";
 import NavWalk from "../components/NavWalk";
 import WalkTop from "../components/WalkTop"
-
+import {history} from "../redux/configStore"
 
 const Walk = (props) => {
     const dispatch = useDispatch();
@@ -94,21 +94,32 @@ const Walk = (props) => {
     }, [state]);
 
     const polylinePath = useSelector((state) => state.geolocation.polylinePath);
-
+    const rewalk = location.state.rewalk;
     const [time, setTime] = useState({ s: 0, m: 0, h: 0 });
     const [interv, setInterv] = useState();
-
     let updatedS = time.s, updatedM = time.m, updatedH = time.h;
-
     const run = () => {
       if (updatedM === 59) { updatedH++; updatedM = -1;}
       if (updatedS === 59) { updatedM++; updatedS = -1;}
       updatedS++;
       return setTime({ s: updatedS, m: updatedM, h: updatedH });
     };
-
     useEffect(() => {
-      setInterv(setInterval(run, 1000));
+      if(rewalk){
+        SetWeter(rewalk.water)
+        SetYellow(rewalk.yellow)
+        SetBrown(rewalk.brown)
+        SetDanger(rewalk.danger)
+        setTime(rewalk.time)
+        let updatedS = rewalk.time.s, updatedM = rewalk.time.m, updatedH = rewalk.time.h;
+        setInterv(setInterval(()=>{
+          if (updatedM === 59) { updatedH++; updatedM = -1;}
+          if (updatedS === 59) { updatedM++; updatedS = -1;}
+          updatedS++;
+          return setTime({ s: updatedS, m: updatedM, h: updatedH });}
+      , 1000)); 
+      }else{
+      setInterv(setInterval(run, 1000));}
       return() => {
         clearInterval(interv);
       }
@@ -132,10 +143,8 @@ const Walk = (props) => {
               distanceBetween += getDistanceBetween({latitude: polylinePath[i]?.lat, longitude: polylinePath[i]?.lng}, {latitude: polylinePath[i + 1]?.lat, longitude: polylinePath[i + 1]?.lng});
             }
           }
-          // console.log(distanceBetween); 
         }
         const totalDistance = String(distanceBetween).substr(0, 3);
-        // console.log(totalDistance);
         if(lastTime){
           dispatch(walkActions.addWalkDB(polylinePath, lastTime, totalDistance, water, yellow, brown, danger));
         }
@@ -150,7 +159,6 @@ const Walk = (props) => {
         clearInterval(interv);
         clearTimeout(centers.current);
       }
-
       const walkRestart = () => {
         setInterv(setInterval(run, 1000));
         centers.current = setTimeout(()=>{ 
@@ -185,6 +193,13 @@ const Walk = (props) => {
          }, 5000);
       }
 
+      const goGuide = () => {
+        dispatch(walkActions.pauseWalk({path:polylinePath[polylinePath.length-1], time:time, water:water, yellow:yellow, brown:brown, danger:danger}));
+        clearTimeout(centers.current);
+        clearInterval(interv);
+        history.replace("/guide")
+      }
+
       return (
         <WalkContainer>
           <TopBg></TopBg>
@@ -203,7 +218,7 @@ const Walk = (props) => {
             options: {offset: {x: 35.5, y: 35.5,},},}}/>
           )}
           </Map>
-          <NavWalk walkEnd={walkEnd} walkPause={walkPause} walkRestart={walkRestart}></NavWalk>
+          <NavWalk walkEnd={walkEnd} walkPause={walkPause} walkRestart={walkRestart} goGuide={goGuide}></NavWalk>
         </WalkContainer>
       );
 }
