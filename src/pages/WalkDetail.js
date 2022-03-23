@@ -356,6 +356,10 @@ const WalkDetail = () => {
   background-color: #FFFBF1;
   padding: 54px 30px 30px;
   box-sizing: border-box;
+  height: 100vh;
+  overflow: auto;
+  &::-webkit-scrollbar {
+  display: none;
   `;
   const Head = styled.div`
     margin-bottom: 25px;

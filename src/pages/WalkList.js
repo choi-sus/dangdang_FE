@@ -105,6 +105,7 @@ const ListWrap = styled.div`
   overflow: scroll;
 &::-webkit-scrollbar {
   display: none;
+}
 `;
 const WalkCard = styled.div`
 height: 52px;
