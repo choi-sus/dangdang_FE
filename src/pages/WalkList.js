@@ -65,7 +65,6 @@ export default Profile;
 const ListContainer = styled.div`
 position: relative;
 background-color: #FFFBF1;
-width: 100vW;
 height: 100vh;
 padding: 54px 0 96px;
 box-sizing: border-box;

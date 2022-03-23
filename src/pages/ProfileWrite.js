@@ -172,8 +172,6 @@ export default ProfileWrite;
 
 const PageBody = styled.div`
 background-color: #FFFBF1;
-width: 100vW;
-/* height: 100vh; */
 `;
 const Head = styled.div`
   margin-bottom: 25px;

@@ -54,7 +54,6 @@ export default UserInfo;
 
 const UserContainer = styled.div`
 background-color: #FFFBF1;
-width: 100vw;
 height: 100vh;
 `;
 const Head = styled.div`

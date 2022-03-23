@@ -31,7 +31,10 @@ const WalkDetail = () => {
               <FontAwesomeIcon icon={faAngleLeft} />
             </Grid>
             {walk &&( 
-              <Text center color="#4F4F4F" size="18px">{moment.tz(walk.createdAt,'Asia/seoul').format('YYYY.MM.DD')+"  ·  "+at+moment.tz(walk.createdAt,'Asia/seoul').format('h:mm')}</Text>)}
+              <Text center color="#4F4F4F" size="18px">{moment.tz(walk.createdAt,'Asia/seoul').format('YYYY.MM.DD')+"  ·  "+at+moment.tz(walk.createdAt,'Asia/seoul').format('h:mm')}<svg onClick={()=>{DelWalk();}} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 2H9C7.897 2 7 2.897 7 4V6H3V8H5V20C5 21.103 5.897 22 7 22H17C18.103 22 19 21.103 19 20V8H21V6H17V4C17 2.897 16.103 2 15 2ZM9 4H15V6H9V4ZM17 20H7V8H17V20Z" fill="#4F4F4F"/>
+            </svg></Text>)}
+                
           </Head>
           <SvgFrame>
             <svg
@@ -342,7 +345,6 @@ const WalkDetail = () => {
           <Map center={walk.path[0]} style={{width: "100%", height: "400px", borderRadius: "15px"}} level={3}>
             <Polyline path={walk.path} strokeWeight={5} strokeColor={"#FFAE00"} strokeOpacity={0.7} strokeStyle={"solid"}/>
           </Map>}
-          <Button _onClick={()=>{DelWalk();}}>일지 삭제</Button>
         </WalkDetailContainer>
       );
   }
@@ -352,7 +354,6 @@ const WalkDetail = () => {
   const WalkDetailContainer = styled.div`
   position: relative;
   background-color: #FFFBF1;
-  width: 100vW;
   padding: 54px 30px 30px;
   box-sizing: border-box;
   `;
@@ -371,6 +372,9 @@ const WalkDetail = () => {
       line-height: 25px;
       letter-spacing: -0.5px;
       color: #4F4F4F;
+      & > svg{
+        transform: translate(60px, 3px);
+      }
     }
     svg{
       font-size: 25px;
