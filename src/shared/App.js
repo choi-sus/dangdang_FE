@@ -40,29 +40,31 @@ function App() {
   return (
     <React.Fragment>
       <Container>
-        <div className="App">
-          <ConnectedRouter history={history}>
-            <Route path="/" component={Loding} exact/>
-            <Route path="/guideslide" component={GuideSlide} exact/>
-            <Route path="/login" component={Login} exact/>
-            <Route path="/signup" component={SignUp} exact/>
-            <Route path="/find" component={UserFind} exact/>
-            <Route path="/main" exact component={Main}/>
-            <Route path="/walk" exact component={Walk}/>
-            <Route path="/walkend" exact component={WalkEnd}/>
-            <Route path="/guide" exact component={Guide}/>
-            <Route path="/guide/:_id" exact component={GuideDetail}/>
-            <Route path="/profile" exact component={Profile}/>
-            <Route path="/profilewrite" exact component={ProfileWrite}/>
-            <Route path="/walklist" exact component={WalkList}/>
-            <Route path="/walkdetail/:id" exact component={WalkDetail}/>
-            <Route path="/icon" exact component={Icon}/>
-            <Route path="/kakao" component={Kakao}/>
-            <Route path="/userinfo" exact component={UserInfo}/>
-            <Route path="/modifypwd" exact component={ModifyPwd}/>
-            <Route path="/modifynick" exact component={ModifyNick}/>
-          </ConnectedRouter>
-        </div>
+        <Wrap>
+          <div className="App">
+            <ConnectedRouter history={history}>
+              <Route path="/" component={Loding} exact/>
+              <Route path="/guideslide" component={GuideSlide} exact/>
+              <Route path="/login" component={Login} exact/>
+              <Route path="/signup" component={SignUp} exact/>
+              <Route path="/find" component={UserFind} exact/>
+              <Route path="/main" exact component={Main}/>
+              <Route path="/walk" exact component={Walk}/>
+              <Route path="/walkend" exact component={WalkEnd}/>
+              <Route path="/guide" exact component={Guide}/>
+              <Route path="/guide/:_id" exact component={GuideDetail}/>
+              <Route path="/profile" exact component={Profile}/>
+              <Route path="/profilewrite" exact component={ProfileWrite}/>
+              <Route path="/walklist" exact component={WalkList}/>
+              <Route path="/walkdetail/:id" exact component={WalkDetail}/>
+              <Route path="/icon" exact component={Icon}/>
+              <Route path="/kakao" component={Kakao}/>
+              <Route path="/userinfo" exact component={UserInfo}/>
+              <Route path="/modifypwd" exact component={ModifyPwd}/>
+              <Route path="/modifynick" exact component={ModifyNick}/>
+            </ConnectedRouter>
+          </div>
+        </Wrap>
       </Container>
     </React.Fragment>
   );
@@ -71,50 +73,38 @@ function App() {
 export default App;
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
+  width: 100vw;
+  height: 100vh;
   background: url(img/web_bg.png) no-repeat center / cover;
   scrollbar-width: none;
   ::-webkit-scrollbar {
     display: none;
   }
 
-  @media screen and (min-width: 420px) {
-    max-height: 100vh;
-  }
-
-  @media screen and (min-width: 1200px) {
-    background-size: 100% 100vh;
-  }
-
   .App{
-    background: url(img/iphone_mockup.png) no-repeat center / cover;
-    scrollbar-width: none;
-    ::-webkit-scrollbar {
-      display: none;
-    }
-    overflow-y: scroll;
-    width: 100%;
-    max-width: 420px;
-    height: 100%;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: 0 auto;
-    box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 340px;
+    height: calc(100% - 45px);
     position: relative;
-    @media screen and (min-width: 1024px) {
-      position: relative;
-      left: 25%;
-      top: 0%;
-      overflow: auto;
-    }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+    overflow: hidden;
   }
 `;
+
+const Wrap = styled.div`
+  @media screen and (min-width: 1120px){
+    left: 10%;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+  background: url(img/iphone_mockup.png) no-repeat center / cover;
+  width: 368px;
+  height: 94%;
+  min-height: 750px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+`
