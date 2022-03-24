@@ -32,18 +32,25 @@ const UserInfo = () => {
                   <p>{user && user.email}</p>
               </div>
               <div>
+                <div>
                   <p>닉네임</p>
                   <p>{user && user.nickname}</p>
+                </div>
+                  <div> 
+                    <p>변경하기</p>
+                    {user && (
+                      <Link to={{pathname:'/modifynick', state:{nickname:user.nickname}}}>
+                        <FontAwesomeIcon icon={faAngleRight}/>
+                      </Link>
+                    )}
+                  </div>
               </div>
               <div>
-                <p>닉네임 변경하기</p>
-                {user && (
-                <Link to={{pathname:'/modifynick', state:{nickname:user.nickname}}}>
-                <FontAwesomeIcon icon={faAngleRight}/>
-                </Link>
-                )}
-                <p>비밀번호 변경하기</p>
-                <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/modifypwd")}}/>
+                  <p>비밀번호</p>
+                  <div>
+                    <p>변경하기</p>
+                    <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/modifypwd")}}/>
+                  </div>
               </div>
           </InfoWrap>
         </UserContainer>
@@ -53,15 +60,18 @@ const UserInfo = () => {
 export default UserInfo;
 
 const UserContainer = styled.div`
-background-color: #FFFBF1;
-height: 100vh;
+  background-color: #fffbf1;
+  height: 100vh;
 `;
 const Head = styled.div`
   margin-bottom: 25px;
   box-sizing: border-box;
   padding: 15% 4.35% 0;
   &::after {
-    content: ""; display: block; visibility: hidden; clear: both;
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
   }
   & > div {
     float: left;
@@ -71,39 +81,60 @@ const Head = styled.div`
     font-size: 18px;
     line-height: 25px;
     letter-spacing: -0.5px;
-    color: #4F4F4F;
+    color: #4f4f4f;
   }
-  svg{
+  svg {
     font-size: 25px;
-    color: #4F4F4F;
+    color: #4f4f4f;
   }
 `;
 const InfoWrap = styled.div`
   padding: 0 30px;
-  div{
-      display: flex;
-  }
-  p:nth-child(1){
-    width: 85px;
-    color: #828282;
-    }
-  div:nth-child(4){
-    font-size: 16px;
-    border-radius: 13px;
-    color: #4f4f4f;
+  div {
     display: flex;
-    text-align: right;
-    justify-content: flex-end;
-    padding: 18px 0px;
-  p{
-    width: 150px;
-    margin: 0px;
+  }
+  p:nth-child(1) {
+    width: 70px;
     color: #828282;
   }
-  svg{
-    font-size: 20px;
-    color: #828282;
-    margin: 0px 0px 0px 10px;
+  div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    p {
+      width: 70px;
+      color: #828282;
+    }
+    p:nth-child(2) {
+      color: black;
+    }
+    div:nth-child(2) {
+      display: flex;
+      text-align: right;
+      align-items: center;
+      svg {
+        font-size: 20px;
+        margin: 0 10px;
+        color: #828282;
+      }
+    }
   }
+  div:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+    p {
+      width: 70px;
+      color: #828282;
+    }
+    div {
+      display: flex;
+      text-align: right;
+      justify-content: flex-end;
+      align-items: center;
+      svg {
+        font-size: 20px;
+        margin: 0 10px;
+        color: #828282;
+      }
+    }
   }
 `;

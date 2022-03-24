@@ -176,6 +176,7 @@ height: 100vh;
 overflow: auto;
 &::-webkit-scrollbar {
   display: none;
+}
 `;
 const Head = styled.div`
   margin-bottom: 25px;
