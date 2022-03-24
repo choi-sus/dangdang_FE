@@ -61,7 +61,7 @@ const Mobile = styled.div`
   max-width: 640px;
   min-width: 280px;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.colors.bg};
+  background-color: rgb(255, 251, 241);
 `;
 
 //웹 브라우저

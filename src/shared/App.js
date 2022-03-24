@@ -39,8 +39,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <Container>
-        <Wrap>
+      {/* <Container>
+        <Wrap> */}
           <div className="App">
             <ConnectedRouter history={history}>
               <Route path="/" component={Loding} exact/>
@@ -64,8 +64,8 @@ function App() {
               <Route path="/modifynick" exact component={ModifyNick}/>
             </ConnectedRouter>
           </div>
-        </Wrap>
-      </Container>
+        {/* </Wrap>
+      </Container> */}
     </React.Fragment>
   );
 }

@@ -21,12 +21,6 @@ const SignUp = () => {
     const [inputPwd,setInputPwd] = useState(false);
     const [inputConfirmPwd,setInputConfirmPwd] = useState(false);
 
-    const changeId = (e)=>{setId(e.target.value)}
-    const changeEmail = (e)=>{setEmail(e.target.value)}
-    const changeNickname = (e)=>{setNickname(e.target.value)}
-    const changePwd = (e)=>{setPwd(e.target.value)}
-    const changeConfirmPwd = (e)=>{setConfirmPwd(e.target.value)}
-
     const changeHandler = (checked, id) => {
       if (checked) {
         setCheckedInputs([...checkedInputs, id]);
@@ -67,16 +61,16 @@ const SignUp = () => {
           <SignContent>
             <ContentTitle>회원가입</ContentTitle>
             <Grid height="auto">
-              <Input margin="0px" value={id} _onChange={()=>{changeId()}} type="text" placeholder="아이디" _onFocus={() => {focusId()}} _onBlur={()=>{blurId()}}></Input>
+              <Input margin="0px" value={id} _onChange={(e)=>{setId(e.target.value)}} type="text" placeholder="아이디" _onFocus={() => {focusId()}} _onBlur={()=>{blurId()}}></Input>
               <p style={{display: inputId? null: "none"}}>2~10자 이내의 영어 대소문자, 숫자 조합</p>
-              <Input margin="15px 0 0" value={email} _onChange={()=>{changeEmail()}} type="text" placeholder="이메일" _onFocus={() => {focusEmail()}} _onBlur={()=>{blurEmail()}}></Input>
+              <Input margin="15px 0 0" value={email} _onChange={(e)=>{setEmail(e.target.value)}} type="text" placeholder="이메일" _onFocus={() => {focusEmail()}} _onBlur={()=>{blurEmail()}}></Input>
               <p style={{display: inputEmail? null: "none"}}>(예)denglove@dengdeng.com</p>
-              <Input margin="15px 0 0" value={nickname} _onChange={()=>{changeNickname()}} type="text" placeholder="닉네임" _onFocus={() => {focusNick()}} _onBlur={()=>{blurNick()}}></Input>
+              <Input margin="15px 0 0" value={nickname} _onChange={(e)=>{setNickname(e.target.value)}} type="text" placeholder="닉네임" _onFocus={() => {focusNick()}} _onBlur={()=>{blurNick()}}></Input>
               <p style={{display: inputNick? null: "none"}}>2~10자 이내의 한글, 영문자 조합(특수문자 제외)</p>
-              <Input margin="15px 0 0" value={pwd} _onChange={()=>{changePwd()}} type="password" placeholder="비밀번호" _onFocus={() => {focusPwd()}} _onBlur={()=>{blurPwd()}}></Input>
+              <Input margin="15px 0 0" value={pwd} _onChange={(e)=>{setPwd(e.target.value)}} type="password" placeholder="비밀번호" _onFocus={() => {focusPwd()}} _onBlur={()=>{blurPwd()}}></Input>
               <p style={{display: inputPwd? null: "none"}}>8~16자 이내의 영어 대소문자, 숫자, 특수문자(!@#$%^*_-)를 모두 사용하여 조합</p>
-              <Input margin="15px 0 0" value={confirmPwd} _onChange={()=>{changeConfirmPwd()}} type="password" placeholder="비밀번호 확인" _onFocus={() => {focusConfirmPwd()}} _onBlur={()=>{blurConfirmPwd()}}></Input>
-              <p style={{display: inputConfirmPwd===true ? (pwd===confirmPwd ? "none": null ): "none"}}>비밀번호가 일치하지 않습니다.</p>
+              <Input margin="15px 0 0" value={confirmPwd} _onChange={(e)=>{setConfirmPwd(e.target.value)}} type="password" placeholder="비밀번호 확인" _onFocus={() => {focusConfirmPwd()}} _onBlur={()=>{blurConfirmPwd()}}></Input>
+              <p style={{display: inputConfirmPwd? (pwd===confirmPwd ? "none": null ): "none",color:"b80a45"}}>비밀번호가 일치하지 않습니다.</p>
             </Grid>
             <Grid margin="30px 0 130px 0" height="auto">
               <InputContent>
