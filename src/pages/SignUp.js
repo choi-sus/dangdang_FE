@@ -15,6 +15,17 @@ const SignUp = () => {
     const [pwd, setPwd] = useState();
     const [confirmPwd, setConfirmPwd] = useState();
     const [checkedInputs, setCheckedInputs] = useState([]);
+    const [inputId,setInputId] = useState(false);
+    const [inputEmail,setInputEmail] = useState(false);
+    const [inputNick,setInputNick] = useState(false);
+    const [inputPwd,setInputPwd] = useState(false);
+    const [inputConfirmPwd,setInputConfirmPwd] = useState(false);
+
+    const changeId = (e)=>{setId(e.target.value)}
+    const changeEmail = (e)=>{setEmail(e.target.value)}
+    const changeNickname = (e)=>{setNickname(e.target.value)}
+    const changePwd = (e)=>{setPwd(e.target.value)}
+    const changeConfirmPwd = (e)=>{setConfirmPwd(e.target.value)}
 
     const changeHandler = (checked, id) => {
       if (checked) {
@@ -23,6 +34,17 @@ const SignUp = () => {
         setCheckedInputs(checkedInputs.filter(el => el !== id));
       }
     };
+
+    const focusId = () => {setInputId(true)}
+    const blurId = () => {setInputId(false)}
+    const focusEmail = () => {setInputEmail(true)}
+    const blurEmail = () => {setInputEmail(false)}
+    const focusNick = () => {setInputNick(true)}
+    const blurNick = () => {setInputNick(false)}
+    const focusPwd = () => {setInputPwd(true)}
+    const blurPwd = () => {setInputPwd(false)}
+    const focusConfirmPwd = () => {setInputConfirmPwd(true)}
+    const blurConfirmPwd = () => {setInputConfirmPwd(false)}
 
     const isAllChecked = checkedInputs.length === 2;
 
@@ -33,24 +55,7 @@ const SignUp = () => {
         }
         dispatch(userActions.signUpDB(id, email, nickname, pwd, confirmPwd));
       };
-      
-    const [inputId,setInputId] = useState(false);
-    const [inputEmail,setInputEmail] = useState(false);
-    const [inputNick,setInputNick] = useState(false);
-    const [inputPwd,setInputPwd] = useState(false);
-    const [inputConfirmPwd,setInputConfirmPwd] = useState(false);
-    const focusId = () => {setInputId(true)};
-    const blurId = () => {setInputId(false)};
-    const focusEmail = () => {setInputEmail(true)};
-    const blurEmail = () => {setInputEmail(false)};
-    const focusNick = () => {setInputNick(true)};
-    const blurNick = () => {setInputNick(false)};
-    const focusPwd = () => {setInputPwd(true)};
-    const blurPwd = () => {setInputPwd(false)};
-    const focusConfirmPwd = () => {setInputConfirmPwd(true)};
-    const blurConfirmPwd = () => {setInputConfirmPwd(false)};
-    
-    console.log("이거 왜 안나와요? ")
+   
     return (
         <SignContainer>
           <Head>
@@ -62,18 +67,18 @@ const SignUp = () => {
           <SignContent>
             <ContentTitle>회원가입</ContentTitle>
             <Grid height="auto">
-              <Input margin="0 0 15px 0" value={id} _onChange={(e)=>{setId(e.target.value);}} type="text" placeholder="아이디" onFocus={focusId} onBlur={blurId}></Input>
-              <p style={{display: inputId? null: "none", marginBottom:"0px"}}>2~10자 이내의 영어 대소문자, 숫자 조합</p>
-              <Input margin="0 0 15px 0" value={email} _onChange={(e)=>{setEmail(e.target.value);}} type="text" placeholder="이메일" onFocus={focusEmail} onBlur={blurEmail}></Input>
-              {/* <p style={{display: inputEmail? null: "none", marginBottom:"0px"}}>이메일 형식</p> */}
-              <Input margin="0 0 15px 0" value={nickname} _onChange={(e)=>{setNickname(e.target.value);}} type="text" placeholder="닉네임" onFocus={focusNick} onBlur={blurNick}></Input>
-              <p style={{display: inputNick? null: "none", marginBottom:"0px"}}>2~10자 이내의 한글, 영문자 조합(특수문자 제외)</p>
-              <Input margin="0 0 15px 0" value={pwd} _onChange={(e)=>{setPwd(e.target.value);}} type="password" placeholder="비밀번호" onFocus={focusPwd} onBlur={blurPwd}></Input>
-              <p style={{display: inputPwd? null: "none", marginBottom:"0px"}}>8~16자 이내의 영어 대소문자, 숫자, 특수문자(!@#$%^*_-)를 1자이상 사용한 조합</p>
-              <Input margin="0 0 30px 0" value={confirmPwd} _onChange={(e)=>{setConfirmPwd(e.target.value);}} type="password" placeholder="비밀번호 확인" onFocus={focusConfirmPwd} onBlur={blurConfirmPwd}></Input>
+              <Input margin="0px" value={id} _onChange={()=>{changeId()}} type="text" placeholder="아이디" _onFocus={() => {focusId()}} _onBlur={()=>{blurId()}}></Input>
+              <p style={{display: inputId? null: "none"}}>2~10자 이내의 영어 대소문자, 숫자 조합</p>
+              <Input margin="15px 0 0" value={email} _onChange={()=>{changeEmail()}} type="text" placeholder="이메일" _onFocus={() => {focusEmail()}} _onBlur={()=>{blurEmail()}}></Input>
+              <p style={{display: inputEmail? null: "none"}}>(예)denglove@dengdeng.com</p>
+              <Input margin="15px 0 0" value={nickname} _onChange={()=>{changeNickname()}} type="text" placeholder="닉네임" _onFocus={() => {focusNick()}} _onBlur={()=>{blurNick()}}></Input>
+              <p style={{display: inputNick? null: "none"}}>2~10자 이내의 한글, 영문자 조합(특수문자 제외)</p>
+              <Input margin="15px 0 0" value={pwd} _onChange={()=>{changePwd()}} type="password" placeholder="비밀번호" _onFocus={() => {focusPwd()}} _onBlur={()=>{blurPwd()}}></Input>
+              <p style={{display: inputPwd? null: "none"}}>8~16자 이내의 영어 대소문자, 숫자, 특수문자(!@#$%^*_-)를 모두 사용하여 조합</p>
+              <Input margin="15px 0 0" value={confirmPwd} _onChange={()=>{changeConfirmPwd()}} type="password" placeholder="비밀번호 확인" _onFocus={() => {focusConfirmPwd()}} _onBlur={()=>{blurConfirmPwd()}}></Input>
               <p style={{display: inputConfirmPwd===true ? (pwd===confirmPwd ? "none": null ): "none"}}>비밀번호가 일치하지 않습니다.</p>
             </Grid>
-            <Grid margin="0 0 130px 0" height="auto">
+            <Grid margin="30px 0 130px 0" height="auto">
               <InputContent>
               <input type="checkbox" id="check" onChange={e => {changeHandler(e.currentTarget.checked, 'check');}} checked={checkedInputs.includes('check') ? true : false}></input>
               <label id="check" htmlFor="check"></label>
@@ -133,6 +138,11 @@ const ContentTitle = styled.h2`
 const SignContent = styled.div`
   padding: 0 10.25%;
   box-sizing: border-box;
+  p{
+    margin: 5px 16px 0px;
+    color: #828282;
+    font-size:12px;
+  }
 `
 
 const InputContent = styled.div`

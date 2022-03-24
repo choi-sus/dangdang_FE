@@ -33,7 +33,7 @@ const Input = (props) => {
     <React.Fragment>
       <Grid>
         {label && <Text margin="0px">{label}</Text>}
-        <ElInput {...styles} type={type} placeholder={placeholder} onChange={_onChange} onFous={_onFocus} onBlur={_onBlur}/>
+        <ElInput {...styles} type={type} placeholder={placeholder} onChange={_onChange} onFocus={_onFocus} onBlur={_onBlur}/>
       </Grid>
     </React.Fragment>
   );

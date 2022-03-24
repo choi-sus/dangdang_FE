@@ -299,7 +299,7 @@ const WalkDetail = () => {
                 <svg width="30" height="30" viewBox="0 0 40 39" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M23.5147 33.5164C20.9803 34.684 18.0209 34.684 15.4865 33.5164C3.28716 27.896 4.62523 13.1883 19.5007 0.172755C34.3758 13.1883 35.714 27.896 23.5147 33.5164Z" fill="#87BAFF"/>
             </svg>
-            <p>물</p>
+            <p>식수</p>
             <p>{walk.water}</p>
                 </MarkerFrame>
                 <MarkerFrame>

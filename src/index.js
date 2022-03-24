@@ -6,18 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import store from "./redux/configStore";
 import { Provider } from "react-redux";
 
-import ReactPWAInstallProvider, { useReactPWAInstall } from "react-pwa-install";
+import ReactPWAInstallProvider from "react-pwa-install";
 
 // -- serviceWorker --
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
-
+// -- components --
+import Device from "./shared/Device";
 
 ReactDOM.render(
   <React.StrictMode>
     <ReactPWAInstallProvider enableLogging>
       <Provider store={store}>
-        <App />
+        <Device>
+          <App />
+        </Device>
       </Provider>
     </ReactPWAInstallProvider>
   </React.StrictMode>,
