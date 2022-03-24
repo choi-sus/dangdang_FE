@@ -10,7 +10,7 @@ const MobileInstall = (props) => {
   return (
     <Content>
       <h2>산책이 필요한 순간</h2>
-      <img src={mobile_title} alt="mobile_title" />
+      <div>{mobile_title}</div>
       <p>
         앱 다운로드하고 <br /> 매일 가는 산책길, 새롭게 즐겨보세요!
       </p>
@@ -24,7 +24,7 @@ const MobileInstall = (props) => {
 
 MobileInstall.defaultProps = {
   _onClick: () => {},
-};
+}; 
 
 const Content = styled.div`
   width: 100vw;
