@@ -65,8 +65,6 @@ const WebInstall = styled.div`
 `;
 
 const WebInstallButton = styled.div`
-//   font-size: ${({ theme }) => theme.fontSizes.xxxl};
-//   font-weight: ${({ theme }) => theme.fontWeight.Bold};
   color: #101340;
   cursor: pointer;
 `;
@@ -76,9 +74,6 @@ const MobileInstallButton = styled.div`
   height: 48px;
   background: #fff;
   border-radius: 48px;
-//   font-size: ${({ theme }) => theme.fontSizes.small};
-//   font-weight: ${({ theme }) => theme.fontWeight.Bold};
-//   color: ${({ theme }) => theme.colors.bg};
   line-height: 48px;
   margin: 0 auto;
   margin-bottom: 20px;
