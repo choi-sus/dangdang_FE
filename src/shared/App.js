@@ -35,7 +35,7 @@ function App() {
       if(is_login){
         dispatch(userActions.loginCheckDB());
       }
-  }, []); 
+  }, []);  
 
   return (
     <React.Fragment>

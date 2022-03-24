@@ -40,7 +40,7 @@ const PwaInstall = (props) => {
         <>
           <MobileInstallButton onClick={handleClick}>
             {props.text}
-          </MobileInstallButton>
+          </MobileInstallButton> 
         </>
       )}
     </InstallBox>
