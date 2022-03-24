@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useReactPWAInstall } from "react-pwa-install";
 
-// import { Icon } from "../elements";
-
-// import { install_logo, install_download } from "../static/images";
+import { logo, download } from "../../public/img";
 
 const PwaInstall = (props) => {
   const { pwaInstall } = useReactPWAInstall();
@@ -12,7 +10,7 @@ const PwaInstall = (props) => {
   const handleClick = () => {
     pwaInstall({
       title: "댕댕한바퀴 다운받기",
-    //   logo: install_logo,
+      logo: logo,
     })
       .then(() => {
         // 설치 성공
@@ -25,20 +23,16 @@ const PwaInstall = (props) => {
   return (
     <InstallBox>
       {props.web ? (
-        <WebInstall>
-          {/* <Icon
-            src={install_download}
-            width="24px"
-            height="24px"
-            marginR="10px"
-          ></Icon> */}
-          <WebInstallButton onClick={handleClick}>
+        <WebInstall  onClick={handleClick}>
+          <span>{download}</span>
+          <WebInstallButton>
             {props.text}
           </WebInstallButton>
         </WebInstall>
       ) : (
         <>
           <MobileInstallButton onClick={handleClick}>
+            <span>{download}</span>
             {props.text}
           </MobileInstallButton> 
         </>
@@ -58,25 +52,26 @@ const WebInstall = styled.div`
   top: 420px;
   left: 380px;
   border-radius: 32px;
-  background: #fff;
+  background-color: #ffc710;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const WebInstallButton = styled.div`
-  color: #101340;
+  color: #fff;
   cursor: pointer;
 `;
 
 const MobileInstallButton = styled.div`
   width: 200px;
-  height: 48px;
-  background: #fff;
+  height: 60px;
+  background-color: #ffc710;
+  color: #fff;
   border-radius: 48px;
-  line-height: 48px;
+  line-height: 60px;
   margin: 0 auto;
-  margin-bottom: 20px;
+  font-size: 24px;
 `;
 
 export default PwaInstall;
