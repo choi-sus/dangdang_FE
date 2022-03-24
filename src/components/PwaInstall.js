@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useReactPWAInstall } from "react-pwa-install";
 
-import { logo, download } from "../../public/img";
+import { logo, download } from "../static/images";
 
 const PwaInstall = (props) => {
   const { pwaInstall } = useReactPWAInstall();

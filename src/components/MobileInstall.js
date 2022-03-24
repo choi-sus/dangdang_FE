@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PwaInstall from "../components/PwaInstall";
 
-import { mobile_bg, mobile_logo } from "../../public/img";
+import { mobile_bg, mobile_title } from "../static/images";
 
 const MobileInstall = (props) => {
   const { _onClick } = props;
@@ -10,7 +10,7 @@ const MobileInstall = (props) => {
   return (
     <Content>
       <h2>산책이 필요한 순간</h2>
-      <img src={mobile_logo} alt="mobile_logo" />
+      <img src={mobile_title} alt="mobile_title" />
       <p>
         앱 다운로드하고 <br /> 매일 가는 산책길, 새롭게 즐겨보세요!
       </p>
