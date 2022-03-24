@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Text, Grid } from "./Index";
 
 const Input = (props) => {
-  const { label, placeholder, _onChange, type, multiLine, value, radio ,name, _onClick, margin } = props;
+  const { label, placeholder, _onChange, type, multiLine, value, radio ,name, _onClick, margin , _onFocus, _onBlur } = props;
   const styles = {margin};
 
   if (multiLine) {
@@ -33,7 +33,7 @@ const Input = (props) => {
     <React.Fragment>
       <Grid>
         {label && <Text margin="0px">{label}</Text>}
-        <ElInput {...styles} type={type} placeholder={placeholder} onChange={_onChange} />
+        <ElInput {...styles} type={type} placeholder={placeholder} onChange={_onChange} onFous={_onFocus} onBlur={_onBlur}/>
       </Grid>
     </React.Fragment>
   );
@@ -50,6 +50,8 @@ Input.defaultProps = {
   margin: false,
   _onChange: () => {},
   _onClick: () => {},
+  _onFocus: () => {},
+  _onBlur: () => {},
 };
 const ElTextarea = styled.textarea`
   border: 1px solid #212121;
