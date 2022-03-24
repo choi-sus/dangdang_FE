@@ -10,7 +10,7 @@ const MobileInstall = (props) => {
   return (
     <Content>
       <h2>산책이 필요한 순간</h2>
-      <div>{mobile_title}</div>
+      <img src={mobile_title} alt="mobile_title" />
       <p>
         앱 다운로드하고 <br /> 매일 가는 산책길, 새롭게 즐겨보세요!
       </p>
@@ -30,11 +30,11 @@ const Content = styled.div`
   width: 100vw;
   height: 100vh;
   background: url(${mobile_bg});
-  background-size: 100%, 100%;
+  background-size: cover;
   background-position: 0%, 0%;
   background-repeat: no-repeat;
   text-align: center;
-  padding-top:144px ;
+  padding-top: 144px;
   box-sizing: border-box;
   & h2 {
     color: #ffc710;

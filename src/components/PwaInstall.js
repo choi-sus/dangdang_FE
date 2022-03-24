@@ -24,7 +24,6 @@ const PwaInstall = (props) => {
     <InstallBox>
       {props.web ? (
         <WebInstall  onClick={handleClick}>
-          <span>{download}</span>
           <WebInstallButton>
             {props.text}
           </WebInstallButton>
@@ -32,7 +31,6 @@ const PwaInstall = (props) => {
       ) : (
         <>
           <MobileInstallButton onClick={handleClick}>
-            <span>{download}</span>
             {props.text}
           </MobileInstallButton> 
         </>
@@ -61,6 +59,20 @@ const WebInstall = styled.div`
 const WebInstallButton = styled.div`
   color: #fff;
   cursor: pointer;
+  position: relative;
+  &::before {
+    content: "";
+    width: 31px;
+    height: 31px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    z-index: 100;
+    background: url(${download});
+    background-size: cover;
+    background-position: 0%, 0%;
+    background-repeat: no-repeat;
+  }
 `;
 
 const MobileInstallButton = styled.div`
@@ -72,6 +84,20 @@ const MobileInstallButton = styled.div`
   line-height: 60px;
   margin: 0 auto;
   font-size: 24px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 31px;
+    height: 31px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    z-index: 100;
+    background: url(${download});
+    background-size: cover;
+    background-position: 0%, 0%;
+    background-repeat: no-repeat;
+  }
 `;
 
 export default PwaInstall;
