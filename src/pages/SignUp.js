@@ -70,7 +70,7 @@ const SignUp = () => {
               <Input margin="15px 0 0" value={pwd} _onChange={(e)=>{setPwd(e.target.value)}} type="password" placeholder="비밀번호" _onFocus={() => {focusPwd()}} _onBlur={()=>{blurPwd()}}></Input>
               <p style={{display: inputPwd? null: "none"}}>8~16자 이내의 영어 대소문자, 숫자, 특수문자(!@#$%^*_-)를 모두 사용하여 조합</p>
               <Input margin="15px 0 0" value={confirmPwd} _onChange={(e)=>{setConfirmPwd(e.target.value)}} type="password" placeholder="비밀번호 확인" _onFocus={() => {focusConfirmPwd()}} _onBlur={()=>{blurConfirmPwd()}}></Input>
-              <p style={{display: inputConfirmPwd? (pwd===confirmPwd ? "none": null ): "none",color:"b80a45"}}>비밀번호가 일치하지 않습니다.</p>
+              <p style={{display: inputConfirmPwd? (pwd===confirmPwd ? "none": null ): "none",color:"#b80a45"}}>비밀번호가 일치하지 않습니다.</p>
             </Grid>
             <Grid margin="30px 0 130px 0" height="auto">
               <InputContent>

@@ -42,7 +42,7 @@ const ModifyPwd = () => {
               <input type="password" placeholder="새 비밀번호" value={newPwd} onChange={changeNewPwd} onFocus={focusNewPwd} onBlur={blurNewPwd}></input>
               <p style={{display: inputNewPwd? null: "none", marginBottom:"0px"}}>8~16자 이내의 영어 대소문자, 숫자, 특수문자(!@#$%^*_-)를 모두 사용하여 조합</p>
               <input type="password" placeholder="새 비밀번호 확인" value={confirmPwd} onChange={changeConfirmPwd} onFocus={focusConfirmPwd} onBlur={blurConfirmPwd}></input>
-              <p style={{display: inputConfirmPwd? (newPwd===confirmPwd ? "none": null ): "none", color:"b80a45"}}>새 비밀번호와 일치하지 않습니다.</p>
+              <p style={{display: inputConfirmPwd? (newPwd===confirmPwd ? "none": null ): "none", color:"#b80a45"}}>새 비밀번호와 일치하지 않습니다.</p>
           </TextInput>
           <Button width="80%" margin="40px" _onClick={()=>{sendNewPwd()}}>변경하기</Button>
 
