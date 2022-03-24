@@ -23,7 +23,7 @@ const SignUp = () => {
 
     const changeHandler = (checked, id) => {
       if (checked) {
-        setCheckedInputs([...checkedInputs, id]);
+        setCheckedInputs([...checkedInputs, id]); 
       } else {
         setCheckedInputs(checkedInputs.filter(el => el !== id));
       }

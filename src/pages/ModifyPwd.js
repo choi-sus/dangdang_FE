@@ -46,7 +46,7 @@ const ModifyPwd = () => {
           </TextInput>
           <Button width="80%" margin="40px" _onClick={()=>{sendNewPwd()}}>변경하기</Button>
 
-        </Container>
+        </Container> 
     )
 }
 
