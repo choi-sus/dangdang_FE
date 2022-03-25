@@ -9,6 +9,7 @@ import {actionCreators as walkActions} from "../redux/modules/walk";
 import NavWalk from "../components/NavWalk";
 import WalkTop from "../components/WalkTop"
 import {history} from "../redux/configStore"
+import { map_center } from "../static/images";
 
 const Walk = (props) => {
     const dispatch = useDispatch();
@@ -194,7 +195,15 @@ const Walk = (props) => {
       }
 
       const goGuide = () => {
-        dispatch(walkActions.pauseWalk({path:polylinePath[polylinePath.length-1], time:time, water:water, yellow:yellow, brown:brown, danger:danger}));
+        dispatch(walkActions.pauseWalk(
+          {
+            path:polylinePath[polylinePath.length-1],
+            time:time,
+            water:water,
+            yellow:yellow,
+            brown:brown,
+            danger:danger
+          }));
         clearTimeout(centers.current);
         clearInterval(interv);
         history.replace("/guide")
@@ -214,7 +223,7 @@ const Walk = (props) => {
           <Polyline path={polylinePath} strokeWeight={5} strokeColor={"#FFAE00"} strokeOpacity={0.7} strokeStyle={"solid"}/>
           {!state.isLoading && (
             <MapMarker position={state.center}
-            image={{src: "img/marker.PNG", size: {width: 71, height: 71,},
+            image={{src: map_center, size: {width: 71, height: 71,},
             options: {offset: {x: 35.5, y: 35.5,},},}}/>
           )}
           </Map>

@@ -1,11 +1,11 @@
-import React ,{useState} from "react";
+import React from "react";
 import styled from "styled-components"
 import { actionCreators as guideActions } from "../redux/modules/guide"
 import { useDispatch, useSelector } from "react-redux"
 import {history} from "../redux/configStore";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import {Grid, Text} from "../elements/Index"
+import { Text} from "../elements/Index"
 import { Link } from 'react-router-dom';
 
 const Guide = () => {

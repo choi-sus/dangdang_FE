@@ -10,6 +10,7 @@ import { actionCreators as userActions } from "../redux/modules/user";
 import { actionCreators as walkActions } from "../redux/modules/walk";
 import Nav from "../components/Nav";
 import moment from "moment-timezone";
+import { petimage_bg } from "../static/images";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -207,7 +208,7 @@ const PetImg = styled.div`
   background-size: cover;
   border: 10px solid #ffffff;
   background-color: #ffffff;
-  background-image: url("img/profile.PNG");
+  background-image: url(${petimage_bg});
 `;
 const NameFrame = styled.div`
   display: flex;

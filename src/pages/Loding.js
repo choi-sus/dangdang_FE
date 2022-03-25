@@ -3,7 +3,7 @@ import {history} from "../redux/configStore"
 import {Grid} from "../elements/Index"
 import styled, {keyframes} from "styled-components";
 import { useSelector } from "react-redux";
-import { main_logo,text_logo } from "../static/images";
+import { logo,text_logo } from "../static/images";
 
 const Loding = () => {
     const is_login = useSelector((state) => state.user.is_login);
@@ -22,7 +22,7 @@ const Loding = () => {
     return(
         <Load>
             <Grid height="auto" center padding="0 15%;">
-                <img src={main_logo} alt="intro img"></img>
+                <img src={logo} alt="intro img"></img>
                 <LoadTitle>
                     <img src={text_logo} alt="intro title"></img>
                 </LoadTitle>
