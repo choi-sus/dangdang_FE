@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from "react-router-dom"
+import { Route , Switch } from "react-router-dom"
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from '../redux/configStore';
 import styled from "styled-components";
@@ -22,6 +22,7 @@ import Kakao from './kakao';
 import UserInfo from '../pages/UserInfo';
 import ModifyPwd from '../pages/ModifyPwd';
 import ModifyNick from '../pages/ModifyNick';
+import NotFound from '../pages/NotFound';
 import './App.css';
 import { useDispatch } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
@@ -42,25 +43,28 @@ function App() {
       <Container>
         <div className="App">
           <ConnectedRouter history={history}>
-            <Route path="/" component={Loding} exact/>
-            <Route path="/guideslide" component={GuideSlide} exact/>
-            <Route path="/login" component={Login} exact/>
-            <Route path="/signup" component={SignUp} exact/>
-            <Route path="/find" component={UserFind} exact/>
-            <Route path="/main" exact component={Main}/>
-            <Route path="/walk" exact component={Walk}/>
-            <Route path="/walkend" exact component={WalkEnd}/>
-            <Route path="/guide" exact component={Guide}/>
-            <Route path="/guide/:_id" exact component={GuideDetail}/>
-            <Route path="/profile" exact component={Profile}/>
-            <Route path="/profilewrite" exact component={ProfileWrite}/>
-            <Route path="/walklist" exact component={WalkList}/>
-            <Route path="/walkdetail/:id" exact component={WalkDetail}/>
-            <Route path="/icon" exact component={Icon}/>
-            <Route path="/kakao" component={Kakao}/>
-            <Route path="/userinfo" exact component={UserInfo}/>
-            <Route path="/modifypwd" exact component={ModifyPwd}/>
-            <Route path="/modifynick" exact component={ModifyNick}/>
+            <Switch>
+              <Route path="/" component={Loding} exact/>
+              <Route path="/guideslide" component={GuideSlide} exact/>
+              <Route path="/login" component={Login} exact/>
+              <Route path="/signup" component={SignUp} exact/>
+              <Route path="/find" component={UserFind} exact/>
+              <Route path="/main" exact component={Main}/>
+              <Route path="/walk" exact component={Walk}/>
+              <Route path="/walkend" exact component={WalkEnd}/>
+              <Route path="/guide" exact component={Guide}/>
+              <Route path="/guide/:_id" exact component={GuideDetail}/>
+              <Route path="/profile" exact component={Profile}/>
+              <Route path="/profilewrite" exact component={ProfileWrite}/>
+              <Route path="/walklist" exact component={WalkList}/>
+              <Route path="/walkdetail/:id" exact component={WalkDetail}/>
+              <Route path="/icon" exact component={Icon}/>
+              <Route path="/kakao" component={Kakao}/>
+              <Route path="/userinfo" exact component={UserInfo}/>
+              <Route path="/modifypwd" exact component={ModifyPwd}/>
+              <Route path="/modifynick" exact component={ModifyNick}/>
+              <Route exact component={NotFound} />
+            </Switch>
           </ConnectedRouter>
         </div>
       </Container>

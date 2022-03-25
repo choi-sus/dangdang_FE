@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components"
 import { useSelector} from "react-redux";
 import {Text} from "../elements/Index"
+import { main_logo } from "../static/images";
 
 const Weather = ()=> {
     const [coords, saveCoords] = React.useState();
@@ -56,7 +57,7 @@ const Weather = ()=> {
             </WeatherContent>
             <UserWalk>
                 {user ? <UserNick>{`${user.nickname}님!`}<br></br>산책하러 갈까요?</UserNick> : <UserNick>로그인 후<br></br>산책하러 갈까요?</UserNick>}
-                <img src="img/main.PNG" alt="강아지 이미지"></img>
+                <img src={main_logo} alt="강아지 이미지"></img>
             </UserWalk>
             <UserConfirm>
                 <Text color="#4f4f4f" size="14px" margin="0 0 15px 0">산책 전, 챙기셨나요?</Text>
@@ -120,9 +121,9 @@ const UserWalk = styled.div`
         content: ""; display: block; visibility: hidden; clear: both;
     }
     img {
-        width: 95px;
+        width: 100px;
         position: absolute;
-        right: -10px;
+        right: 0px;
         bottom: 0px;
     }
 `
