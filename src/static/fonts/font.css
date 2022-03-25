@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "NotoSansKR";
+    src: url("./NotoSansKR-Regular.otf");
+  }
+  @font-face {
+    font-family: "NotoSansKR";
+    src: url("./NotoSansKR-Medium.otf");
+  }
+  @font-face {
+    font-family: "NotoSansKR";
+    src: url("./NotoSansKR-Bold.otf");
+  }
+  @font-face {
+    font-family: 'Godo';
+    src: url("./GodoM.ttf");
+  }
+  @font-face {
+    font-family: 'Godo';
+    src: url("./GodoB.ttf");
+  }
