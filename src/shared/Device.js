@@ -60,7 +60,11 @@ const Mobile = styled.div`
   width: 100%;
   max-width: 640px;
   min-width: 280px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   background-color: rgb(255, 251, 241);
 `;
 

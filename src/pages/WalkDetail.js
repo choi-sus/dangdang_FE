@@ -351,21 +351,19 @@ const WalkDetail = () => {
   export default WalkDetail;
   
   const WalkDetailContainer = styled.div`
-  position: relative;
-  background-color: #FFFBF1;
-  padding: 54px 30px 30px;
-  box-sizing: border-box;
-  height: 100vh;
-  overflow: auto;
-  &::-webkit-scrollbar {
-  display: none;
-  }
+    position: relative;
+    background-color: #fffbf1;
+    padding: 54px 30px 30px;
+    box-sizing: border-box;
   `;
   const Head = styled.div`
     margin-bottom: 25px;
     box-sizing: border-box;
     &::after {
-      content: ""; display: block; visibility: hidden; clear: both;
+      content: "";
+      display: block;
+      visibility: hidden;
+      clear: both;
     }
     & > div {
       float: left;
@@ -375,37 +373,37 @@ const WalkDetail = () => {
       font-size: 18px;
       line-height: 25px;
       letter-spacing: -0.5px;
-      color: #4F4F4F;
-      & > svg{
+      color: #4f4f4f;
+      & > svg {
         transform: translate(60px, 3px);
       }
     }
-    svg{
+    svg {
       font-size: 25px;
-      color: #4F4F4F;
+      color: #4f4f4f;
       transform: translate(-10px, 0px);
     }
-  `
-const SvgFrame = styled.div`
+  `;
+  const SvgFrame = styled.div`
     display: flex;
     justify-content: center;
     margin: 0 0 20px;
-    svg{
-        position: relative;
+    svg {
+      position: relative;
     }
-    p{
-        position: absolute;
-        color: #333333;
-        transform: translate(30%, -3%);
+    p {
+      position: absolute;
+      color: #333333;
+      transform: translate(30%, -3%);
     }
-`;
-const WalkRecord = styled.div`
-  display:flex;
-  justify-content: space-between;
-  margin: 0 0 12px;
-  height: 177px;
-`;
-const MarkerCard = styled.div`
+  `;
+  const WalkRecord = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 12px;
+    height: 177px;
+  `;
+  const MarkerCard = styled.div`
     display: grid;
     border-radius: 15px;
     box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
@@ -414,38 +412,38 @@ const MarkerCard = styled.div`
     width: 124px;
     width: 50%;
     margin-right: 12px;
-    p{
-        margin: 0px;
-        color: #4f4f4f;
-        line-height: 30px;
-        text-align: left;
+    p {
+      margin: 0px;
+      color: #4f4f4f;
+      line-height: 30px;
+      text-align: left;
     }
-`;
-const MarkerFrame = styled.div`
-    display:flex;
+  `;
+  const MarkerFrame = styled.div`
+    display: flex;
     justify-content: space-around;
-`;
-const WalkInfo = styled.div`
-  display: grid;
-  border-radius: 15px;
-  box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
-  background-color: #fff;
-  padding: 20px 17px;
-  width: 50%;
-`;
-const InfoDetail = styled.div`
-  p:first-child {
-    color: #bdbdbd;
-    font-size: 16px;
-    margin: 0;
-  }
-  p{
-    font-size: 35px;
-    margin: 0px;
-    margin: 7px 0;
-    font-weight: 700;
-    span{
-        font-size: 20px;
+  `;
+  const WalkInfo = styled.div`
+    display: grid;
+    border-radius: 15px;
+    box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
+    background-color: #fff;
+    padding: 20px 17px;
+    width: 50%;
+  `;
+  const InfoDetail = styled.div`
+    p:first-child {
+      color: #bdbdbd;
+      font-size: 16px;
+      margin: 0;
     }
-  }
-`;
+    p {
+      font-size: 35px;
+      margin: 0px;
+      margin: 7px 0;
+      font-weight: 700;
+      span {
+        font-size: 20px;
+      }
+    }
+  `;

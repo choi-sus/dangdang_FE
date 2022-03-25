@@ -60,7 +60,6 @@ const UserFind = () => {
 export default UserFind
 
 const FindContainer = styled.div`
-    height: 100vh;
     background-color: #FFFBF1;
     padding: 15.5% 0;
     box-sizing: border-box;

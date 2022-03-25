@@ -61,7 +61,6 @@ export default UserInfo;
 
 const UserContainer = styled.div`
   background-color: #fffbf1;
-  height: 100vh;
 `;
 const Head = styled.div`
   margin-bottom: 25px;

@@ -48,7 +48,7 @@ const GuideContainer = styled.div`
   padding: 15.5% 4.35%;
   box-sizing: border-box;
   @media screen and (min-height: 890px) {
-    height: 100vh;
+    /* height: 100vh; */
   }
 `
 const Head = styled.div`

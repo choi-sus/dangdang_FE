@@ -34,7 +34,7 @@ const ModifyNick = () => {
               <input placeholder="변경할 닉네임을 입력하세요" value={nickname} onChange={changeNickname} onFocus={focusNick} onBlur={blurNick}></input>
               <p style={{display: inputNick? null: "none", marginBottom:"0px"}}> 2~10자 이내의 한글, 영문자 조합(특수문자 제외)</p>
           </TextInput>
-          <Button width="80%" margin="40px" _onClick={()=>{newNick()}}>변경하기</Button>
+          <Button width="calc(100% - 80px)" margin="40px" _onClick={()=>{newNick()}}>변경하기</Button>
         </Container>
     )
 }
@@ -43,7 +43,6 @@ export default ModifyNick;
 
 const Container = styled.div`
 background-color: #FFFBF1;
-height: 100vh;
 `;
 const Head = styled.div`
   margin-bottom: 25px;

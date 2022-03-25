@@ -64,7 +64,7 @@ const SignUp = () => {
               <Input margin="0px" value={id} _onChange={(e)=>{setId(e.target.value)}} type="text" placeholder="아이디" _onFocus={() => {focusId()}} _onBlur={()=>{blurId()}}></Input>
               <p style={{display: inputId? null: "none"}}>2~10자 이내의 영어 대소문자, 숫자 조합</p>
               <Input margin="15px 0 0" value={email} _onChange={(e)=>{setEmail(e.target.value)}} type="text" placeholder="이메일" _onFocus={() => {focusEmail()}} _onBlur={()=>{blurEmail()}}></Input>
-              <p style={{display: inputEmail? null: "none"}}>(예)denglove@dengdeng.com</p>
+              <p style={{display: inputEmail? null: "none"}}>이메일 형식 deng@denground.com</p>
               <Input margin="15px 0 0" value={nickname} _onChange={(e)=>{setNickname(e.target.value)}} type="text" placeholder="닉네임" _onFocus={() => {focusNick()}} _onBlur={()=>{blurNick()}}></Input>
               <p style={{display: inputNick? null: "none"}}>2~10자 이내의 한글, 영문자 조합(특수문자 제외)</p>
               <Input margin="15px 0 0" value={pwd} _onChange={(e)=>{setPwd(e.target.value)}} type="password" placeholder="비밀번호" _onFocus={() => {focusPwd()}} _onBlur={()=>{blurPwd()}}></Input>
@@ -93,12 +93,11 @@ const SignUp = () => {
 export default SignUp
 
 const SignContainer = styled.div`
-  height: 100vh;
   background-color: #FFFBF1;
   padding: 15.5% 0;
   box-sizing: border-box;
   @media screen and (min-height: 0) and (max-height: 800px){
-    height: auto;
+    /* height: auto; */
   }
 `
 const Head = styled.div`
