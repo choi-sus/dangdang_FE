@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
+  ${reset};
   * {
     margin: 0;
     padding: 0;
@@ -8,12 +10,9 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  body {
-    box-sizing: border-box;
-    
-  }
-  button,img{
-    cursor:pointer;
+
+  button{
+    cursor: pointer;
   }
   
 `;

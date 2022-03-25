@@ -27,7 +27,8 @@ const fontWeight = {
 };
 
 const colors = {
-  main_1: "#FBC037",
+  main_1: "#fffbf1",
+  bg: "#ffe7a5",
 };
 
 const paddings = {

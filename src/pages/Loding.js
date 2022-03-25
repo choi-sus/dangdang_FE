@@ -46,8 +46,8 @@ const BarWidth = keyframes`
 `;
 
 const Load = styled.div`
-    height: 100vh;
-    background-color: #fffbf1;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.main_1};
     display: flex;
     justify-content: center;
     align-items: center;
