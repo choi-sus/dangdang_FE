@@ -3,11 +3,13 @@ import logo from "./logo/logo.svg";
 import text_logo from "./logo/text_logo.svg";
 import main_logo from "./logo/main_logo.PNG";
 import logo_foot from "./logo/logo_foot.svg";
+import og_image from "./logo/og_image.PNG";
 
 //-- background --
 import web_bg from "./background/web_bg.webp";
 import mobile_bg from "./background/mobile_bg.png";
 import mobile_title from "./background/mobile_title.svg";
+import iphone_mockup from "./background/iphone_mockup.png";
 
 //-- icons --
 import download from "./icons/download.svg";
@@ -24,6 +26,10 @@ import marker_brown from "./icons/marker_brown.svg";
 import marker_danger from "./icons/marker_danger.svg";
 import marker_water from "./icons/marker_water.svg";
 import marker_yellow from "./icons/marker_yellow.svg";
+import profile_edit from "./icons/profile_edit.svg";
+import profile_cake from "./icons/profile_cake.svg";
+import walk_delete from "./icons/walk_delete.svg";
+import camera from "./icons/camera.svg";
 
 //-- guide --
 import slide_guide from "./guide/slide_guide.webp";
@@ -33,6 +39,8 @@ import slide_walk from "./guide/slide_walk.webp";
 //-- character --
 import notfound from "./character/notfound.svg";
 import petimage_bg from "./character/petimage_bg.svg";
+import walkend_dog from "./character/walkend_dog.svg";
+import walklist_dog from "./character/walklist_dog.svg";
 
 export {
     logo,
@@ -61,4 +69,12 @@ export {
     marker_water,
     marker_yellow,
     petimage_bg,
+    profile_edit,
+    profile_cake,
+    walkend_dog,
+    walklist_dog,
+    walk_delete,
+    camera,
+    iphone_mockup,
+    og_image,
 };

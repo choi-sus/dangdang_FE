@@ -10,14 +10,14 @@ const WalkTop = (props)=> {
         <IconContent>
             <IconArea onClick={()=> {SetNum.SetWeter(SetNum.water + 1)}}>
               <IconInner>
-                <img src={marker_yellow} alt="소변 아이콘" />
+                <img src={marker_water} alt="급수 아이콘" />
                   <Text color="#828282" size="14px" margin="0 3px 0 0" height="20px">급수</Text>
                   <IconNum>{SetNum.water}</IconNum>
               </IconInner>
             </IconArea>
             <IconArea onClick={()=> {SetNum.SetYellow(SetNum.yellow + 1)}}>
               <IconInner>
-                <img src={marker_water} alt="급수 아이콘" />
+                <img src={marker_yellow} alt="소변 아이콘" />
                 <Text color="#828282" size="14px" margin="0 3px 0 0" height="20px">소변</Text>
                 <IconNum>{SetNum.yellow}</IconNum>
               </IconInner>
@@ -67,7 +67,7 @@ const IconArea = styled.div`
   &:not(:first-child){
     margin-left: 10px;
   }
-  svg {
+  img {
     height: 20px; width: 20px; float: left;
   }
   p {

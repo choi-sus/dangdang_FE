@@ -42,7 +42,7 @@ const NavBar = styled.div`
 `
 const WalkList = styled.div`
     float: left;
-    svg {
+    img {
         position: relative;
         left: 50%;
         transform: translateX(-50%);
