@@ -15,10 +15,10 @@ const Main = () => {
     return(
         <MapContainer>
             <MainMap defaultLoca={receiveLoca}></MainMap>
-            <Weather></Weather>
-            <GridText>
-                <Link to={{pathname:'/walk', state:{nowLoca}}}>지금 바로 산책가기</Link>
-            </GridText>
+                <Weather></Weather>
+                <GridText>
+                    <Link to={{pathname:'/walk', state:{nowLoca}}}>지금 바로 산책가기</Link>
+                </GridText>
             <NavBar>
                 <WalkList onClick={()=> {history.replace("/walklist")}}>
                     <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,6 @@ export default Main
 const MapContainer = styled.div`
     position: relative;
 `
-
 const GridText = styled.div`
     position: absolute;
     left: 50%;

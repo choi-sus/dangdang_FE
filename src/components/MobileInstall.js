@@ -64,6 +64,7 @@ const Content = styled.div`
       z-index: 100;
       background-color: transparent;
     }
+  }
 `;
 
 export default MobileInstall;

@@ -172,11 +172,6 @@ export default ProfileWrite;
 
 const PageBody = styled.div`
 background-color: #FFFBF1;
-height: 100vh;
-overflow: auto;
-&::-webkit-scrollbar {
-  display: none;
-}
 `;
 const Head = styled.div`
   margin-bottom: 25px;

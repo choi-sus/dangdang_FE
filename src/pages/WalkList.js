@@ -63,18 +63,21 @@ const Profile = () => {
 export default Profile;
 
 const ListContainer = styled.div`
-position: relative;
-background-color: #FFFBF1;
-height: 100vh;
-padding: 54px 0 96px;
-box-sizing: border-box;
+  position: relative;
+  background-color: #fffbf1;
+  height: 100vh;
+  padding: 54px 0 96px;
+  box-sizing: border-box;
 `;
 const Head = styled.div`
   margin-bottom: 25px;
   box-sizing: border-box;
   padding: 0 4.35%;
   &::after {
-    content: ""; display: block; visibility: hidden; clear: both;
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
   }
   & > div {
     float: left;
@@ -84,13 +87,13 @@ const Head = styled.div`
     font-size: 18px;
     line-height: 25px;
     letter-spacing: -0.5px;
-    color: #4F4F4F;
+    color: #4f4f4f;
   }
-  svg{
+  svg {
     font-size: 25px;
-    color: #4F4F4F;
+    color: #4f4f4f;
   }
-`
+`;
 const NotList = styled.div`
   position: absolute;
   top: 50%;
@@ -98,47 +101,47 @@ const NotList = styled.div`
   padding: 0 30px;
   width: calc(100% - 60px);
   text-align: center;
-  color:#bdbdbd;  
+  color: #bdbdbd;
 `;
 const ListWrap = styled.div`
   height: calc(100% - 50px);
-  overflow: scroll;
-&::-webkit-scrollbar {
-  display: none;
-}
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const WalkCard = styled.div`
-height: 52px;
-background: #FFFFFF;
-box-shadow: 0px 1px 4px rgba(158, 158, 158, 0.25);
-border-radius: 11px;
-margin:0 16px 13px;
-padding: 16px;
-position: relative;
-cursor: pointer;
-h5{
-  font-size: 18px;
-  margin: 0px;
-  font-weight: 400;
-  span{
-    font-size: 14px;
-  color: #bdbdbd;
-  margin: 5px 0px 5px 10px;
+  height: 52px;
+  background: #ffffff;
+  box-shadow: 0px 1px 4px rgba(158, 158, 158, 0.25);
+  border-radius: 11px;
+  margin: 0 16px 13px;
+  padding: 16px;
+  position: relative;
+  cursor: pointer;
+  h5 {
+    font-size: 18px;
+    margin: 0px;
+    font-weight: 400;
+    span {
+      font-size: 14px;
+      color: #bdbdbd;
+      margin: 5px 0px 5px 10px;
+    }
   }
-}
-p{
-  font-size: 16px;
-  color: #bdbdbd;
-  margin: 10px 0px;
-}
+  p {
+    font-size: 16px;
+    color: #bdbdbd;
+    margin: 10px 0px;
+  }
 `;
 const PetImg = styled.div`
-width: 56px;
-height: 56px;
-border-radius: 50%;
-background-image: url("img/profile.PNG");
-background-size: cover;
-position: absolute;
-right: 16px;
-top: 13px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-image: url("img/profile.PNG");
+  background-size: cover;
+  position: absolute;
+  right: 16px;
+  top: 13px;
 `;

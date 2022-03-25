@@ -49,7 +49,6 @@ const Login = () => {
 export default Login
 
 const LonginContainer = styled.div`
-    height: 100vh;
     background-color: #FFFBF1;
     padding: 15.5% 10.25%;
     box-sizing: border-box;
@@ -61,7 +60,7 @@ const LonginContainer = styled.div`
         display: block;
     }
     @media screen and (min-height: 0) and (max-height: 800px){
-        height: auto;
+        /* height: auto; */
     }
     button {
         box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
