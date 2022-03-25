@@ -1,25 +1,27 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {history} from "../redux/configStore"
 import {Grid} from "../elements/Index"
 import styled, {keyframes} from "styled-components";
 import { useSelector } from "react-redux";
-import { logo,text_logo } from "../static/images";
+import { logo, text_logo } from "../static/images";
 
 const Loding = () => {
+
     const is_login = useSelector((state) => state.user.is_login);
+
     const timeout = () => {
         setTimeout(() => {
-            if(is_login){history.replace("/main")}
-            else{history.replace("/guideslide")}
+            if (is_login) {history.replace("/main")} //로그인 한 유저는 이용 가이드 건너뛰고 메인으로 보내기
+            else {history.replace("/guideslide")}
         }, 3000);
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         timeout();
         return () => {clearTimeout(timeout);};
     });
 
-    return(
+    return (
         <Load>
             <Grid height="auto" center padding="0 15%;">
                 <img src={logo} alt="intro img"></img>
