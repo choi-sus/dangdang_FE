@@ -15,9 +15,7 @@ const Main = () => {
     return(
         <MapContainer>
             <MainMap defaultLoca={receiveLoca}></MainMap>
-            <ContentWrap>
                 <Weather></Weather>
-            </ContentWrap>
                 <GridText>
                     <Link to={{pathname:'/walk', state:{nowLoca}}}>지금 바로 산책가기</Link>
                 </GridText>
@@ -71,14 +69,6 @@ export default Main
 
 const MapContainer = styled.div`
     position: relative;
-`
-const ContentWrap = styled.div`
-    height: calc(100% - 215px);
-    overflow: overlay;
-    &::-webkit-scrollbar {
-    display: none;
-  }
-
 `
 const GridText = styled.div`
     position: absolute;

@@ -76,6 +76,12 @@ const WeatherContainer = styled.div`
     left: 50%;
     transform: translateX(-50%);
     min-width: 310px;
+    height: calc(100% - 215px);
+    overflow: overlay;
+    &::-webkit-scrollbar {
+    display: none;
+  }
+  
 `
 
 const WeatherContent = styled.div`
@@ -136,6 +142,7 @@ const UserConfirm = styled.div`
     border-radius: 6px;
     box-shadow: 0 1px 6px 0 rgba(171, 171, 171, 0.25);
     background-color: #fff;
+    margin-bottom: 20px;
 `
 
 const ConfirmList = styled.p`

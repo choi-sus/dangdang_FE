@@ -285,7 +285,8 @@ const LogoutBtn = styled.div`
 const NotList = styled.div`
   position: absolute;
   top: 50%;
-  transform: translate(0%, -82%);
+  left: 50%;
+  transform: translate(-50%, -82%);
   width: calc(100% - 60px);
   text-align: center;
   color: #bdbdbd;
