@@ -34,7 +34,7 @@ const Content = styled.div`
   background-position: 0%, 0%;
   background-repeat: no-repeat;
   text-align: center;
-  padding-top: 144px;
+  padding-top: 130px;
   box-sizing: border-box;
   & h2 {
     color: #ffc710;
@@ -45,7 +45,6 @@ const Content = styled.div`
     width: 130px;
   }
   & p {
-    padding: 40px 0;
     font-size: 28px;
     color: #ffd04c;
     font-family: 'Godo', sans-serif;
