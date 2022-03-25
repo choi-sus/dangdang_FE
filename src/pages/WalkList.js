@@ -7,6 +7,7 @@ import { actionCreators as walkActions } from "../redux/modules/walk";
 import { actionCreators as profileActions } from "../redux/modules/profile";
 import Nav from "../components/Nav";
 import moment from "moment-timezone";
+import { petimage_bg } from "../static/images";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -89,10 +90,6 @@ const Head = styled.div`
     letter-spacing: -0.5px;
     color: #4f4f4f;
   }
-  svg {
-    font-size: 25px;
-    color: #4f4f4f;
-  }
 `;
 const NotList = styled.div`
   position: absolute;
@@ -139,7 +136,7 @@ const PetImg = styled.div`
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-image: url("img/profile.PNG");
+  background-image: url(${petimage_bg});
   background-size: cover;
   position: absolute;
   right: 16px;
