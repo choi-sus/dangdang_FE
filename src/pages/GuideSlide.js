@@ -6,6 +6,7 @@ import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, {Pagination} from "swiper";
 import {Button} from "../elements/Index";
 import {history} from "../redux/configStore"
+import {slide_guide, slide_home, slide_walk} from "../static/images";
 
 const GuideSlide = () => {
     const [swiper, setSwiper] = useState(null);
@@ -45,13 +46,13 @@ const StyledSwiper = styled(Swiper)`
         background-color: #FFD04C;
     }
     & .swiper-slide:nth-child(1) > div{
-        background-image: url('img/home.PNG');
+        background-image: url(${slide_home});
     }
     & .swiper-slide:nth-child(2) > div{
-        background-image: url('img/walk.PNG');
+        background-image: url(${slide_walk});
     }
     & .swiper-slide:nth-child(3) > div{
-        background-image: url('img/guide.PNG');
+        background-image: url(${slide_guide});
     }
     button {
         position: absolute;
