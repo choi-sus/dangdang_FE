@@ -22,7 +22,6 @@ const WalkDetail = () => {
     const [zoomable, setZoomable] = useState(false)
     const DelWalk = () => {
       dispatch(walkActions.DelWalkDB(params.id));
-      history.replace('/walklist')
     }
     const at = (moment.tz(walk.createdAt,'Asia/seoul').format('A')==="AM"? "오전 " : "오후 ")
       return (
@@ -42,7 +41,7 @@ const WalkDetail = () => {
             {walk &&(
             <MarkerCard>
                 <MarkerFrame>
-                  <img src={marker_water} alt="급수 아이콘" />    
+                  <img src={marker_water} alt="식수 아이콘" />    
                   <p>식수</p>
                   <p>{walk.water}</p>
                 </MarkerFrame>

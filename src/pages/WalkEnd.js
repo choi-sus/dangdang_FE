@@ -44,8 +44,8 @@ const WalkEnd = () => {
                 <IconContent>
                     <Text color="#4f4f4f" size="14px" margin="0 0 25px 0">산책레포트</Text>
                     <IconArea>
-                        <img src={marker_water} alt="급수 아이콘" />
-                        <Text color="#4f4f4f" size="16px" margin="0 0 15px 0" center>급수</Text>
+                        <img src={marker_water} alt="식수 아이콘" />
+                        <Text color="#4f4f4f" size="16px" margin="0 0 15px 0" center>식수</Text>
                         {walk_list && <IconNum>{walk_list.water}</IconNum>}
                     </IconArea>
                     <IconArea>
