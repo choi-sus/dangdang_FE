@@ -47,7 +47,7 @@ const WebInstall = styled.div`
   width: 204px;
   height: 54px;
   position: relative;
-  top: 420px;
+  top: 300px;
   left: 58%;
   border-radius: 32px;
   background-color: ${({ theme }) => theme.colors.main_2};
@@ -59,7 +59,7 @@ const WebInstall = styled.div`
 
 const WebInstallButton = styled.div`
   color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSizes.xxxl};
+  font-size: ${({ theme }) => theme.fontSizes.xxl};
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
   font-family: "NotoSansKR", sans-serif;
   &::before {
@@ -71,6 +71,8 @@ const WebInstallButton = styled.div`
     background-position: 0%, 0%;
     background-repeat: no-repeat;
     display: inline-block;
+    margin-right: 3px;
+    line-height: 27px;
   }
 `;
 
