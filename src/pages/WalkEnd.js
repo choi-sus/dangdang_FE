@@ -36,8 +36,8 @@ const WalkEnd = () => {
             <DayRecord>
                 <Text color="#4f4f4f" size="14px" margin="0 0 10px 0">오늘의 기록</Text>
                 <Record>
-                    {walk_list && <Text bold><span>시간</span>{walk_list.time}</Text>}
-                    {walk_list && <Text bold><span>거리</span>{walk_list.distance}<span>km</span></Text>}
+                    {walk_list && <Text bold><span>시간</span>{walk_list.time.split(":").reverse()[2]? walk_list.time : "00:"+walk_list.time}</Text>}
+                    {walk_list && <Text bold><span>거리(km)</span>{walk_list.distance}</Text>}
                 </Record>
             </DayRecord>
             <WalkReport>
@@ -123,6 +123,9 @@ const DayRecord = styled.div`
 `
 
 const Record = styled.div`
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
     &::after {
         content: ""; display: block; visibility: hidden; clear: both;
     }
@@ -130,44 +133,30 @@ const Record = styled.div`
         margin: 0;  float: left;
     }
     p:nth-child(1){
-        font-size: 20px;
+        font-size: 30px;
         color: #333;
-        width: 80px;
-        line-height: 35px;
+        width: 65%;
+    }
+    p:nth-child(1) span{
+        font-size: 14px;
+        color: #bdbdbd;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: 8px;
+        font-weight: 400;
     }
     p:nth-child(2){
         font-size: 30px;
         color: #333;
-        width: calc(50% - 40px);
+        text-align: right;
     }
     p:nth-child(2) span{
         font-size: 14px;
-        color: #4f4f4f;
+        color: #bdbdbd;
         display: inline-block;
         margin-right: 10px;
         vertical-align: 8px;
         font-weight: 400;
-    }
-    p:nth-child(3){
-        font-size: 30px;
-        color: #333;
-        width: calc(50% - 40px);
-        text-align: right;
-    }
-    p:nth-child(3) span{
-        font-size: 14px;
-        color: #4f4f4f;
-        display: inline-block;
-        margin-right: 10px;
-        vertical-align: 8px;
-        font-weight: 400;
-    }
-    p:nth-child(3) span:last-child{
-        font-size: 14px;
-        color: #4f4f4f;
-        display: inline-block;
-        margin: 0 0 0 10px;
-        vertical-align: baseline;
     }
 `
  

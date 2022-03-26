@@ -37,7 +37,7 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
             history.replace("/walkend");
          })
          .catch((err)=>{
-            console.log(err) 
+            window.alert(err.response.data.fail);
          })
     }
  }
@@ -85,7 +85,7 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
             window.alert(res.data.success)
           })
           .catch((err)=>{
-             console.log(err) 
+            window.alert(err.response.data.fail);
           })
      }
  }

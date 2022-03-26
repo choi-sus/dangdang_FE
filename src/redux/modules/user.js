@@ -133,6 +133,7 @@ const modifyNickDB = (nickname) => {
         })
             .then((res) => {
                 window.alert(res.data.success)
+                history.replace("/userinfo");
             })
             .catch((err) => {
                 window.alert(err.response.data.fail);
@@ -149,6 +150,7 @@ const modifyPwdDB = (oldPwd,newPwd,confirmNewPwd) => {
         })
             .then((res) => {
                 window.alert(res.data.success)
+                history.replace("/userinfo");
             })
             .catch((err) => {
                 window.alert(err.response.data.fail);

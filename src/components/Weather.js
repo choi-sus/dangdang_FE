@@ -125,6 +125,7 @@ const UserWalk = styled.div`
         position: absolute;
         right: 0px;
         bottom: 0px;
+        border-bottom-right-radius: 6px;
     }
 `
 

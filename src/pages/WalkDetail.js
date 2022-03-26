@@ -39,7 +39,6 @@ const WalkDetail = () => {
           <SvgFrame>
             <img src={walklist_dog} alt="엎드린 강아지 이미지" />
           </SvgFrame>
-          <WalkRecord>
             {walk &&(
             <MarkerCard>
                 <MarkerFrame>
@@ -67,18 +66,17 @@ const WalkDetail = () => {
             <WalkInfo>
                 {walk && (
                 <InfoDetail>
-                    <p>시간</p>
-                    <p>{walk.time.split(":").reverse()[2]?(walk.time.split(":").reverse()[2]<10 ? walk.time.split(":").reverse()[2].split('').reverse()[0] : walk.time.split(":").reverse()[2]):null}<span>{walk.time.split(":").reverse()[2]?"시간":null}</span>{walk.time.split(":").reverse()[1]=== "00"? null : (walk.time.split(":").reverse()[1] <10 ? walk.time.split(":").reverse()[1].split('').reverse()[0] : walk.time.split(":").reverse()[1])}<span>{walk.time.split(":").reverse()[1]=== "00"?null: "분"}</span>{walk.time.split(":").reverse()[2]?null:(walk.time.split(":").reverse()[0] <10 ? walk.time.split(":").reverse()[0].split('').reverse()[0] : walk.time.split(":").reverse()[0])}<span>{walk.time.split(":").reverse()[2]?null:"초"}</span></p>
+                    <p>산책시간</p>
+                    <p>{walk.time.split(":").reverse()[2]? walk.time : "00:"+walk.time}</p>
                 </InfoDetail>
                 )}
                 {walk && (
                 <InfoDetail>
-                    <p>거리</p>
-                    <p>{walk.distance}<span>km</span></p>
+                    <p>거리(km)</p>
+                    <p>{walk.distance}</p>
                 </InfoDetail>
                 )}
             </WalkInfo>
-          </WalkRecord>
           {walk &&
           <Map center={walk.path[0]} style={{width: "100%", height: "400px", borderRadius: "15px"}} level={3}>
             <Polyline path={walk.path} strokeWeight={5} strokeColor={"#FFAE00"} strokeOpacity={0.7} strokeStyle={"solid"}/>
@@ -117,10 +115,11 @@ const WalkDetail = () => {
         transform: translate(60px, 3px);
       }
     }
-    svg {
+    img {
       font-size: 25px;
       color: #4f4f4f;
-      transform: translate(-10px, 0px);
+      position: absolute;
+      right: 30px;
     }
   `;
   const SvgFrame = styled.div`
@@ -136,53 +135,49 @@ const WalkDetail = () => {
       transform: translate(30%, -3%);
     }
   `;
-  const WalkRecord = styled.div`
+  const MarkerCard = styled.div`
     display: flex;
     justify-content: space-between;
-    margin: 0 0 12px;
-    height: 177px;
-  `;
-  const MarkerCard = styled.div`
-    display: grid;
     border-radius: 15px;
     box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
     background-color: #fff;
-    padding: 17px;
-    width: 124px;
-    width: 50%;
-    margin-right: 12px;
+    padding: 20px 35px 15px;
+    width: calc(100% -60px);
+    margin-bottom: 12px;
+  `;
+  const MarkerFrame = styled.div`
+    display: grid;
+    justify-items: center;
+    img {
+      width: 30px;
+      margin-bottom: 3px;
+    }
     p {
-      margin: 0px;
       color: #4f4f4f;
       line-height: 30px;
       text-align: left;
     }
-  `;
-  const MarkerFrame = styled.div`
-    display: flex;
-    justify-content: space-around;
   `;
   const WalkInfo = styled.div`
     display: grid;
     border-radius: 15px;
     box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
     background-color: #fff;
-    padding: 20px 17px;
-    width: 50%;
+    padding: 20px 25px 10px;
+    width: calc(100% -60px);
+    margin-bottom: 12px;
   `;
   const InfoDetail = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
     p:first-child {
       color: #bdbdbd;
       font-size: 16px;
-      margin: 0;
+      width: 100px;
     }
     p {
-      font-size: 35px;
-      margin: 0px;
-      margin: 7px 0;
-      font-weight: 700;
-      span {
-        font-size: 20px;
-      }
+      font-size: 32px;
+      font-weight: 500;
     }
   `;
