@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "댕댕한바퀴",
+  "name": "댕댕한바퀴",
+  "description": "산책이 똑똑해진 순간, 댕댕한바퀴!",
   "icons": [
     { 
       "src": "./icon/apple-touch-icon-57x57.png",
