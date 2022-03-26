@@ -15,8 +15,11 @@ const ModifyNick = () => {
   const [nickname,setNickname] = useState(oldNick);
   const changeNickname = (e) => {setNickname(e.target.value)};
   const newNick = ()=> {
+    if (nickname ===""){
+      window.alert("변경할 닉네임을 입력해주세요!")
+    }else{
       dispatch(userActions.modifyNickDB(nickname))
-      history.replace("/userinfo");
+    }
   }
   const [inputNick,setInputNick] = useState(false);
   const focusNick = () => {setInputNick(true)};
@@ -32,7 +35,7 @@ const ModifyNick = () => {
           <TextInput>
               <label>닉네임</label>
               <input placeholder="변경할 닉네임을 입력하세요" value={nickname} onChange={changeNickname} onFocus={focusNick} onBlur={blurNick}></input>
-              <p style={{display: inputNick? null: "none", marginBottom:"0px"}}> 2~10자 이내의 한글, 영문자 조합(특수문자 제외)</p>
+              <p style={{display: inputNick? null: "none", marginBottom:"0px"}}> 2~10자 이내의 한글, 영문자 조합(특수문자,공백 제외)</p>
           </TextInput>
           <Button width="calc(100% - 80px)" margin="40px" _onClick={()=>{newNick()}}>변경하기</Button>
         </Container>

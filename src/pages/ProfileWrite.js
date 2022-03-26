@@ -59,7 +59,6 @@ const ProfileWrite = () => {
         formData.append("petBirth",petBirth)
         formData.append("petBreed",selBreed)
         dispatch(profileActions.addPetDB(formData))
-        history.replace("/profile");
       }
     };
     useEffect(()=>{
@@ -78,13 +77,16 @@ const ProfileWrite = () => {
     const petInfo = useSelector((state)=> state.profile.pet)
     const editPetInfo = (e) => {
       const petBirth = selYear+"-"+selMonth+"-"+selDay;
+      if (petName ==="" ||  selGender ==="" ||  petBirth ==="" || selBreed ==="" ){
+        window.alert("입력하지 않은 항목이 있는지 확인 후 다시 시도해주세요!")
+      }else{
       formData.append("petImage",petImage);
       formData.append("petName",petName)
       formData.append("petGender",selGender)
       formData.append("petBirth",petBirth)
       formData.append("petBreed",selBreed)
       dispatch(profileActions.editPetDB(formData))
-      history.replace("/profile");
+      }
     };
 
     return(
@@ -214,6 +216,10 @@ label{
   position: absolute;
   top: 87px;
   left: 87px;
+  img{
+    width: 39px;
+    height: 39px;
+  }
 }
 `;
 const NameInput = styled.div`

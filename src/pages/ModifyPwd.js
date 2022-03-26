@@ -19,7 +19,6 @@ const ModifyPwd = () => {
   const changeConfirmPwd = (e) => {setConfirmPwd(e.target.value)};
   const sendNewPwd = ()=> {
       dispatch(userActions.modifyPwdDB(oldPwd,newPwd,confirmPwd));
-      history.replace("/userinfo");
   }
   const focusNewPwd = () => {setInputNewPwd(true)};
   const blurNewPwd = () => {setInputNewPwd(false)};
