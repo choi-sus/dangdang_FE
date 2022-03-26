@@ -46,19 +46,19 @@ const InstallBox = styled.div`
 `;
 
 const WebInstall = styled.div`
-  width: 204px;
-  height: 54px;
   position: relative;
   top: 420px;
-  right: 380px;
-  border-radius: 32px;
-  background-color: #ffc710;
+  left: 58%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const WebInstallButton = styled.div`
+  width: 204px;
+  height: 54px;
+  border-radius: 32px;
+  background-color: #ffc710;
   color: #fff;
   cursor: pointer;
   position: relative;
