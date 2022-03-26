@@ -40,6 +40,11 @@ jobs:
       - name: Install packages
         run: |
           npm install
+      # .env setting
+      - name: Setting .env
+        run: |
+          echo "REACT_APP_KAKAO_REST_API_KEY=${{ secrets.REACT_APP_KAKAO_REST_API_KEY }}" >> .env
+          cat .env
       # Build an optimized production build
       - name: Production build
         run: |
