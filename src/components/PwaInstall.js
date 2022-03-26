@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useReactPWAInstall } from "react-pwa-install";
 
+import {Text} from "../elements/Index"
 import { logo, download } from "../static/images"; 
 
 const PwaInstall = (props) => {
@@ -23,8 +24,9 @@ const PwaInstall = (props) => {
   return (
     <InstallBox>
       {props.web ? (
-        <WebInstall  onClick={handleClick}>
-          <WebInstallButton>
+        <WebInstall>
+          <Text>산책이 필요한 순간</Text>
+          <WebInstallButton onClick={handleClick}>
             {props.text}
           </WebInstallButton>
         </WebInstall>
@@ -48,7 +50,7 @@ const WebInstall = styled.div`
   height: 54px;
   position: relative;
   top: 420px;
-  left: 380px;
+  right: 380px;
   border-radius: 32px;
   background-color: #ffc710;
   display: flex;
@@ -85,19 +87,6 @@ const MobileInstallButton = styled.div`
   margin: 0 auto;
   font-size: 24px;
   position: relative;
-  &::before {
-    content: "";
-    width: 31px;
-    height: 31px;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    z-index: 100;
-    background: url(${download});
-    background-size: cover;
-    background-position: 0%, 0%;
-    background-repeat: no-repeat;
-  }
 `;
 
 export default PwaInstall;

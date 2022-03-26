@@ -7,7 +7,7 @@ import MobileInstall from "../components/MobileInstall";
 import PwaInstall from "../components/PwaInstall";
 
 import { isMobile } from "./DeviceDetector";
-// import { web_phone, web_back, web_logo } from "../static/images";
+import { web_bg, iphone_mockup, all_title } from "../static/images";
 
 const Device = ({ children }) => {
   const { supported, isInstalled } = useReactPWAInstall();
@@ -60,21 +60,17 @@ const Mobile = styled.div`
   width: 100%;
   max-width: 640px;
   min-width: 280px;
-  /* overflow: hidden; */
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  background-color: rgb(255, 251, 241);
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.colors.main_1};
 `;
 
 //웹 브라우저
 const Web = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: rgb(255, 251, 241);
-  background-size: 300px 144px, cover;
-  background-position: 326px 230px, 0% 100%;
+  background: url(${all_title}), url(${web_bg}) ;
+  background-size: 350px 150px, cover;
+  background-position: 975px 150px, 0% 100%;
   background-repeat: no-repeat;
 `;
 const Phone = styled.div`
@@ -85,10 +81,11 @@ const Phone = styled.div`
   right: 50%;
   top: 50%;
   transform: translate(50%, -50%);
-  background-color: rgb(255, 251, 241);
+  background: url(${iphone_mockup}) no-repeat;
   background-size: 100% 100%;
+
   @media screen and (min-width: 1120px) {
-    right: 10%;
+    left: 10%;
     top: 50%;
     transform: translate(0%, -50%);
   }
@@ -101,12 +98,8 @@ const WebViewLayout = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 40px;
-  background-color: rgb(255, 251, 241);
-  /* overflow: hidden; */
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  background-color: ${({ theme }) => theme.colors.main_1};
+  overflow: hidden;
 `;
 
 export default Device;

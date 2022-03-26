@@ -8,7 +8,7 @@ import logo_rectangle from "./logo/logo_rectangle.svg";
 //-- background --
 import web_bg from "./background/web_bg.webp";
 import mobile_bg from "./background/mobile_bg.webp";
-import mobile_title from "./background/mobile_title.svg";
+import all_title from "./background/all_title.svg";
 import iphone_mockup from "./background/iphone_mockup.webp";
 
 //-- icons --
@@ -46,7 +46,7 @@ export {
     logo,
     web_bg,
     mobile_bg,
-    mobile_title,
+    all_title,
     download,
     notfound, 
     text_logo,
