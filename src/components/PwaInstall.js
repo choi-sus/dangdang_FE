@@ -23,8 +23,8 @@ const PwaInstall = (props) => {
   return (
     <InstallBox>
       {props.web ? (
-        <WebInstall>
-          <WebInstallButton onClick={handleClick}>
+        <WebInstall  onClick={handleClick}>
+          <WebInstallButton>
             {props.text}
           </WebInstallButton>
         </WebInstall>
@@ -44,21 +44,22 @@ const InstallBox = styled.div`
 `;
 
 const WebInstall = styled.div`
+  width: 204px;
+  height: 54px;
   position: relative;
   top: 420px;
   left: 58%;
-  text-align: center;
+  border-radius: 32px;
+  background-color: #ffc710;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const WebInstallButton = styled.div`
-  width: 204px;
-  height: 54px;
-  border-radius: 32px;
-  background-color: #ffc710;
   color: #fff;
   cursor: pointer;
   position: relative;
-  line-height: 54px;
   &::before {
     content: "";
     width: 31px;
