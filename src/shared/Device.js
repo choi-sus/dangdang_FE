@@ -7,7 +7,7 @@ import MobileInstall from "../components/MobileInstall";
 import PwaInstall from "../components/PwaInstall";
 
 import { isMobile } from "./DeviceDetector";
-import { web_bg, iphone_mockup, all_title } from "../static/images";
+import { web_bg, iphone_mockup, web_title } from "../static/images";
 
 const Device = ({ children }) => {
   const { supported, isInstalled } = useReactPWAInstall();
@@ -68,7 +68,7 @@ const Mobile = styled.div`
 const Web = styled.div`
   width: 100vw;
   height: 100vh;
-  background: url(${all_title}), url(${web_bg}) ;
+  background: url(${web_title}), url(${web_bg}) ;
   background-size: 350px 150px, cover;
   background-position: 975px 150px, 0% 100%;
   background-repeat: no-repeat;

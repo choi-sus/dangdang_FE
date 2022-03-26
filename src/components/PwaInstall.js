@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useReactPWAInstall } from "react-pwa-install";
 
-import {Text} from "../elements/Index"
 import { logo, download } from "../static/images"; 
 
 const PwaInstall = (props) => {
@@ -25,7 +24,6 @@ const PwaInstall = (props) => {
     <InstallBox>
       {props.web ? (
         <WebInstall>
-          <Text>산책이 필요한 순간</Text>
           <WebInstallButton onClick={handleClick}>
             {props.text}
           </WebInstallButton>
