@@ -33,11 +33,11 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
             danger: danger
         })
          .then((res)=>{
-            window.alert(res.data.success)
             history.replace("/walkend");
          })
          .catch((err)=>{
             window.alert(err.response.data.fail);
+            history.replace("/main");
          })
     }
  }
@@ -82,7 +82,8 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
     return async (dispatch, getState, { history }) => {
         await api_token.delete(`/maps/delete/${mapsId}`)
           .then((res)=>{
-            window.alert(res.data.success)
+            window.alert(res.data.success);
+            history.replace('/walklist');
           })
           .catch((err)=>{
             window.alert(err.response.data.fail);

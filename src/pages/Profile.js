@@ -57,7 +57,6 @@ const Profile = () => {
                 </PetDetail>
                 <PetBirth>
                   <img src={profile_cake} alt="생년월일 케이크 이미지" />
-                  
                   <p>{petInfo.petBirth}</p>
                 </PetBirth>
             </ProfileCard>
@@ -101,21 +100,23 @@ const Profile = () => {
               <Text center color="#4F4F4F" size="18px">펫 프로필</Text>
             </Head>
           </HeadColor>
-          <ProfileCard>
-            <PetImg></PetImg>
-            <p>반려견 정보가 없습니다!</p>
-            <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px",paddingBottom:"20px"}} onClick={()=> {history.replace("/profilewrite")}}>
-              <p>나의 반려견 정보 입력하기</p>
-              <FontAwesomeIcon icon={faAngleRight}/>
-            </BtnBox>
-            {user && (user.email?
-              <BtnBox>
-                <p>회원 정보</p>
-                <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
+          <ProfileWrap>
+            <ProfileCard>
+              <PetImg></PetImg>
+              <Text margin="20px 0">반려견 정보가 없습니다!</Text>
+              <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px",paddingBottom:"20px"}} onClick={()=> {history.replace("/profilewrite")}}>
+                <p>나의 반려견 정보 입력하기</p>
+                <FontAwesomeIcon icon={faAngleRight}/>
               </BtnBox>
-              : null)}
-            <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
-          </ProfileCard>
+              {user && (user.email?
+                <BtnBox>
+                  <p>회원 정보</p>
+                  <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
+                </BtnBox>
+                : null)}
+              <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
+            </ProfileCard>
+          </ProfileWrap>
           <Nav></Nav>
        </ProfileContainer>
       )

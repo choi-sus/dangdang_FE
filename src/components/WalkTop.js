@@ -10,8 +10,8 @@ const WalkTop = (props)=> {
         <IconContent>
             <IconArea onClick={()=> {SetNum.SetWeter(SetNum.water + 1)}}>
               <IconInner>
-                <img src={marker_water} alt="급수 아이콘" />
-                  <Text color="#828282" size="14px" margin="0 3px 0 0" height="20px">급수</Text>
+                <img src={marker_water} alt="식수 아이콘" />
+                  <Text color="#828282" size="14px" margin="0 3px 0 0" height="20px">식수</Text>
                   <IconNum>{SetNum.water}</IconNum>
               </IconInner>
             </IconArea>

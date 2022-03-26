@@ -18,7 +18,11 @@ const ModifyPwd = () => {
   const changeNewPwd = (e) => {setNewPwd(e.target.value)};
   const changeConfirmPwd = (e) => {setConfirmPwd(e.target.value)};
   const sendNewPwd = ()=> {
+    if ( oldPwd ===""|| newPwd ===""|| confirmPwd ===""){
+      window.alert("모든 칸을 빠짐없이 입력해주세요!")
+    }else{
       dispatch(userActions.modifyPwdDB(oldPwd,newPwd,confirmPwd));
+    }
   }
   const focusNewPwd = () => {setInputNewPwd(true)};
   const blurNewPwd = () => {setInputNewPwd(false)};

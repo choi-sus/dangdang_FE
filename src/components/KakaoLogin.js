@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { kakaologin } from "../static/images";
 
 const KakaoLogin = () => {
-  const REST_API_KEY = "fe01947ee13f5583f84508f08485e4ea";
-  const REDIRECT_URI = "https://denground.com/kakao";
+  const REST_API_KEY = process.env.REACT_APP_KAKAO_REST_API_KEY;
+  const REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
     return (
     <Kakao onClick={() => { window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;}}>
       <img src={kakaologin} alt="kakaologin" />

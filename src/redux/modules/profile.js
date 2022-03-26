@@ -14,7 +14,6 @@ const addPetDB = (formData) => {
     return async (dispatch, getState, { history }) => {
         await api.post(`/profiles`,formData)
         .then((res)=>{
-            window.alert(res.data.success)
             history.replace("/profile")
         })
         .catch((err)=>{
