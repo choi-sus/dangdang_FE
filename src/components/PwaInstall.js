@@ -50,24 +50,22 @@ const WebInstall = styled.div`
   top: 420px;
   left: 58%;
   border-radius: 32px;
-  background-color: #ffc710;
+  background-color: ${({ theme }) => theme.colors.main_2};
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 const WebInstallButton = styled.div`
-  color: #fff;
-  cursor: pointer;
-  position: relative;
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSizes.xxxl};
+  font-weight: ${({ theme }) => theme.fontWeight.Bold};
+  font-family: "NotoSansKR", sans-serif;
   &::before {
     content: "";
-    width: 31px;
-    height: 31px;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    z-index: 100;
+    width: 25px;
+    height: 25px;
     background: url(${download});
     background-size: cover;
     background-position: 0%, 0%;
@@ -77,14 +75,16 @@ const WebInstallButton = styled.div`
 
 const MobileInstallButton = styled.div`
   width: 200px;
-  height: 60px;
-  background-color: #ffc710;
-  color: #fff;
+  height: 48px;
+  background-color: ${({ theme }) => theme.colors.main_2};
   border-radius: 48px;
-  line-height: 60px;
+  font-family: "NotoSansKR", sans-serif;
+  font-size: ${({ theme }) => theme.fontSizes.small};
+  font-weight: ${({ theme }) => theme.fontWeight.Bold};
+  color: ${({ theme }) => theme.colors.white};
+  line-height: 48px;
   margin: 0 auto;
-  font-size: 24px;
-  position: relative;
+  margin-bottom: 20px;
 `;
 
 export default PwaInstall;

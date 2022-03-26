@@ -69,8 +69,8 @@ const Web = styled.div`
   width: 100vw;
   height: 100vh;
   background: url(${web_title}), url(${web_bg}) ;
-  background-size: 420px 150px,cover;
-  background-position: 865px 85px,0% 100%;
+  background-size: 460px 150px,cover;
+  background-position: 840px 85px,0% 100%;
   background-repeat: no-repeat;
 `;
 const Phone = styled.div`

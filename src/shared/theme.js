@@ -28,7 +28,10 @@ const fontWeight = {
 
 const colors = {
   main_1: "#fffbf1",
+  main_2: "#ffd04c",
+  main_3: "#ffac0a",
   bg: "#ffe7a5",
+  white: "#ffffff",
 };
 
 const paddings = {
