@@ -49,9 +49,7 @@ const WebInstall = styled.div`
   position: relative;
   top: 420px;
   left: 58%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 `;
 
 const WebInstallButton = styled.div`
@@ -62,6 +60,7 @@ const WebInstallButton = styled.div`
   color: #fff;
   cursor: pointer;
   position: relative;
+  line-height: 54px;
   &::before {
     content: "";
     width: 31px;
