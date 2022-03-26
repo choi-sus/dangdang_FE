@@ -44,6 +44,7 @@ jobs:
       - name: Setting .env
         run: |
           echo "REACT_APP_KAKAO_REST_API_KEY=${{ secrets.REACT_APP_KAKAO_REST_API_KEY }}" >> .env
+          echo "REACT_APP_KAKAO_MAP_API=${{ secrets.REACT_APP_KAKAO_MAP_API }}" >> .env
           cat .env
       # Build an optimized production build
       - name: Production build
