@@ -60,7 +60,7 @@ const WebInstall = styled.div`
 const WebInstallButton = styled.div`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.fontSizes.xxxl};
-  font-weight: ${({ theme }) => theme.fontWeight.Bold};
+  font-weight: ${({ theme }) => theme.fontWeight.Medium};
   font-family: "NotoSansKR", sans-serif;
   &::before {
     content: "";
@@ -70,6 +70,7 @@ const WebInstallButton = styled.div`
     background-size: cover;
     background-position: 0%, 0%;
     background-repeat: no-repeat;
+    display: inline-block;
   }
 `;
 
@@ -80,7 +81,7 @@ const MobileInstallButton = styled.div`
   border-radius: 48px;
   font-family: "NotoSansKR", sans-serif;
   font-size: ${({ theme }) => theme.fontSizes.small};
-  font-weight: ${({ theme }) => theme.fontWeight.Bold};
+  font-weight: ${({ theme }) => theme.fontWeight.Medium};
   color: ${({ theme }) => theme.colors.white};
   line-height: 48px;
   margin: 0 auto;
