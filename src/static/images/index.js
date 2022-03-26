@@ -1,13 +1,13 @@
 //-- logo --
 import logo from "./logo/logo.svg";
 import text_logo from "./logo/text_logo.svg";
-import main_logo from "./logo/main_logo.PNG";
 import logo_foot from "./logo/logo_foot.svg";
 import og_image from "./logo/og_image.PNG";
+import logo_rectangle from "./logo/logo_rectangle.svg";
 
 //-- background --
 import web_bg from "./background/web_bg.webp";
-import mobile_bg from "./background/mobile_bg.png";
+import mobile_bg from "./background/mobile_bg.webp";
 import mobile_title from "./background/mobile_title.svg";
 import iphone_mockup from "./background/iphone_mockup.png";
 
@@ -50,7 +50,6 @@ export {
     download,
     notfound, 
     text_logo,
-    main_logo,
     slide_guide,
     slide_home,
     slide_walk,
@@ -77,4 +76,5 @@ export {
     camera,
     iphone_mockup,
     og_image,
+    logo_rectangle,
 };

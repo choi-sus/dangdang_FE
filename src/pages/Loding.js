@@ -3,7 +3,7 @@ import {history} from "../redux/configStore"
 import {Grid} from "../elements/Index"
 import styled, {keyframes} from "styled-components";
 import { useSelector } from "react-redux";
-import { logo, text_logo } from "../static/images";
+import { logo_rectangle, text_logo } from "../static/images";
 
 const Loding = () => {
 
@@ -24,7 +24,7 @@ const Loding = () => {
     return (
         <Load>
             <Grid height="auto" center padding="0 15%;">
-                <img src={logo} alt="intro img"></img>
+                <img src={logo_rectangle} alt="intro img"></img>
                 <LoadTitle>
                     <img src={text_logo} alt="intro title"></img>
                 </LoadTitle>
