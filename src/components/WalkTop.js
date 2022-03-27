@@ -51,6 +51,7 @@ const IconContent = styled.div`
   width: 100%;
   padding: 0 5%;
   box-sizing: border-box;
+  
   &::after {
     content: ""; display: block; visibility: hidden; clear: both;
   }
@@ -61,11 +62,13 @@ const IconArea = styled.div`
   padding: 6px 0 3px;
   border-radius: 30px;
   box-shadow: 0 1px 3px 0 rgb(118 118 118 / 50%);
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   box-sizing: border-box;
   text-align: center;
+  cursor: pointer;
+
   &:not(:first-child){
-    margin-left: 10px;
+    margin-left: ${({ theme }) => theme.margins.base};
   }
   img {
     height: 20px; width: 20px; float: left;
@@ -84,7 +87,7 @@ const IconInner = styled.div`
 
 const IconNum = styled.span`
   float: left;
-  font-size: 14px;
-  color: #828282;
+  font-size: ${({ theme }) => theme.fontSizes.small};
+  color: ${({ theme }) => theme.colors.gray_3};
   line-height: 20px;
 `

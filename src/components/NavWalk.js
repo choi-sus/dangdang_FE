@@ -13,7 +13,7 @@ const NavWalk = (props) => {
         if (window.confirm("산책 기록이 사라집니다. 그래도 산책일지를 보러 가시겠습니까?")) {
             history.replace("/walklist")
         } else {
-            
+            return;
         }
     }
 
@@ -21,7 +21,7 @@ const NavWalk = (props) => {
         if (window.confirm("산책 기록이 사라집니다. 그래도 프로필을 보러 가시겠습니까?")) {
             history.replace("/profile")
         } else {
-            
+            return;
         }
     }
 
@@ -72,10 +72,10 @@ export default NavWalk
 const NavBar = styled.div`
     width: 100%;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-    background-color: #ffd04c;
+    background-color: ${({ theme }) => theme.colors.main_2};
     border-radius: 35px 35px 0 0;
     box-sizing: border-box;
-    padding: 16px 65px 28px;
+    padding: 15px 60px 25px;;
     position: absolute;
     left: 0;
     bottom: 0px;
@@ -86,6 +86,8 @@ const NavBar = styled.div`
 `
 const WalkList = styled.div`
     float: left;
+    cursor: pointer;
+    
     img {
         position: relative;
         left: 50%;
@@ -99,6 +101,8 @@ const WalkList = styled.div`
 
 const MyPage = styled.div`
     float: right;
+    cursor: pointer;
+
     img {
         position: relative;
         left: 50%;
@@ -113,7 +117,7 @@ const MainBtn = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 40px;
+    bottom: 35px;
     width: 108px;
     height: 108px;
     border-radius: 50%;
@@ -130,17 +134,20 @@ const NavInner = styled.div`
     height: 295px;
     border-radius: 50%;
     box-shadow: 0 0 6px 0 rgb(0 0 0 / 25%);
-    background-color: #fffbf1;
+    background-color: ${({ theme }) => theme.colors.main_1};
     z-index: 1;
     transition: bottom 0.8s ease-in-out;
+
     &.trans_nav{
-        bottom: -65px;
+        bottom: -72px;;
     }
 `
 
 const NavList = styled.div`
     position: absolute;
     text-align: center;
+    cursor: pointer;
+
     &:nth-child(1) {
         top: 65px;
         left: 32px;
@@ -157,6 +164,6 @@ const NavList = styled.div`
 `
 const ListTitle = styled.span`
     display: block;
-    font-size: 14px;
-    color: #828282;
+    font-size: ${({ theme }) => theme.fontSizes.small};
+    color: ${({ theme }) => theme.colors.gray_3};
 `

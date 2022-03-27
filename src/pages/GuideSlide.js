@@ -75,7 +75,6 @@ const SlideBtn = styled.div`
     text-align: center;
     height: 70px;
     line-height: 60px;
-    cursor: pointer;
     background-color: #D8D9DA;
     color: ${({ theme }) => theme.colors.white};
     font-size: ${({ theme }) => theme.fontSizes.lg};
@@ -83,5 +82,6 @@ const SlideBtn = styled.div`
     &.start{
         background-color: ${({ theme }) => theme.colors.main_2};
         color: ${({ theme }) => theme.colors.gray_5};
+        cursor: pointer;
     }
 `

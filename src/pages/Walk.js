@@ -28,6 +28,7 @@ const Walk = (props) => {
     const [zoomable, setZoomable] = useState(false)
     const centers = useRef(); 
 
+    // 첫 사용자 위치
     useEffect(() => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -59,6 +60,7 @@ const Walk = (props) => {
       }
     }, [])
 
+    // 5초에 한 번씩 위치 갱신
     useEffect(() => {
       centers.current = setTimeout(()=>{ 
         if (navigator.geolocation) {
@@ -237,6 +239,7 @@ export default Walk;
 const WalkContainer = styled.div`
   position: relative;
   overflow: hidden;
+  height: inherit;
 `
 const TopBg = styled.div`
   position: absolute;
@@ -255,7 +258,7 @@ const TimeContent = styled.div`
   transform: translateX(-50%);
   top: 60px;
   font-size: 52px;
-  font-weight: 700;
-  color: #333;
+  font-weight: ${({ theme }) => theme.fontWeight.Bold};
+  color: ${({ theme }) => theme.colors.gray_5};
   z-index: 5;
 `
