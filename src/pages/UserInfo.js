@@ -64,8 +64,13 @@ const UserInfo = () => {
 export default UserInfo;
 
 const UserContainer = styled.div`
-  height: inherit;
   padding: 15.5% 0;
+  box-sizing: border-box;
+  height: inherit;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const Head = styled.div`
   margin-bottom: 25px;

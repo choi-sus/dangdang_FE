@@ -57,6 +57,7 @@ const WalkList = styled.div`
 const MyPage = styled.div`
     float: right;
     cursor: pointer;
+
     img {
         position: relative;
         left: 50%;
@@ -75,4 +76,5 @@ const MainBtn = styled.div`
     width: 108px;
     height: 108px;
     border-radius: 50%;
+    cursor: pointer;
 `

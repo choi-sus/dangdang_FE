@@ -26,6 +26,11 @@ export default NotFound;
 
 const NotContainer = styled.div`
     height: inherit;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     div:nth-child(1) {
         position: absolute;
         top: 40%;
