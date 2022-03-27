@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components"
 import { actionCreators as guideActions } from "../redux/modules/guide"
 import { useDispatch, useSelector } from "react-redux"
@@ -11,9 +11,9 @@ const GuideDetail = (props) => {
     const id = props.match.params._id;
     const dispatch = useDispatch()
 
-    React.useEffect(()=>{
+    useEffect(()=>{
         dispatch(guideActions.guideDetailDB(id))
-      },[]);
+    },[]);
 
     const guide_detail = useSelector((state) => state.guide.detail)
     return(
@@ -48,9 +48,14 @@ const GuideDetail = (props) => {
 export default GuideDetail
 
 const DetailContainer = styled.div`
-  background-color: #FFFBF1;
   padding: 15.5% 0;
   box-sizing: border-box;
+  height: inherit;
+  overflow-y: scroll;
+  
+  &::-webkit-scrollbar {
+      display: none;
+  }
   img {
       width: 100%;
       margin-bottom: 25px; 
@@ -61,7 +66,8 @@ const DetailContainer = styled.div`
 const Head = styled.div`
   margin-bottom: 25px;
   box-sizing: border-box;
-  padding: 0 4.35%;
+  padding: 0 ${({ theme }) => theme.paddings.lg};
+
   &::after {
     content: ""; display: block; visibility: hidden; clear: both;
   }
@@ -69,20 +75,21 @@ const Head = styled.div`
     float: left;
   }
   & > p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    line-height: ${({ theme }) => theme.lineHeight.base};
     letter-spacing: -0.5px;
-    color: #4F4F4F;
+    color: ${({ theme }) => theme.colors.gray_4};
   }
   svg{
-    font-size: 25px;
-    color: #4F4F4F;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    color: ${({ theme }) => theme.colors.gray_4};
+    cursor: pointer;
   }
 `
 
 const DetailContent = styled.div`
-  padding: 0 10.25%;
+  padding: 0 ${({ theme }) => theme.paddings.xxxxl};
   box-sizing: border-box;
 `
 
@@ -98,7 +105,7 @@ const DetailContents = styled.div`
       content: "";
       width: calc(100% + 100px);
       height: 0px;
-      border-bottom: 3px dashed #FFD04C;
+      border-bottom: 3px dashed ${({ theme }) => theme.colors.main_2};
       display: block;
       -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
@@ -116,11 +123,11 @@ const ContentNum = styled.span`
     width: 30px;
     height: 30px;
     text-align: center;
-    line-height: 32px;
-    background-color: #FFD04C;
+    line-height: ${({ theme }) => theme.lineHeight.xxl};
+    background-color: ${({ theme }) => theme.colors.main_2};
     border-radius: 50%;
-    color: #fff;
-    font-weight: 600;
+    color: ${({ theme }) => theme.colors.white};
+    font-weight: ${({ theme }) => theme.fontWeight.Bold};
     float: left;
     position: relative;
 `
@@ -129,6 +136,6 @@ const TextContent = styled.p`
   float: right;
   width: calc(100% - 55px);
   margin: 0;
-  line-height: 25px;
-  color: #333;
+  line-height: ${({ theme }) => theme.lineHeight.base};
+  color: ${({ theme }) => theme.colors.gray_5};
 `

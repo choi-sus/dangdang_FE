@@ -55,7 +55,7 @@ const GuideContainer = styled.div`
   }
 `
 const Head = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   box-sizing: border-box;
   padding: 0 ${({ theme }) => theme.paddings.lg};
   &::after {
