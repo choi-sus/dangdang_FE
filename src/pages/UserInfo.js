@@ -1,6 +1,6 @@
 import React,{useEffect} from "react";
 import styled from "styled-components";
-import {Button, Grid, Input, Text} from "../elements/Index"
+import { Grid, Text} from "../elements/Index"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft,faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import { history } from "../redux/configStore";
@@ -10,110 +10,123 @@ import { Link } from 'react-router-dom';
 
 const UserInfo = () => {
   const dispatch = useDispatch();
-    useEffect(() => {
-          dispatch(userActions.loginCheckDB());
-    }, []);
-    const user = useSelector((state)=> state.user.user);
-    return (
-        <UserContainer>
-          <Head>
-            <Grid width="auto" _onClick={()=> {history.replace("/profile")}}>
-              <FontAwesomeIcon icon={faAngleLeft}/>
-            </Grid>
-              <Text center color="#4F4F4F" size="18px">회원정보</Text>
-          </Head>
-          <InfoWrap>
-              <div>
-                  <p>아이디</p>
-                  <p>{user && user.userID}</p>
-              </div>
-              <div>
-                  <p>이메일</p>
-                  <p>{user && user.email}</p>
-              </div>
-              <div>
-                <div>
-                  <p>닉네임</p>
-                  <p>{user && user.nickname}</p>
-                </div>
-                  <div> 
-                    <p>변경하기</p>
-                    {user && (
-                      <Link to={{pathname:'/modifynick', state:{nickname:user.nickname}}}>
-                        <FontAwesomeIcon icon={faAngleRight}/>
-                      </Link>
-                    )}
-                  </div>
-              </div>
-              <div>
-                  <p>비밀번호</p>
-                  <div>
-                    <p>변경하기</p>
-                    <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/modifypwd")}}/>
-                  </div>
-              </div>
-          </InfoWrap>
-        </UserContainer>
-    )
+  useEffect(() => {
+    dispatch(userActions.loginCheckDB());
+  }, []);
+  const user = useSelector((state)=> state.user.user);
+  return (
+    <UserContainer>
+      <Head>
+        <Grid width="auto" _onClick={()=> {history.replace("/profile")}}>
+          <FontAwesomeIcon icon={faAngleLeft}/>
+        </Grid>
+          <Text center color="#4F4F4F" size="18px">회원정보</Text>
+      </Head>
+      <InfoWrap>
+        <div>
+            <p>아이디</p>
+            <p>{user && user.userID}</p>
+        </div>
+        <div>
+            <p>이메일</p>
+            <p>{user && user.email}</p>
+        </div>
+        <div>
+          <div>
+            <p>닉네임</p>
+            <p>{user && user.nickname}</p>
+          </div>
+            <div> 
+              <p>변경하기</p>
+              {user && (
+                <Link to={{pathname:'/modifynick', state:{nickname:user.nickname}}}>
+                  <FontAwesomeIcon icon={faAngleRight}/>
+                </Link>
+              )}
+            </div>
+        </div>
+        <div>
+            <p>비밀번호</p>
+            <div>
+              <p>변경하기</p>
+              <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/modifypwd")}}/>
+            </div>
+        </div>
+      </InfoWrap>
+    </UserContainer>
+  )
 }
 
 export default UserInfo;
 
 const UserContainer = styled.div`
-  background-color: #fffbf1;
+  height: inherit;
+  padding: 15.5% 0;
 `;
 const Head = styled.div`
   margin-bottom: 25px;
-  box-sizing: border-box;
-  padding: 15% 4.35% 0;
+  padding: 0 ${({ theme }) => theme.paddings.lg};
   &::after {
-    content: "";
-    display: block;
-    visibility: hidden;
-    clear: both;
+    content: ""; display: block; visibility: hidden; clear: both;
   }
   & > div {
     float: left;
   }
   & > p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    line-height: ${({ theme }) => theme.lineHeight.base};
     letter-spacing: -0.5px;
-    color: #4f4f4f;
+    color: ${({ theme }) => theme.colors.gray_4};
   }
-  svg {
-    font-size: 25px;
-    color: #4f4f4f;
+  svg{
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    color: ${({ theme }) => theme.colors.gray_4};
+    cursor: pointer;
   }
 `;
+
 const InfoWrap = styled.div`
-  padding: 0 30px;
+  padding: 1px 30px;
   div {
     display: flex;
+    padding: ${({ theme }) => theme.paddings.xxxl} 0;
   }
   p:nth-child(1) {
     width: 70px;
-    color: #828282;
+    color: ${({ theme }) => theme.colors.gray_3};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+  }
+  p:nth-child(2) {
+    font-size: ${({ theme }) => theme.fontSizes.base};
   }
   div:nth-child(3) {
     display: flex;
     justify-content: space-between;
+    div{
+      padding: 0;
+    }
     p {
       width: 70px;
-      color: #828282;
+      color: ${({ theme }) => theme.colors.gray_3};
     }
     p:nth-child(2) {
-      color: black;
+      color: ${({ theme }) => theme.colors.gray_5};
+      font-size: ${({ theme }) => theme.fontSizes.base};
     }
     div:nth-child(2) {
       display: flex;
       text-align: right;
       align-items: center;
+      p {
+      color: ${({ theme }) => theme.colors.gray_3};
+      font-size: ${({ theme }) => theme.fontSizes.base};
+      }
       svg {
-        font-size: 20px;
-        margin: 0 10px;
-        color: #828282;
+        font-size: ${({ theme }) => theme.fontSizes.xl};
+        margin: 0 ${({ theme }) => theme.margins.base};
+        color: ${({ theme }) => theme.colors.gray_3};
+        cursor: pointer;
       }
     }
   }
@@ -122,17 +135,22 @@ const InfoWrap = styled.div`
     justify-content: space-between;
     p {
       width: 70px;
-      color: #828282;
+      color: ${({ theme }) => theme.colors.gray_3};
     }
     div {
       display: flex;
       text-align: right;
       justify-content: flex-end;
       align-items: center;
+      padding:  0;
+      p{
+        font-size: ${({ theme }) => theme.fontSizes.base};
+      }
       svg {
-        font-size: 20px;
-        margin: 0 10px;
-        color: #828282;
+        font-size: ${({ theme }) => theme.fontSizes.xl};
+        margin: 0 ${({ theme }) => theme.margins.base};
+        color: ${({ theme }) => theme.colors.gray_3};
+        cursor: pointer;
       }
     }
   }

@@ -1,8 +1,8 @@
-import React ,{useEffect, useState}from "react";
+import React ,{useState}from "react";
 import styled from "styled-components";
-import {Button, Grid, Input, Text} from "../elements/Index"
+import {Button, Grid, Text} from "../elements/Index"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft,faAngleRight} from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft} from '@fortawesome/free-solid-svg-icons';
 import { history } from "../redux/configStore";
 import { actionCreators as userActions } from "../redux/modules/user";
 import { useDispatch } from "react-redux";
@@ -24,33 +24,39 @@ const ModifyNick = () => {
   const [inputNick,setInputNick] = useState(false);
   const focusNick = () => {setInputNick(true)};
   const blurNick = () => {setInputNick(false)};
-    return (
-        <Container>
-            <Head>
-            <Grid width="auto" _onClick={()=> {history.replace("/userinfo")}}>
-              <FontAwesomeIcon icon={faAngleLeft}/>
-            </Grid>
-              <Text center color="#4F4F4F" size="18px">닉네임 변경</Text>
-          </Head>
-          <TextInput>
-              <label>닉네임</label>
-              <input placeholder="변경할 닉네임을 입력하세요" value={nickname} onChange={changeNickname} onFocus={focusNick} onBlur={blurNick}></input>
-              <p style={{display: inputNick? null: "none", marginBottom:"0px"}}> 2~10자 이내의 한글, 영문자 조합(특수문자,공백 제외)</p>
-          </TextInput>
-          <Button width="calc(100% - 80px)" margin="40px" _onClick={()=>{newNick()}}>변경하기</Button>
-        </Container>
-    )
+  return (
+    <Container>
+      <Head>
+        <Grid width="auto" _onClick={()=> {history.replace("/userinfo")}}>
+          <FontAwesomeIcon icon={faAngleLeft}/>
+        </Grid>
+        <Text center color="#4F4F4F" size="18px">닉네임 변경</Text>
+      </Head>
+      <TextInput>
+        <label>닉네임</label>
+        <input placeholder="변경할 닉네임을 입력하세요" value={nickname} onChange={changeNickname} onFocus={focusNick} onBlur={blurNick}></input>
+        <p style={{display: inputNick? null: "none", marginBottom:"0px"}}>
+          2~10자 이내의 한글, 영문자 조합(특수문자,공백 제외)
+        </p>
+      </TextInput>
+      <Button width="calc(100% - 80px)" margin="40px" _onClick={()=>{newNick()}}>변경하기</Button>
+    </Container>
+  )
 }
 
 export default ModifyNick;
 
 const Container = styled.div`
-background-color: #FFFBF1;
+  height: inherit;
+  padding: 15.5% 0;
+  button:last-child {
+    position: absolute;
+    top: 80%;
+  }
 `;
 const Head = styled.div`
   margin-bottom: 25px;
-  box-sizing: border-box;
-  padding: 15% 4.35% 0;
+  padding: 0 ${({ theme }) => theme.paddings.lg};
   &::after {
     content: ""; display: block; visibility: hidden; clear: both;
   }
@@ -58,43 +64,44 @@ const Head = styled.div`
     float: left;
   }
   & > p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    line-height: ${({ theme }) => theme.lineHeight.base};
     letter-spacing: -0.5px;
-    color: #4F4F4F;
+    color: ${({ theme }) => theme.colors.gray_4};
   }
-  svg{
-    font-size: 25px;
-    color: #4F4F4F;
+  svg {
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    color: ${({ theme }) => theme.colors.gray_4};
+    cursor: pointer;
   }
 `;
 const TextInput = styled.div`
   display: grid;
-  margin: 0 30px 15px;
-  label{
-    font-size: 18px;
-    color: #5a5a5a;
-    font-weight: 400;
+  padding: ${({ theme }) => theme.paddings.xxl} 30px;
+  label {
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    color: ${({ theme }) => theme.colors.gray_3};
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
   }
-  input{
-  height: 58px;
-  margin: 15px 0px 0px;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
-  background-color: #fff;
-  border:none;
-  font-size: 16px;
-  font-family: inherit;
-  padding: 0 18px;
-
-  &::placeholder{
-  color: #bdbdbd;
-  text-align: left;
+  input {
+    height: 58px;
+    margin: ${({ theme }) => theme.margins.xxl} 0px 0px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
+    background-color: ${({ theme }) => theme.colors.white};
+    border:none;
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    font-family: inherit;
+    padding: 0 ${({ theme }) => theme.paddings.xl};
+    &::placeholder{
+      color: ${({ theme }) => theme.colors.gray_2};
+      text-align: left;
+    }
   }
-  }
-  p{
-    font-size: 14px;
-    color: #828282;
+  p {
+    font-size: ${({ theme }) => theme.fontSizes.small};
+    color: ${({ theme }) => theme.colors.gray_3};
+    margin: ${({ theme }) => theme.margins.xxl} 0 0 ${({ theme }) => theme.margins.base};
   }
 `;

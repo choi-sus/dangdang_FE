@@ -18,19 +18,20 @@ const NotFound = (props) => {
             </Grid>
         </NotContainer>
     );
-  };
+};
   
-  export default NotFound;
+export default NotFound;
 
-  const NotContainer = styled.div`
-    div:nth-child(1){
+const NotContainer = styled.div`
+    height: inherit;
+    div:nth-child(1) {
         position: absolute;
         top: 40%;
     }
-    div:nth-child(2){
+    div:nth-child(2) {
         position: absolute;
         top: 80%;
     }
-  `;
+`;
 
   

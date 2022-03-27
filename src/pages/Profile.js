@@ -1,7 +1,7 @@
 import React ,{useEffect}from "react";
 import styled from "styled-components"
 import { useDispatch,useSelector } from "react-redux";
-import {Button, Grid, Input, Text} from "../elements/Index"
+import {Button, Text} from "../elements/Index"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { history } from "../redux/configStore";
@@ -35,122 +35,122 @@ const Profile = () => {
   }
 
   if(petInfo){
-      return(
-        <ProfileContainer>
-          <HeadColor>
+    return(
+      <ProfileContainer>
+        <HeadColor>
           <Head>
             <Text center color="#4F4F4F" size="18px">펫 프로필</Text>
           </Head>
-          </HeadColor>
-          <ProfileWrap>
-            <ProfileCard>
-              <PetImg style={{backgroundImage:`url(${petInfo.petImage})`}}></PetImg>
-                <NameFrame>
-                <PetName>{petInfo.petName}</PetName>
-                  <img src={profile_edit} alt="펫 프로필 수정 아이콘" onClick={()=> {history.replace("/profilewrite");}} />
-                </NameFrame>
-                <PetDetail>
-                  <span>성별</span>
-                  <p>{petInfo.petGender}</p>
-                  <span> |</span>
-                  <p>{petInfo.petBreed}</p>
-                </PetDetail>
-                <PetBirth>
-                  <img src={profile_cake} alt="생년월일 케이크 이미지" />
-                  <p>{petInfo.petBirth}</p>
-                </PetBirth>
-            </ProfileCard>
-            <BtnBox style={{paddingBottom:"20px"}}>
-              <p>최근 산책 내역</p>
-              <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/walklist")}}/>
-            </BtnBox>
-              {!lastWalk[0] ? 
-                <LastWalk style={{display: "block", textAlign:"center"}}>
-                  <p>산책 내역이 없어요</p>
-                  <p>첫 산책을 시작해주세요!</p>
-                </LastWalk>
-              : 
-              <div>
-                {lastWalk && (lastWalk.map((e,i) => {
-                  const at = (moment.tz(e.createdAt,'Asia/seoul').format('A')==="AM"? "오전 " : "오후 ")
-                  return(
-                <LastWalk key={i} onClick={()=> {history.replace(`/walkdetail/${e._id}`)}}>
-                  <p>{moment.tz(e.createdAt,'Asia/seoul').format('YYYY / MM / DD')}</p>
-                  <p>{at+moment.tz(e.createdAt,'Asia/seoul').format('h:mm')}</p>
-                </LastWalk>
-                )}))}
-              </div>
-              }
-            {user && (user.email?
+        </HeadColor>
+        <ProfileWrap>
+          <ProfileCard>
+            <PetImg style={{backgroundImage:`url(${petInfo.petImage})`}}></PetImg>
+            <NameFrame>
+              <PetName>{petInfo.petName}</PetName>
+              <img src={profile_edit} alt="펫 프로필 수정 아이콘" onClick={()=> {history.replace("/profilewrite");}} />
+            </NameFrame>
+            <PetDetail>
+              <span>성별</span>
+              <p>{petInfo.petGender}</p>
+              <span> |</span>
+              <p>{petInfo.petBreed}</p>
+            </PetDetail>
+            <PetBirth>
+              <img src={profile_cake} alt="생년월일 케이크 이미지" />
+              <p>{petInfo.petBirth}</p>
+            </PetBirth>
+          </ProfileCard>
+          <BtnBox style={{paddingBottom:"20px"}}>
+            <p>최근 산책 내역</p>
+            <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/walklist")}}/>
+          </BtnBox>
+            {!lastWalk[0] ? 
+              <LastWalk style={{display: "block", textAlign:"center"}}>
+                <p>산책 내역이 없어요</p>
+                <p>첫 산책을 시작해주세요!</p>
+              </LastWalk>
+            : 
+            <div>
+              {lastWalk && (lastWalk.map((e,i) => {
+                const at = (moment.tz(e.createdAt,'Asia/seoul').format('A')==="AM"? "오전 " : "오후 ")
+                return(
+              <LastWalk key={i} onClick={()=> {history.replace(`/walkdetail/${e._id}`)}}>
+                <p>{moment.tz(e.createdAt,'Asia/seoul').format('YYYY / MM / DD')}</p>
+                <p>{at+moment.tz(e.createdAt,'Asia/seoul').format('h:mm')}</p>
+              </LastWalk>
+              )}))}
+            </div>
+            }
+          {user && (user.email ?
             <BtnBox>
               <p>회원 정보</p>
               <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
             </BtnBox>
+          : null)}
+          <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
+        </ProfileWrap>
+        <Nav></Nav>
+      </ProfileContainer>
+    )
+  }else if(!petInfo && is_login){
+    return(
+    <ProfileContainer>
+        <HeadColor>
+          <Head>
+            <Text center color="#4F4F4F" size="18px">펫 프로필</Text>
+          </Head>
+        </HeadColor>
+        <ProfileWrap>
+          <ProfileCard>
+            <PetImg></PetImg>
+            <Text margin="20px 0">반려견 정보가 없습니다!</Text>
+            <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px",paddingBottom:"20px"}} onClick={()=> {history.replace("/profilewrite")}}>
+              <p>나의 반려견 정보 입력하기</p>
+              <FontAwesomeIcon icon={faAngleRight}/>
+            </BtnBox>
+            {user && (user.email?
+              <BtnBox>
+                <p>회원 정보</p>
+                <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
+              </BtnBox>
             : null)}
             <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
-          </ProfileWrap>
-          <Nav></Nav>
-       </ProfileContainer>
+          </ProfileCard>
+        </ProfileWrap>
+        <Nav></Nav>
+      </ProfileContainer>
     )
-    }else if(!petInfo && is_login){
-      return(
+  }else{
+    return(
       <ProfileContainer>
-          <HeadColor>
-            <Head>
-              <Text center color="#4F4F4F" size="18px">펫 프로필</Text>
-            </Head>
-          </HeadColor>
-          <ProfileWrap>
-            <ProfileCard>
-              <PetImg></PetImg>
-              <Text margin="20px 0">반려견 정보가 없습니다!</Text>
-              <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px",paddingBottom:"20px"}} onClick={()=> {history.replace("/profilewrite")}}>
-                <p>나의 반려견 정보 입력하기</p>
-                <FontAwesomeIcon icon={faAngleRight}/>
-              </BtnBox>
-              {user && (user.email?
-                <BtnBox>
-                  <p>회원 정보</p>
-                  <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/userinfo")}}/>
-                </BtnBox>
-                : null)}
-              <LogoutBtn onClick={()=> {LogOut()}}>로그아웃</LogoutBtn>
-            </ProfileCard>
-          </ProfileWrap>
-          <Nav></Nav>
-       </ProfileContainer>
-      )
-    }else{
-      return(
-        <ProfileContainer>
-            <NotList>
-              <p>로그인이 필요한 서비스입니다.</p>
-              <p>로그인 후 이용해주세요.</p>
-              <Button margin= "58px 0 0" _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
-            </NotList>
-            <Nav></Nav>
-         </ProfileContainer>
-        )
-    }
+        <NotList>
+          <p>로그인이 필요한 서비스입니다.</p>
+          <p>로그인 후 이용해주세요.</p>
+          <Button margin= "58px 0 0" _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
+        </NotList>
+        <Nav></Nav>
+      </ProfileContainer>
+    )
+  }
 }
 
 export default Profile;
 
 const ProfileContainer = styled.div`
   position: relative;
-  height: 100vh;
+  height: inherit;
 `;
 const HeadColor = styled.div`
   height: 257px;
   margin: 0px 0px -168px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background: #ffe7a5;
+  background-color: ${({ theme }) => theme.colors.bg};
 `;
 const Head = styled.div`
   margin-bottom: 25px;
   box-sizing: border-box;
-  padding: 54px 4.35% 0;
+  padding: 54px ${({ theme }) => theme.paddings.lg} 0;
   &::after {
     content: "";
     display: block;
@@ -161,34 +161,28 @@ const Head = styled.div`
     float: left;
   }
   & > p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    line-height: ${({ theme }) => theme.lineHeight.lg};
     letter-spacing: -0.5px;
-    color: #4f4f4f;
+    color: ${({ theme }) => theme.colors.gray_4};
   }
 `;
 const ProfileWrap = styled.div`
   padding: 100px 30px 0px;
-  height: calc(100% - 284px);
+  height: calc(100% - 284px); 
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
   }
-  h2 {
-    font-size: 30px;
-    line-height: 35px;
-    color: #4f4f4f;
-    margin: 60px 0 30px;
-  }
 `;
 const ProfileCard = styled.div`
   position: relative;
-  height: 150px;
+  height: 135px;
   padding: 70px 0px 0px;
   border-radius: 13px;
   box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   text-align: center;
   z-index: 5;
 `;
@@ -200,32 +194,35 @@ const PetImg = styled.div`
   height: 147px;
   border-radius: 50%;
   background-size: cover;
-  border: 10px solid #ffffff;
-  background-color: #ffffff;
+  border: 10px solid ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
   background-image: url(${petimage_bg});
 `;
 const NameFrame = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  img {
+    cursor: pointer;
+  }
 `;
 const PetName = styled.div`
-  font-size: 24px;
-  margin: 10px;
-  font-weight: 600;
+  font-size: ${({ theme }) => theme.fontSizes.xxxl};
+  margin: ${({ theme }) => theme.margins.base};
+  font-weight: ${({ theme }) => theme.fontWeight.Medium};
 `;
 
 const PetDetail = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: ${({ theme }) => theme.margins.base};;
   span {
     font-size: 13px;
-    margin: 10px 5px;
+    margin: ${({ theme }) => theme.margins.base} 5px;
     color: #c4c4c4;
   }
   p {
-    font-size: 18px;
+    font-size: ${({ theme }) => theme.fontSizes.lg};
     margin: 5px;
   }
 `;
@@ -235,47 +232,46 @@ const PetBirth = styled.div`
   justify-content: center;
   p {
     margin: 3px;
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.fontSizes.xl};
   }
 `;
 
 const LastWalk = styled.div`
-  padding: 19px 15px;
-  box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
-  background-color: #fff;
-  border-radius: 13px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  padding: ${({ theme }) => theme.paddings.xxl} ${({ theme }) => theme.paddings.lg};
+  box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
+  background-color: ${({ theme }) => theme.colors.white};
+  border-radius: 13px;
+  margin-bottom: ${({ theme }) => theme.margins.base};;
+  cursor: pointer;
   p {
-    font-size: 16px;
-    color: #4f4f4f;
-    margin: 0;
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    color: ${({ theme }) => theme.colors.gray_4};
   }
   p:nth-child(2) {
-    color: #bdbdbd;
+    color: ${({ theme }) => theme.colors.gray_2};
   }
 `;
 const BtnBox = styled.div`
-  padding: 20px 20px 0px 20px;
-  font-size: 16px;
+  padding: ${({ theme }) => theme.paddings.xxl};
+  font-size: ${({ theme }) => theme.fontSizes.base};
   border-radius: 13px;
-  color: #4f4f4f;
+  color: ${({ theme }) => theme.colors.gray_4};
   display: flex;
   justify-content: space-between;
-  p {
-    margin: 0px;
-  }
   svg {
-    font-size: 20px;
-    color: #828282;
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    color: ${({ theme }) => theme.colors.gray_3};
+    cursor: pointer;
   }
 `;
 const LogoutBtn = styled.div`
-  color: #4f4f4f;
-  font-size: 16px;
-  margin: 20px 0 20px 20px;
+  color: ${({ theme }) => theme.colors.gray_4};
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  margin: ${({ theme }) => theme.margins.base} ${({ theme }) => theme.margins.xxxxl} 40px;
   text-align: left;
+  cursor: pointer;
 `;
 const NotList = styled.div`
   position: absolute;
@@ -284,5 +280,5 @@ const NotList = styled.div`
   transform: translate(-50%, -82%);
   width: calc(100% - 60px);
   text-align: center;
-  color: #bdbdbd;
+  color: ${({ theme }) => theme.colors.gray_2};
 `;

@@ -75,7 +75,6 @@ const Content = styled.div`
       background-color: transparent;
     }
   }
-  //아이폰SE
   @media only screen and (min-device-width : 320px) and (max-device-width : 374px) {
     padding-top: 20%;
     h2{
@@ -88,9 +87,6 @@ const Content = styled.div`
       font-size: ${({ theme }) => theme.fontSizes.base};
     }
   }
-  @media only screen and (min-device-width : 375px) and (max-device-width : 479px) {
-
-}
 `;
 
 export default MobileInstall;

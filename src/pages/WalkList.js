@@ -1,7 +1,7 @@
-import React ,{useEffect, useState}from "react";
+import React ,{useEffect}from "react";
 import styled from "styled-components"
 import { useDispatch,useSelector } from "react-redux";
-import {Button, Grid, Input, Text} from "../elements/Index"
+import {Button, Text} from "../elements/Index"
 import { history } from "../redux/configStore";
 import { actionCreators as walkActions } from "../redux/modules/walk";
 import { actionCreators as profileActions } from "../redux/modules/profile";
@@ -9,7 +9,7 @@ import Nav from "../components/Nav";
 import moment from "moment-timezone";
 import { petimage_bg } from "../static/images";
 
-const Profile = () => {
+const WaliList = () => {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(walkActions.WalkListDB())
@@ -21,29 +21,29 @@ const Profile = () => {
   if(!walkList[0]){
     return(
       <ListContainer>
-          {is_login ? 
+        {is_login ? 
           <NotList>
             <p>반려견과 함께한 산책기록이 없으시군요?</p>
             <p>지금 산책하러 갈까요?</p>
             <Button margin= "58px 0 0"_onClick={()=> {history.replace("/main")}} text="산책하러 가기"></Button>
           </NotList>
-          : 
+        : 
           <NotList>
             <p>로그인이 필요한 서비스입니다.</p>
             <p>로그인 후 이용해주세요.</p>
             <Button margin= "58px 0 0" _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
           </NotList>
-          }
-          <Nav/>
+        }
+        <Nav></Nav>
      </ListContainer>
-  )
+    )
   }else{
     return(
       <ListContainer>
-          <Head>
-            <Text center color="#4F4F4F" size="18px">산책 일지</Text>
-          </Head>
-          <ListWrap>
+        <Head>
+          <Text center color="#4F4F4F" size="18px">산책 일지</Text>
+        </Head>
+        <ListWrap>
           {walkList.map((e,i) => {
             const at = (moment.tz(e.createdAt,'Asia/seoul').format('A')==="AM"? "오전 " : "오후 ")
             return(
@@ -54,41 +54,37 @@ const Profile = () => {
               </WalkCard> 
             )
           })}
-          </ListWrap>
-          <Nav/>
+        </ListWrap>
+        <Nav></Nav>
      </ListContainer>
-  )
+    )
   }
 }
 
-export default Profile;
+export default WaliList;
 
 const ListContainer = styled.div`
   position: relative;
-  background-color: #fffbf1;
-  height: 100vh;
+  height: inherit;
   padding: 54px 0 96px;
   box-sizing: border-box;
 `;
 const Head = styled.div`
   margin-bottom: 25px;
   box-sizing: border-box;
-  padding: 0 4.35%;
+  padding: 0 ${({ theme }) => theme.paddings.lg};
   &::after {
-    content: "";
-    display: block;
-    visibility: hidden;
-    clear: both;
+    content: "";display: block; visibility: hidden; clear: both;
   }
   & > div {
     float: left;
   }
   & > p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    line-height: ${({ theme }) => theme.lineHeight.base};
     letter-spacing: -0.5px;
-    color: #4f4f4f;
+    color: ${({ theme }) => theme.colors.gray_4};
   }
 `;
 const NotList = styled.div`
@@ -98,7 +94,7 @@ const NotList = styled.div`
   padding: 0 30px;
   width: calc(100% - 60px);
   text-align: center;
-  color: #bdbdbd;
+  color: ${({ theme }) => theme.colors.gray_2};
 `;
 const ListWrap = styled.div`
   height: calc(100% - 50px);
@@ -109,27 +105,27 @@ const ListWrap = styled.div`
 `;
 const WalkCard = styled.div`
   height: 52px;
-  background: #ffffff;
+  background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 1px 4px rgba(158, 158, 158, 0.25);
   border-radius: 11px;
-  margin: 0 16px 13px;
-  padding: 16px;
+  margin: 0 ${({ theme }) => theme.margins.xxl} 13px;
+  padding: ${({ theme }) => theme.paddings.lg};
   position: relative;
   cursor: pointer;
   h5 {
-    font-size: 18px;
-    margin: 0px;
-    font-weight: 400;
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    margin: 5px 0;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
     span {
-      font-size: 14px;
-      color: #bdbdbd;
-      margin: 5px 0px 5px 10px;
+      font-size: ${({ theme }) => theme.fontSizes.small};
+      color: ${({ theme }) => theme.colors.gray_2};
+      margin: 5px 0px 5px ${({ theme }) => theme.margins.base};
     }
   }
   p {
-    font-size: 16px;
-    color: #bdbdbd;
-    margin: 10px 0px;
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    color: ${({ theme }) => theme.colors.gray_2};
+    margin: ${({ theme }) => theme.margins.base} 0 0;
   }
 `;
 const PetImg = styled.div`
