@@ -38,6 +38,7 @@ const GuideSlide = () => {
 export default GuideSlide
 
 const StyledSwiper = styled(Swiper)`
+    height: inherit;
     .swiper-pagination{
         top: 30px; height: 20px;
     }
