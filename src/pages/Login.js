@@ -59,18 +59,18 @@ const LogoContent = styled.div`
 `
 
 const TextOter = styled.p`
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    font-size: ${({ theme }) => theme.fontSizes.small};
     line-height: 15px;
     text-align: center;
-    color: #828282;
+    color: ${({ theme }) => theme.colors.gray_3};
     margin: 0 0 35px 0;
     position: relative;
     &:before {
         content:"";
         width: 40%;
         height: 0.5px;
-        background-color: #BDBDBD;
+        background-color: ${({ theme }) => theme.colors.gray_2};
         position: absolute;
         left: 0;
         top: 50%;
@@ -80,7 +80,7 @@ const TextOter = styled.p`
         content:"";
         width: 40%;
         height: 0.5px;
-        background-color: #BDBDBD;
+        background-color: ${({ theme }) => theme.colors.gray_2};
         position: absolute;
         right: 0;
         top: 50%;
