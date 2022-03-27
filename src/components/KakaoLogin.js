@@ -22,6 +22,7 @@ const Kakao = styled.div`
 `;
 
 const KakaoText = styled.span`
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.fontSizes.small};
   color: #382020;
+  cursor: pointer;
 `

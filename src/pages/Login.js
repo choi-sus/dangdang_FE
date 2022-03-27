@@ -51,6 +51,9 @@ const LonginContainer = styled.div`
         background-color: ${({ theme }) => theme.colors.white};
         color: #382020;
     }
+    div > p {
+        cursor: pointer;
+    }
 `
 
 const LogoContent = styled.div`
