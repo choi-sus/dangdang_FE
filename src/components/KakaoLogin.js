@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { kakaologin } from "../static/images";
 
 const KakaoLogin = () => {
-  //환경변수 설정중
   const REST_API_KEY = process.env.REACT_APP_KAKAO_REST_API_KEY;
   const REDIRECT_URI = "https://denground.com/kakao";
     return (
