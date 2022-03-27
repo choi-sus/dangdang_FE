@@ -42,6 +42,7 @@ const Device = ({ children }) => {
     </>
   ) : (
     <Web>
+      <img src={web_title} alt="web_title" />
       {isSupported ? (
         <>{!isInstalled() ? <PwaInstall web text="앱 다운로드" /> : null}</>
       ) : null}
@@ -68,10 +69,16 @@ const Mobile = styled.div`
 const Web = styled.div`
   width: 100vw;
   height: 100vh;
-  background: url(${web_title}), url(${web_bg}) ;
-  background-size: 467.1px 139.5px, cover;
-  background-position: 840px 85px,0% 100%;
+  background: url(${web_bg}) ;
+  background-size: cover;
+  background-position: 0% 100%;
   background-repeat: no-repeat;
+  & > img {
+    position: relative;
+    top: 100px;
+    left: 58%;
+    width: 467.1px;
+  }
 `;
 const Phone = styled.div`
   width: 426px;
