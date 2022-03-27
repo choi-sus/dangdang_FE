@@ -62,6 +62,8 @@ const WebInstallButton = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.xxl};
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
   font-family: "NotoSansKR", sans-serif !important;
+  padding-left: 30px;
+  position: relative;
   &::before {
     content: "";
     width: 25px;
@@ -70,8 +72,11 @@ const WebInstallButton = styled.div`
     background-size: cover;
     background-position: 0%, 0%;
     background-repeat: no-repeat;
-    display: inline-block;
-    margin: 1px 5px 1px 0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
   }
 `;
 
