@@ -56,6 +56,7 @@ const WebInstall = styled.div`
   align-items: center;
   cursor: pointer;
   display: none;
+  text-align: center;
 
   @media screen and (min-width: 1120px) {
     display: block;
@@ -69,6 +70,9 @@ const WebInstallButton = styled.div`
   font-family: "NotoSansKR", sans-serif !important;
   padding-left: 30px;
   position: relative;
+  display: inline-block;
+  line-height: 54px;
+
   &::before {
     content: "";
     width: 25px;
