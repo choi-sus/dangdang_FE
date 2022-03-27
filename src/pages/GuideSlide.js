@@ -21,15 +21,15 @@ const GuideSlide = (props) => {
         <React.Fragment>
             <StyledSwiper {...swiperOption} ref={setSwiper}>
                 <SwiperSlide>
-                    <ImgArea></ImgArea>
+                    <ImgArea className="ImgArea"></ImgArea>
                     <SlideBtn>시작하기</SlideBtn>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <ImgArea></ImgArea>
+                    <ImgArea className="ImgArea"></ImgArea>
                     <SlideBtn>시작하기</SlideBtn>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <ImgArea></ImgArea>
+                    <ImgArea className="ImgArea"></ImgArea>
                     <SlideBtn className="start" onClick={()=> {history.replace("/login")}}>시작하기</SlideBtn>
                 </SwiperSlide>
             </StyledSwiper>
@@ -50,21 +50,14 @@ const StyledSwiper = styled(Swiper)`
     .swiper-pagination-bullet-active{
         background-color: ${({ theme }) => theme.colors.main_2};
     }
-    & .swiper-slide:nth-child(1) > div{
+    & .swiper-slide:nth-child(1) > .ImgArea{
         background-image: url(${slide_home});
     }
-    & .swiper-slide:nth-child(2) > div{
+    & .swiper-slide:nth-child(2) > .ImgArea{
         background-image: url(${slide_walk});
     }
-    & .swiper-slide:nth-child(3) > div{
+    & .swiper-slide:nth-child(3) > .ImgArea{
         background-image: url(${slide_guide});
-    }
-    button {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 60px;
-        background-color: ${({ theme }) => theme.colors.main_2};
     }
 `
 
@@ -73,14 +66,14 @@ const ImgArea = styled.div`
     display: block;
     background-size: contain;
     width: 100%;
-    height: calc(100% - 80px);
+    height: calc(100% - 70px);
     background-color: #585754;
     background-repeat: no-repeat;
 `
 
 const SlideBtn = styled.div`
     text-align: center;
-    height: 80px;
+    height: 70px;
     line-height: 60px;
     cursor: pointer;
     background-color: #D8D9DA;
