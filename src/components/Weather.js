@@ -77,16 +77,15 @@ export default Weather
 
 const WeatherContainer = styled.div`
     position: absolute;
-    top: 120px;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
     min-width: 310px;
-    height: calc(100% - 215px);
     overflow: overlay;
+
     &::-webkit-scrollbar {
     display: none;
     }
-  
 `
 
 const WeatherContent = styled.div`
