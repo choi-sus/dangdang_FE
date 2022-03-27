@@ -1,4 +1,4 @@
-import React from "react";
+         import React from "react";
 import styled from "styled-components"
 import {Text} from "../elements/Index"
 import {history} from "../redux/configStore"
@@ -28,10 +28,10 @@ export default Nav
 const NavBar = styled.div`
     width: 100%;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-    background-color: #ffd04c;
+    background-color: ${({ theme }) => theme.colors.main_2};
     border-radius: 35px 35px 0 0;
     box-sizing: border-box;
-    padding: 16px 65px 28px;
+    padding: 16px 65px 25px;
     position: absolute;
     left: 0;
     bottom: 0px;
@@ -42,6 +42,7 @@ const NavBar = styled.div`
 `
 const WalkList = styled.div`
     float: left;
+    cursor: pointer;
     img {
         position: relative;
         left: 50%;
@@ -55,6 +56,7 @@ const WalkList = styled.div`
 
 const MyPage = styled.div`
     float: right;
+    cursor: pointer;
     img {
         position: relative;
         left: 50%;

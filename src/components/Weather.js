@@ -1,14 +1,15 @@
-import React from "react";
+import React ,{ useEffect, useState } from "react";
 import styled from "styled-components"
 import { useSelector} from "react-redux";
 import {Text} from "../elements/Index"
 import { logo_rectangle } from "../static/images";
 
 const Weather = ()=> {
-    const [coords, saveCoords] = React.useState();
-    const [city, setCity] = React.useState();
-    const [temp, setTemp] = React.useState();
-    const [weather, setWeather] = React.useState();
+
+    const [coords, saveCoords] = useState();
+    const [city, setCity] = useState();
+    const [temp, setTemp] = useState();
+    const [weather, setWeather] = useState();
 
     const user = useSelector((state) => state.user.user);
 
@@ -41,7 +42,7 @@ const Weather = ()=> {
           })
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
       requestCoords();
     }, []);
 
@@ -56,7 +57,10 @@ const Weather = ()=> {
                 <UserTemp>{temp}°</UserTemp>
             </WeatherContent>
             <UserWalk>
-                {user ? <UserNick>{`${user.nickname}님!`}<br></br>산책하러 갈까요?</UserNick> : <UserNick>로그인 후<br></br>산책하러 갈까요?</UserNick>}
+                {user ?
+                    <UserNick>{`${user.nickname}님!`}<br></br>산책하러 갈까요?</UserNick>
+                : 
+                    <UserNick>로그인 후<br></br>산책하러 갈까요?</UserNick>}
                 <img src={logo_rectangle} alt="강아지 이미지"></img>
             </UserWalk>
             <UserConfirm>
@@ -81,7 +85,7 @@ const WeatherContainer = styled.div`
     overflow: overlay;
     &::-webkit-scrollbar {
     display: none;
-  }
+    }
   
 `
 
@@ -99,23 +103,23 @@ const FloatBox = styled.div`
 
 const UserCity = styled.div`
     font-size: 26px;
-    color: #4f4f4f;
+    color: ${({ theme }) => theme.colors.gray_4};
     margin-bottom: 5px;
 `
 
 const UserWeather = styled.div`
-    font-size: 24px;
+    font-size: ${({ theme }) => theme.fontSizes.xxxl};
     color: #87baff;
 `
 
 const UserTemp = styled.div`
     float: right;
     font-size: 66px;
-    color: #4f4f4f;
+    color: ${({ theme }) => theme.colors.gray_4};
 `
 const UserWalk = styled.div`
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: ${({ theme }) => theme.margins.xxxxl};
     overflow: hidden;
     &::after {
         content: ""; display: block; visibility: hidden; clear: both;
@@ -130,26 +134,26 @@ const UserWalk = styled.div`
 `
 
 const UserNick = styled.div`
-    padding: 15px 0 15px 20px;
+    padding: 15px 0 15px ${({ theme }) => theme.paddings.xxl};
     border-radius: 6px;
     box-shadow: 0 1px 6px 0 rgba(171, 171, 171, 0.25);
-    background-color: #fff;
-    font-size: 20px;
-    color: #4f4f4f;
-    line-height: 32px;
+    background-color: ${({ theme }) => theme.colors.white};
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    color: ${({ theme }) => theme.colors.gray_4};
+    line-height: ${({ theme }) => theme.lineHeight.xxl};
 `
 
 const UserConfirm = styled.div`
-    padding: 20px 23px 20px 20px;
+    padding: ${({ theme }) => theme.paddings.xxl} 23px ${({ theme }) => theme.paddings.xxl} ${({ theme }) => theme.paddings.xxl};
     border-radius: 6px;
     box-shadow: 0 1px 6px 0 rgba(171, 171, 171, 0.25);
-    background-color: #fff;
-    margin-bottom: 20px;
+    background-color: ${({ theme }) => theme.colors.white};
+    margin-bottom: ${({ theme }) => theme.margins.xxxxl};
 `
 
 const ConfirmList = styled.p`
-    font-size: 16px;
-    color: #4f4f4f;
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    color: ${({ theme }) => theme.colors.gray_4};
     margin: 0px;
     &:not(:last-child){
         margin-bottom: 15px;
@@ -161,6 +165,6 @@ const ConfirmList = styled.p`
         height: 6px;
         background-color: #ffd04c;
         border-radius: 50%;
-        margin-right: 10px;
+        margin-right: ${({ theme }) => theme.margins.base};
     }
 `

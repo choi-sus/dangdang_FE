@@ -9,11 +9,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 
 const UserInfo = () => {
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(userActions.loginCheckDB());
   }, []);
+
   const user = useSelector((state)=> state.user.user);
+  
   return (
     <UserContainer>
       <Head>

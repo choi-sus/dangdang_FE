@@ -1,4 +1,4 @@
-import React ,{useState}from "react";
+import React ,{useState} from "react";
 import styled from "styled-components";
 import {Button, Grid, Text} from "../elements/Index"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,11 +9,18 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 const ModifyNick = () => {
+
   const dispatch = useDispatch();
   const location = useLocation(); 
+
   const oldNick = location.state.nickname;
   const [nickname,setNickname] = useState(oldNick);
+  const [inputNick,setInputNick] = useState(false);
+
   const changeNickname = (e) => {setNickname(e.target.value)};
+  const focusNick = () => {setInputNick(true)};
+  const blurNick = () => {setInputNick(false)};
+
   const newNick = ()=> {
     if (nickname ===""){
       window.alert("변경할 닉네임을 입력해주세요!")
@@ -21,9 +28,7 @@ const ModifyNick = () => {
       dispatch(userActions.modifyNickDB(nickname))
     }
   }
-  const [inputNick,setInputNick] = useState(false);
-  const focusNick = () => {setInputNick(true)};
-  const blurNick = () => {setInputNick(false)};
+  
   return (
     <Container>
       <Head>

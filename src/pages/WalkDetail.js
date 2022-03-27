@@ -12,16 +12,22 @@ import { Map , Polyline} from "react-kakao-maps-sdk"
 import { walk_delete, walklist_dog, marker_brown, marker_danger, marker_water, marker_yellow } from "../static/images";
 
 const WalkDetail = () => {
+
   const dispatch = useDispatch();
   const params = useParams();
-  const walk = useSelector((state)=> state.walk.walk)
+  
+  const walk = useSelector((state)=> state.walk.walk);
+
   useEffect(()=>{
     dispatch(walkActions.WalkOneDB(params.id))
-  },[])
+  },[]);
+
   const DelWalk = () => {
     dispatch(walkActions.DelWalkDB(params.id));
   }
-  const at = (moment.tz(walk.createdAt,'Asia/seoul').format('A')==="AM"? "오전 " : "오후 ")
+
+  const at = (moment.tz(walk.createdAt,'Asia/seoul').format('A')==="AM"? "오전 " : "오후 ");
+
   return (
     <WalkDetailContainer>
       <Head>

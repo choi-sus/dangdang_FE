@@ -10,14 +10,18 @@ import moment from "moment-timezone";
 import { petimage_bg } from "../static/images";
 
 const WaliList = () => {
+  
   const dispatch = useDispatch();
+
   useEffect(()=>{
     dispatch(walkActions.WalkListDB())
     dispatch(profileActions.getPetDB())
   },[])
+
   const walkList = useSelector((state)=> state.walk.walkList)
   const petImage = useSelector((state)=> state.profile.pet.petImage)
   const is_login = useSelector((state) => state.user.is_login);
+
   if(!walkList[0]){
     return(
       <ListContainer>

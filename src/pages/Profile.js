@@ -1,10 +1,10 @@
 import React ,{useEffect}from "react";
 import styled from "styled-components"
 import { useDispatch,useSelector } from "react-redux";
+import { history } from "../redux/configStore";
 import {Button, Text} from "../elements/Index"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { history } from "../redux/configStore";
 import { actionCreators as profileActions } from "../redux/modules/profile";
 import { actionCreators as userActions } from "../redux/modules/user";
 import { actionCreators as walkActions } from "../redux/modules/walk";
@@ -13,11 +13,14 @@ import moment from "moment-timezone";
 import { petimage_bg, profile_edit, profile_cake } from "../static/images";
 
 const Profile = () => {
+  
   const dispatch = useDispatch();
+
   const petInfo = useSelector((state)=> state.profile.pet);
   const is_login = useSelector((state) => state.user.is_login);
   const walkList = useSelector((state) => state.walk.walkList);
   const user = useSelector((state) => state.user.user);
+
   const lastWalk = [];
   for(let i=0; i<2; i++){
     if (walkList[i]) {lastWalk.push(walkList[i])}
@@ -36,7 +39,7 @@ const Profile = () => {
 
   if(petInfo){
     return(
-      <ProfileContainer>
+      <ProfileContainer> 
         <HeadColor>
           <Head>
             <Text center color="#4F4F4F" size="18px">펫 프로필</Text>

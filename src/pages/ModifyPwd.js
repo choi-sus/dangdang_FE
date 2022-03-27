@@ -8,15 +8,22 @@ import { actionCreators as userActions } from "../redux/modules/user";
 import { useDispatch } from "react-redux";
 
 const ModifyPwd = () => {
+
   const dispatch = useDispatch();
+
   const [oldPwd,setOldPwd] = useState("");
   const [newPwd,setNewPwd] = useState("");
   const [confirmPwd,setConfirmPwd] = useState("");
   const [inputNewPwd,setInputNewPwd] = useState(false);
   const [inputConfirmPwd,setInputConfirmPwd] = useState(false);
+
   const changeOldPwd = (e) => {setOldPwd(e.target.value)};
   const changeNewPwd = (e) => {setNewPwd(e.target.value)};
   const changeConfirmPwd = (e) => {setConfirmPwd(e.target.value)};
+  const focusNewPwd = () => {setInputNewPwd(true)};
+  const blurNewPwd = () => {setInputNewPwd(false)};
+  const focusConfirmPwd = () => {setInputConfirmPwd(true)};
+  const blurConfirmPwd = () => {setInputConfirmPwd(false)};
   const sendNewPwd = ()=> {
     if ( oldPwd ===""|| newPwd ===""|| confirmPwd ===""){
       window.alert("모든 칸을 빠짐없이 입력해주세요!")
@@ -24,10 +31,7 @@ const ModifyPwd = () => {
       dispatch(userActions.modifyPwdDB(oldPwd,newPwd,confirmPwd));
     }
   }
-  const focusNewPwd = () => {setInputNewPwd(true)};
-  const blurNewPwd = () => {setInputNewPwd(false)};
-  const focusConfirmPwd = () => {setInputConfirmPwd(true)};
-  const blurConfirmPwd = () => {setInputConfirmPwd(false)};
+
   return (
     <Container>
       <Head>

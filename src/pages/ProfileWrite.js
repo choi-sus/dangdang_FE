@@ -9,25 +9,31 @@ import { history } from "../redux/configStore";
 import { petimage_bg, camera } from "../static/images";
 
 const ProfileWrite = () => {
+
   const dispatch = useDispatch();
+
   const [imageSrc, setImageSrc] = useState('');
   const encodeFileToBase64 = (fileBlob) => {
-     const reader = new FileReader();
-     reader.readAsDataURL(fileBlob);
-     return new Promise((resolve) => {
-       reader.onload = () => { 
-         setImageSrc(reader.result); resolve();
-        };
-      });
+    const reader = new FileReader();
+    reader.readAsDataURL(fileBlob);
+    return new Promise((resolve) => {
+      reader.onload = () => { 
+        setImageSrc(reader.result); resolve();
+      };
+    });
   };
+
   let now = new Date();
   let year = now.getFullYear();
   let mon = (now.getMonth() + 1) > 9 ? ''+(now.getMonth() + 1) : '0'+(now.getMonth() + 1);
   let day = (now.getDate()) > 9 ? ''+(now.getDate()) : '0'+(now.getDate());
+
   let yearList = [];
   for (let i=1990; i<=year; i++){ yearList.unshift(i)}
+
   let monthList = [];
   for(let i=1; i <= 12; i++) { i > 9 ? monthList.push(i) : monthList.push('0'+i)}
+
   let dayList = [];
   for(let i=1; i <= 31; i++) { i > 9 ? dayList.push(i) : dayList.push('0'+i)}
   
@@ -61,6 +67,7 @@ const ProfileWrite = () => {
       dispatch(profileActions.addPetDB(formData))
     }
   };
+
   useEffect(()=>{
     dispatch(profileActions.getPetDB())
     if(petInfo){
@@ -72,9 +79,10 @@ const ProfileWrite = () => {
       setSelDay(petInfo.petBirth.split("-")[2])
       setSelBreed(petInfo.petBreed)
     }
-  },[])
+  },[]);
 
-  const petInfo = useSelector((state)=> state.profile.pet)
+  const petInfo = useSelector((state)=> state.profile.pet);
+
   const editPetInfo = (e) => {
     const petBirth = selYear+"-"+selMonth+"-"+selDay;
     if (petName ==="" ||  selGender ==="" ||  petBirth ==="" || selBreed ==="" ){

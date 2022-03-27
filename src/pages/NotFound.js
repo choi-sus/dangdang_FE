@@ -5,7 +5,9 @@ import { useHistory } from "react-router-dom";
 import { notfound } from "../static/images";
 
 const NotFound = (props) => {
+
     let history = useHistory();
+    
     return (
         <NotContainer>
             <Grid center>
