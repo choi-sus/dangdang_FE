@@ -59,7 +59,7 @@ const WebInstall = styled.div`
 
 const WebInstallButton = styled.div`
   color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSizes.xxl};
+  font-size: ${({ theme }) => theme.fontSizes.xl};
   font-weight: ${({ theme }) => theme.fontWeight.Medium};
   font-family: "NotoSansKR", sans-serif !important;
   padding-left: 30px;
