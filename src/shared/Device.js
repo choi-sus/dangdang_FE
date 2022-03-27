@@ -78,8 +78,10 @@ const Web = styled.div`
     top: 95px;
     left: 55%;
     width: 467.1px;
+    display: none;
+    
     @media screen and (min-width: 1120px) {
-      display: none;
+      display: block;
     }
   }
 `;

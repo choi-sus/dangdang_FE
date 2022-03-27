@@ -55,8 +55,10 @@ const WebInstall = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  display: none;
+
   @media screen and (min-width: 1120px) {
-    display: none;
+    display: block;
   }
 `;
 
