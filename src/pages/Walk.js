@@ -220,7 +220,7 @@ const Walk = (props) => {
             <span>{time.s >= 10 ? time.s : "0" + time.s}</span>
           </TimeContent>
           <WalkTop setChange={setChange}></WalkTop>
-          <Map center={state.center} isPanto={state.isPanto} style={{width: "100vw", height: "100vh"}}
+          <Map center={state.center} isPanto={state.isPanto} style={{width: "100%", height: "inherit"}}
           level={3} draggable={draggable} zoomable={zoomable}>
           <Polyline path={polylinePath} strokeWeight={5} strokeColor={"#FFAE00"} strokeOpacity={0.7} strokeStyle={"solid"}/>
           {!state.isLoading && (
