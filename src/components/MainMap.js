@@ -52,7 +52,7 @@ const MainMap = (props)=> {
 
   return (
     <MainContent>
-      <Map center={state.center} onCreate={sendLoca} style={{width: "100vw", height: "inherit"}}
+      <Map center={state.center} onCreate={sendLoca} style={{width: "100%", height: "inherit"}}
         level={3} draggable={draggable} zoomable={zoomable}>
         {!state.isLoading && (
           <MapMarker position={state.center}></MapMarker>

@@ -75,9 +75,15 @@ const WalkEnd = () => {
 export default WalkEnd
 
 const EndContainer = styled.div`
-    background-color: #ffe7a5;
-    padding: 15.5% 4.35%;
+    background-color: ${({ theme }) => theme.colors.bg};
+    padding: 15.5% ${({ theme }) => theme.paddings.xxxxl};
     box-sizing: border-box;
+    height: inherit;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `
 
 const Head = styled.div`
@@ -89,15 +95,16 @@ const Head = styled.div`
     float: left;
   }
   & > p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    line-height: ${({ theme }) => theme.lineHeight.base};
     letter-spacing: -0.5px;
-    color: #4F4F4F;
+    color: ${({ theme }) => theme.colors.gray_4};
   }
   svg{
-    font-size: 25px;
-    color: #4F4F4F;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    color: ${({ theme }) => theme.colors.gray_4};
+    cursor: pointer;
   }
 `
 
@@ -117,9 +124,9 @@ const DayRecord = styled.div`
     padding: 20px 25px;
     border-radius: 11px;
     box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.colors.white};
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: ${({ theme }) => theme.margins.base};
 `
 
 const Record = styled.div`
@@ -134,66 +141,56 @@ const Record = styled.div`
     }
     p:nth-child(1){
         font-size: 30px;
-        color: #333;
+        color: ${({ theme }) => theme.colors.gray_5};
         width: 65%;
     }
     p:nth-child(1) span{
-        font-size: 14px;
-        color: #bdbdbd;
+        font-size: ${({ theme }) => theme.fontSizes.small};
+        color: ${({ theme }) => theme.colors.gray_5};
         display: inline-block;
-        margin-right: 10px;
+        margin-right: ${({ theme }) => theme.margins.base};
         vertical-align: 8px;
-        font-weight: 400;
+        font-weight: ${({ theme }) => theme.fontWeight.Regular};
     }
     p:nth-child(2){
         font-size: 30px;
-        color: #333;
+        color: ${({ theme }) => theme.colors.gray_2};
         text-align: right;
     }
     p:nth-child(2) span{
-        font-size: 14px;
-        color: #bdbdbd;
+        font-size: ${({ theme }) => theme.fontSizes.small};
+        color: ${({ theme }) => theme.colors.gray_5};
         display: inline-block;
-        margin-right: 10px;
+        margin-right: ${({ theme }) => theme.margins.base};
         vertical-align: 8px;
-        font-weight: 400;
+        font-weight: ${({ theme }) => theme.fontWeight.Regular};
     }
 `
  
 const WalkReport = styled.div`
     border-radius: 11px;
     box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.colors.white};
     overflow: hidden;
-    & #kakao-map-container{
-        position: relative;
-    }
-    & #kakao-map-container:after{
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-    }
 `
 
 const IconContent = styled.div`
   &::after {
     content: ""; display: block; visibility: hidden; clear: both;
   }
-  padding: 25px;
+  padding: ${({ theme }) => theme.paddings.xxxxl};
 `
 const IconArea = styled.div`
   width: 25%;
   float: left;
   text-align: center;
+
   img {
       height: 39px;
   }
 `
 
 const IconNum = styled.span`
-    font-size: 16px;
-    color: #4f4f4f;
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    color: ${({ theme }) => theme.colors.gray_4};
 `

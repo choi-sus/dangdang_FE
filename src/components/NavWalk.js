@@ -87,7 +87,7 @@ const NavBar = styled.div`
 const WalkList = styled.div`
     float: left;
     cursor: pointer;
-    
+
     img {
         position: relative;
         left: 50%;
@@ -121,6 +121,7 @@ const MainBtn = styled.div`
     width: 108px;
     height: 108px;
     border-radius: 50%;
+    cursor: pointer;
 `
 
 const NavInner = styled.div`
