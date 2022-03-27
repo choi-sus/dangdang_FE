@@ -52,7 +52,7 @@
   "prefer_related_applications": true,
   "start_url": "/", 
   "display": "standalone", 
-  "theme_color": "#031230", 
-  "background_color": "#031230"
+  "theme_color": "#ffd04c", 
+  "background_color": "#ffd04c"
   }
 

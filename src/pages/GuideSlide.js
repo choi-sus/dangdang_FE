@@ -77,7 +77,7 @@ const SlideBtn = styled.div`
     line-height: 60px;
     background-color: #D8D9DA;
     color: ${({ theme }) => theme.colors.white};
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-size: ${({ theme }) => theme.fontSizes.base};
     font-weight: ${({ theme }) => theme.fontWeight.Regular};
     &.start{
         background-color: ${({ theme }) => theme.colors.main_2};

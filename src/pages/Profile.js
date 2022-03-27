@@ -272,7 +272,7 @@ const BtnBox = styled.div`
 const LogoutBtn = styled.div`
   color: ${({ theme }) => theme.colors.gray_4};
   font-size: ${({ theme }) => theme.fontSizes.base};
-  margin: ${({ theme }) => theme.margins.base} ${({ theme }) => theme.margins.xxxxl} 40px;
+  margin: ${({ theme }) => theme.margins.base} ${({ theme }) => theme.margins.xxxxl} 54px;
   text-align: left;
   cursor: pointer;
 `;
