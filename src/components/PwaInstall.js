@@ -44,17 +44,20 @@ const InstallBox = styled.div`
 `;
 
 const WebInstall = styled.div`
-  width: 204px;
+  width: 185px;
   height: 54px;
   position: relative;
-  top: 300px;
-  left: 58%;
+  top: 150px;
+  left: 55%;
   border-radius: 32px;
   background-color: ${({ theme }) => theme.colors.main_2};
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  @media screen and (min-width: 1120px) {
+    display: none;
+  }
 `;
 
 const WebInstallButton = styled.div`

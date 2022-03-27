@@ -75,9 +75,12 @@ const Web = styled.div`
   background-repeat: no-repeat;
   & > img {
     position: relative;
-    top: 100px;
-    left: 58%;
+    top: 95px;
+    left: 55%;
     width: 467.1px;
+    @media screen and (min-width: 1120px) {
+      display: none;
+    }
   }
 `;
 const Phone = styled.div`
