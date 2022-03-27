@@ -182,6 +182,7 @@ export default ProfileWrite;
 
 const PageBody = styled.div`
   padding: 15.5% 0;
+  box-sizing: border-box;
   height: inherit;
   overflow-y: scroll;
   &::-webkit-scrollbar {

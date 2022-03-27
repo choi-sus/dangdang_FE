@@ -65,6 +65,7 @@ const Container = styled.div`
     position: absolute;
     top: 80%;
   }
+  box-sizing: border-box;
 `;
 const Head = styled.div`
   margin-bottom: 25px;
