@@ -52,7 +52,7 @@ const MainMap = (props)=> {
 
   return (
     <MainContent>
-      <Map center={state.center} onCreate={sendLoca} style={{width: "100vw",height: "100vh",}}
+      <Map center={state.center} onCreate={sendLoca} style={{width: "100vw", height: "inherit"}}
         level={3} draggable={draggable} zoomable={zoomable}>
         {!state.isLoading && (
           <MapMarker position={state.center}></MapMarker>
@@ -65,6 +65,7 @@ const MainMap = (props)=> {
 export default MainMap
 
 const MainContent = styled.div`
+  height: inherit;
   opacity: 0.5;
   -webkit-filter: blur(2px);
   filter: blur(2px);

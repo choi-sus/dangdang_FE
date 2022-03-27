@@ -8,7 +8,7 @@ import {Button} from "../elements/Index";
 import {history} from "../redux/configStore"
 import {slide_guide, slide_home, slide_walk} from "../static/images";
 
-const GuideSlide = () => {
+const GuideSlide = (props) => {
     const [swiper, setSwiper] = useState(null);
 
     SwiperCore.use([Pagination]);
@@ -22,13 +22,15 @@ const GuideSlide = () => {
             <StyledSwiper {...swiperOption} ref={setSwiper}>
                 <SwiperSlide>
                     <ImgArea></ImgArea>
+                    <SlideBtn>시작하기</SlideBtn>
                 </SwiperSlide>
                 <SwiperSlide>
                     <ImgArea></ImgArea>
+                    <SlideBtn>시작하기</SlideBtn>
                 </SwiperSlide>
                 <SwiperSlide>
                     <ImgArea></ImgArea>
-                    <Button margin="0" width="35%" _onClick={()=> {history.replace("/login")}} text="시작하기"></Button>
+                    <SlideBtn className="start" onClick={()=> {history.replace("/login")}}>시작하기</SlideBtn>
                 </SwiperSlide>
             </StyledSwiper>
         </React.Fragment>
@@ -71,7 +73,22 @@ const ImgArea = styled.div`
     display: block;
     background-size: contain;
     width: 100%;
-    height: inherit;
+    height: calc(100% - 80px);
     background-color: #585754;
     background-repeat: no-repeat;
+`
+
+const SlideBtn = styled.div`
+    text-align: center;
+    height: 80px;
+    line-height: 60px;
+    cursor: pointer;
+    background-color: #D8D9DA;
+    color: ${({ theme }) => theme.colors.white};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    &.start{
+        background-color: ${({ theme }) => theme.colors.main_2};
+        color: ${({ theme }) => theme.colors.gray_5};
+    }
 `

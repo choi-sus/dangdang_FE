@@ -17,9 +17,7 @@ const Main = () => {
         <MapContainer>
             <MainMap defaultLoca={receiveLoca}></MainMap>
                 <Weather></Weather>
-                <GridText>
-                    <Link to={{pathname:'/walk', state:{nowLoca}}}>지금 바로 산책가기</Link>
-                </GridText>
+                <GridText>지금 바로 산책가기</GridText>
             <NavBar>
                 <WalkList onClick={()=> {history.replace("/walklist")}}>
                     <img src={nav_walklist} alt="산책일지 아이콘" />
@@ -31,7 +29,7 @@ const Main = () => {
                 </MyPage>
                 <MainBtn>
                     <Link to={{pathname:'/walk', state:{nowLoca}}}>
-                    <img src={nav_homebtn} alt="산책하기 버튼" />
+                        <img src={nav_homebtn} alt="산책하기 버튼" />
                     </Link>
                 </MainBtn>
             </NavBar>
@@ -42,6 +40,7 @@ const Main = () => {
 export default Main
 
 const MapContainer = styled.div`
+    height: inherit;
     position: relative;
 `
 const GridText = styled.div`
@@ -49,11 +48,9 @@ const GridText = styled.div`
     left: 50%;
     transform: translateX(-50%);
     bottom: 168px;
-    a{
-        font-size: 15px;
-        color: #4f4f4f;
-        text-decoration: none;
-    }
+    font-size: 15px;
+    color: #4f4f4f;
+    text-decoration: none;
 `
 
 const NavBar = styled.div`
