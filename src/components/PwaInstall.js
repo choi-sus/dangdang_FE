@@ -71,8 +71,7 @@ const WebInstallButton = styled.div`
     background-position: 0%, 0%;
     background-repeat: no-repeat;
     display: inline-block;
-    margin-right: 3px;
-    padding: 1px 0;
+    margin: 1px 5px 1px 0;
   }
 `;
 
