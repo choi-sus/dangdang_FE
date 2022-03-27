@@ -69,7 +69,7 @@ const Web = styled.div`
   width: 100vw;
   height: 100vh;
   background: url(${web_title}), url(${web_bg}) ;
-  background-size: 460px 150px,cover;
+  background-size: 467.1px 139.5px, cover;
   background-position: 840px 85px,0% 100%;
   background-repeat: no-repeat;
 `;
