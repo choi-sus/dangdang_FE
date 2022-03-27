@@ -34,25 +34,35 @@ const Content = styled.div`
   background-position: 0%, 0%;
   background-repeat: no-repeat;
   text-align: center;
-  padding-top: 130px;
+  padding-top: 30%;
   box-sizing: border-box;
-  & h2 {
+  & h2{
     color: #ffc710;
-    font-size: 38px;
-    font-family: 'Godo', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif !important;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    font-weight: ${({ theme }) => theme.fontWeight.Bold};
+    margin: 0px 0 4%;
+    
   }
   & img {
-    width: 130px;
+    width: 64%;
+    max-width: 450px;
+    margin: 0 0 17%;
   }
   & p {
-    font-size: 28px;
-    color: #ffd04c;
-    font-family: 'Godo', sans-serif;
+    color: ${({ theme }) => theme.colors.main_2};
+    font-family: 'Noto Sans KR', sans-serif !important;
+    font-weight: ${({ theme }) => theme.fontWeight.Bold};
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    line-height: ${({ theme }) => theme.lineHeight.lg};
+    margin-bottom: 15%;
   }
 
   & span {
+    font-family: 'Noto Sans KR', sans-serif !important;
     display: inline-block;
     position: relative;
+    color: #ffc710;
     cursor: pointer;
     ::before {
       content: "";
@@ -65,6 +75,21 @@ const Content = styled.div`
       background-color: transparent;
     }
   }
+  //아이폰SE
+  @media only screen and (min-device-width : 320px) and (max-device-width : 374px) {
+    h2{
+
+    }
+    p{
+
+    }
+    span{
+      
+    }
+  }
+  @media only screen and (min-device-width : 375px) and (max-device-width : 479px) {
+
+}
 `;
 
 export default MobileInstall;
