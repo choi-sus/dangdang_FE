@@ -49,19 +49,19 @@ const BarWidth = keyframes`
 
 const Load = styled.div`
     height: 100%;
-    background-color: ${({ theme }) => theme.colors.main_1};
     display: flex;
     justify-content: center;
     align-items: center;
     img {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 `
 
 const LoadTitle = styled.div`
     img{
         width: 140px;
+        margin: 0px;
     }
 `
 
@@ -70,7 +70,7 @@ const ProgressBar = styled.div`
     overflow: hidden;
     width: 100%;
     height: 12px;
-    margin: 120px 0 0;
+    margin: 85px 0 0;
     border-radius: 36px;
     background-color: #ebebeb;
 `
@@ -80,7 +80,7 @@ const Bar = styled.div`
     left: 0; 
     top: 0;
     bottom: 0; 
-    background-color: #ffd04c;
+    background-color: ${({ theme }) => theme.colors.main_2};
     width: 0%;
     height: 12px;
     animation: ${BarWidth} 3s 1 linear;

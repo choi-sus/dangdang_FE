@@ -10,11 +10,13 @@ import {slide_guide, slide_home, slide_walk} from "../static/images";
 
 const GuideSlide = () => {
     const [swiper, setSwiper] = useState(null);
+
     SwiperCore.use([Pagination]);
     const swiperOption = {
-        pagination: true,
+        pagination: true, // swiper option
         onSwiper: setSwiper,
     }
+
     return (
         <React.Fragment>
             <StyledSwiper {...swiperOption} ref={setSwiper}>
@@ -43,7 +45,7 @@ const StyledSwiper = styled(Swiper)`
         width: 8px; height: 8px; background-color: #C4C4C4; margin: 0 5px !important;
     }
     .swiper-pagination-bullet-active{
-        background-color: #FFD04C;
+        background-color: ${({ theme }) => theme.colors.main_2};
     }
     & .swiper-slide:nth-child(1) > div{
         background-image: url(${slide_home});
@@ -59,15 +61,16 @@ const StyledSwiper = styled(Swiper)`
         left: 50%;
         transform: translateX(-50%);
         bottom: 60px;
-        box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
-        background-color: #ffd04c;
+        background-color: ${({ theme }) => theme.colors.main_2};
     }
 `
 
 const ImgArea = styled.div`
     background-position: center;
     display: block;
-    background-size: cover;
+    background-size: contain;
     width: 100%;
-    height: 100vh;
+    height: inherit;
+    background-color: #585754;
+    background-repeat: no-repeat;
 `

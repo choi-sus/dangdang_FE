@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components"
 import {Button, Grid, Input, Text} from "../elements/Index"
 import { useDispatch } from "react-redux";
@@ -9,9 +9,9 @@ import { history } from "../redux/configStore";
 
 const UserFind = () => {
     const dispatch = useDispatch();
-    const [idFind, setIdFind] = React.useState(true);
-    const [mail, setMail] = React.useState("");
-    const [id, setId] = React.useState("");
+    const [idFind, setIdFind] = useState(true);
+    const [mail, setMail] = useState("");
+    const [id, setId] = useState("");
 
     const idFined =()=>{
         dispatch(userActions.idFindDB(mail))
@@ -21,7 +21,7 @@ const UserFind = () => {
         dispatch(userActions.pwdFindDB(mail, id))
     }
 
-    const style = {color: "#E0E0E0", cursor: "pointer"}
+    const style = {color: "#E0E0E0", cursor: "pointer"} //탭 비활성화 스타일
 
     return(
         <FindContainer>
