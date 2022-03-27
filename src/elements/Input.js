@@ -41,9 +41,10 @@ const ElInput = styled.input`
   border-radius: 25px;
   box-shadow: 0px 1px 4px rgb(158 158 158 / 25%);
   font-family: inherit;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSizes.base};
   &::placeholder {
-    color: #BDBDBD; font-family: inherit;
+    color: ${({ theme }) => theme.colors.gray_2};
+    font-family: inherit;
   }
 `;
 

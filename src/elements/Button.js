@@ -29,15 +29,16 @@ Button.defaultProps = {
 
 const ElButton = styled.button`
   width: ${(props) => props.width};
-  background-color: #FFD04C;
-  color: #333;
+  background-color: ${({ theme }) => theme.colors.main_2};
+  color: ${({ theme }) => theme.colors.gray_5};
   box-sizing: border-box;
   border: none;
   padding: ${(props) => props.padding};
   ${(props) => (props.margin ? `margin: ${props.margin};` : "")}
   border-radius: 25px;
   font-family: inherit;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  box-shadow: 0px 1px 4px rgb(158 158 158 / 25%);
 `;
 
 export default Button;

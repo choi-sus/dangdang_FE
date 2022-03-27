@@ -39,24 +39,17 @@ const Login = () => {
 export default Login
 
 const LonginContainer = styled.div`
-    background-color: #FFFBF1;
-    padding: 15.5% 10.25%;
+    padding: 15.5% ${({ theme }) => theme.paddings.xxxxl};
     box-sizing: border-box;
-    & > img {
-        border: 1px solid #ddd;
-        border-radius: 15px;
-        width: 30%;
-        margin: 0px auto 100px;
-        display: block;
-    }
-    @media screen and (min-height: 0) and (max-height: 800px){
-        /* height: auto; */
-    }
-    button {
-        box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
+    height: inherit;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
     }
     button:last-of-type {
-        background-color: #fff; color: #382020;
+        background-color: ${({ theme }) => theme.colors.white};
+        color: #382020;
     }
 `
 

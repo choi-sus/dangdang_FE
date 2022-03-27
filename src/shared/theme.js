@@ -32,16 +32,21 @@ const colors = {
   main_3: "#ffac0a",
   bg: "#ffe7a5",
   white: "#ffffff",
+  gray_1: "#e0e0e0",
+  gray_2: "#bdbdbd",
+  gray_3: "#828282",
+  gray_4: "#4f4f4f",
+  gray_5: "#333333",
 };
 
 const paddings = {
-  small: calcRem(8),
-  base: calcRem(10),
-  lg: calcRem(12),
-  xl: calcRem(14),
-  xxl: calcRem(16),
-  xxxl: calcRem(18),
-  xxxxl: calcRem(20),
+  small: calcRem(12),
+  base: calcRem(14),
+  lg: calcRem(16),
+  xl: calcRem(18),
+  xxl: calcRem(20),
+  xxxl: calcRem(22),
+  xxxxl: calcRem(24),
 };
 
 const margins = {
