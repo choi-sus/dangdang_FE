@@ -146,7 +146,7 @@ const Record = styled.div`
     }
     p:nth-child(1) span{
         font-size: ${({ theme }) => theme.fontSizes.small};
-        color: ${({ theme }) => theme.colors.gray_5};
+        color: ${({ theme }) => theme.colors.gray_2};
         display: inline-block;
         margin-right: ${({ theme }) => theme.margins.base};
         vertical-align: 8px;
@@ -154,12 +154,12 @@ const Record = styled.div`
     }
     p:nth-child(2){
         font-size: 30px;
-        color: ${({ theme }) => theme.colors.gray_2};
+        color: ${({ theme }) => theme.colors.gray_5};
         text-align: right;
     }
     p:nth-child(2) span{
         font-size: ${({ theme }) => theme.fontSizes.small};
-        color: ${({ theme }) => theme.colors.gray_5};
+        color: ${({ theme }) => theme.colors.gray_2};
         display: inline-block;
         margin-right: ${({ theme }) => theme.margins.base};
         vertical-align: 8px;
