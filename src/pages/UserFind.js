@@ -21,7 +21,7 @@ const UserFind = () => {
         dispatch(userActions.pwdFindDB(mail, id))
     }
 
-    const style = {color: "#E0E0E0"}
+    const style = {color: "#E0E0E0", cursor: "pointer"}
 
     return(
         <FindContainer>
@@ -29,7 +29,7 @@ const UserFind = () => {
               <Grid width="auto" height="auto" _onClick={()=> {history.replace("/login")}}>
                 <FontAwesomeIcon icon={faAngleLeft}/>
               </Grid>
-              <Text center color="#4F4F4F" size="18px">아이디/비밀번호 찾기</Text>
+              <Text center>아이디/비밀번호 찾기</Text>
             </Head>
             <FindContent>
               <Grid margin="0 0 60px 0" is_start height="auto">
@@ -41,13 +41,13 @@ const UserFind = () => {
                       idFind === true ?
                       <Grid height="auto">
                           <Text margin="0 0 30px 0" size="14px" color="#4F4F4F" height="25px">댕댕한바퀴에 가입한 정보를 입력해 주세요. <br></br> 가입한 아이디를 메일로 보내드립니다.</Text>
-                          <Input margin="0 0 70px 0" placeholder="이메일을 입력해주세요." _onChange={(e)=> {setMail(e.target.value);}}></Input>
+                          <Input margin="0 0 60px 0" placeholder="이메일을 입력해주세요." _onChange={(e)=> {setMail(e.target.value);}}></Input>
                           <Button _onClick={idFined} text="보내기"></Button>
                       </Grid>
                       : <Grid height="auto">
-                          <Text margin="0 0 30px 0" size="14px" color="#4F4F4F" height="25px">댕댕한바퀴에 가입한 정보를 입력해 주세요. <br></br> 가입한 비밀번호를 메일로 보내드립니다.</Text>
+                          <Text margin="0 0 30px 0" size="14px" color="#4F4F4F" height="25px">댕댕한바퀴에 가입한 정보를 입력해 주세요. <br></br> 임시 비밀번호를 메일로 보내드립니다.</Text>
                           <Input margin="0 0 15px 0" placeholder="이메일을 입력해주세요." _onChange={(e)=> {setMail(e.target.value);}}></Input>
-                          <Input margin="0 0 70px 0" placeholder="아이디를 입력해주세요." _onChange={(e)=> {setId(e.target.value);}}></Input>
+                          <Input margin="0 0 60px 0" placeholder="아이디를 입력해주세요." _onChange={(e)=> {setId(e.target.value);}}></Input>
                           <Button _onClick={pwdFined} text="보내기"></Button>
                       </Grid>
                   }
@@ -60,23 +60,22 @@ const UserFind = () => {
 export default UserFind
 
 const FindContainer = styled.div`
-    background-color: #FFFBF1;
     padding: 15.5% 0;
     box-sizing: border-box;
     h2 {
       font-size: 30px;
-      line-height: 35px;
-      color: #FFD04C;
+      line-height: ${({ theme }) => theme.lineHeight.xxxl};
+      color: ${({ theme }) => theme.colors.main_2};
       margin: 0;
     }
     h2:last-child{
-        margin-left: 10px;
+        margin-left: ${({ theme }) => theme.margins.base};
     }
 `
 const Head = styled.div`
   margin-bottom: 60px;
   box-sizing: border-box;
-  padding: 0 4.35%;
+  padding: 0 ${({ theme }) => theme.paddings.lg};
   &::after {
     content: ""; display: block; visibility: hidden; clear: both;
   }
@@ -84,19 +83,20 @@ const Head = styled.div`
     float: left;
   }
   & > p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
+    font-weight: ${({ theme }) => theme.fontWeight.Regular};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    line-height: ${({ theme }) => theme.lineHeight.base};
     letter-spacing: -0.5px;
-    color: #4F4F4F;
+    color: ${({ theme }) => theme.colors.gray_4};
   }
   svg{
-    font-size: 25px;
-    color: #4F4F4F;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    color: ${({ theme }) => theme.colors.gray_4};
+    cursor: pointer;
   }
 `
 
 const FindContent = styled.div`
-  padding: 0 10.25%;
+  padding: 0 ${({ theme }) => theme.paddings.xxxxl};
   box-sizing: border-box;
 `
