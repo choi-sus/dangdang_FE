@@ -8,6 +8,7 @@ const Kakao = () => {
   let authorization_code = new URL(window.location.href).searchParams.get("code");
   useEffect(() => {
     dispatch(userActions.kakaoLoginDB(authorization_code))
+    history.replace("/main")
   }, []); 
   return (
     <React.Fragment></React.Fragment>

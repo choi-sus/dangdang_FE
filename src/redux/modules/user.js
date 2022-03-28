@@ -10,7 +10,7 @@ const SET_KAKAO = "SET_KAKAO";
 
 const setUser = createAction(SET_USER,(user)=> ({user}));
 const logOut = createAction(LOG_OUT,(user)=>({user}));
-const setKakao = createAction(SET_USER,()=> ({}));
+const setKakao = createAction(SET_USER,(user)=> ({user}));
 
 const initialState = {
     user: null,
@@ -117,8 +117,11 @@ const kakaoLoginDB  = (authorization_code) => {
             .then((res) => {
                 const accessToken = "Bearer " + res.data.token;
                 setCookie('is_login', `${accessToken}`);
-                history.replace("/main");
-                dispatch(setKakao())
+                const {nickname} = jwt_decode(res.data.token);
+                // history.replace("/main");
+                dispatch(setKakao(
+                    {nickname: nickname}
+                ))
             })
             .catch((err) => {
                 window.alert(err.response.data.fail);
@@ -171,6 +174,7 @@ export default handleActions ({
     }),
     [SET_KAKAO]: (state, action) =>
     produce(state, (draft) => {
+        draft.user = action.payload.user;
         draft.is_login = true;
     }),
 },
