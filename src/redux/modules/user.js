@@ -118,7 +118,7 @@ const kakaoLoginDB  = (authorization_code) => {
                 const accessToken = "Bearer " + res.data.token;
                 setCookie('is_login', `${accessToken}`);
                 const {nickname} = jwt_decode(res.data.token);
-                // history.replace("/main");
+                history.replace("/main");
                 dispatch(setKakao(
                     {nickname: nickname}
                 ))
