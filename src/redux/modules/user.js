@@ -117,7 +117,7 @@ const kakaoLoginDB  = (authorization_code) => {
             .then((res) => {
                 const accessToken = "Bearer " + res.data.token;
                 setCookie('is_login', `${accessToken}`);
-                // history.replace("/main");
+                history.replace("/main");
                 dispatch(setKakao())
             })
             .catch((err) => {
