@@ -26,7 +26,8 @@ const logInDB = (userID, password) =>{
             const accessToken = "Bearer " + res.data.token;
             setCookie('is_login', `${accessToken}`);
             window.alert(res.data.success)
-            history.replace("/main");
+            // history.replace("/main");
+            window.location.replce("/main");
             const {userID, nickname} = jwt_decode(res.data.token)
             dispatch(
                 setUser({
@@ -118,7 +119,8 @@ const kakaoLoginDB  = (authorization_code) => {
                 const accessToken = "Bearer " + res.data.token;
                 setCookie('is_login', `${accessToken}`);
                 const {nickname} = jwt_decode(res.data.token);
-                history.replace("/main");
+                // history.replace("/main");
+                window.location.replce("/main");
                 dispatch(setKakao(
                     {nickname: nickname}
                 ))
