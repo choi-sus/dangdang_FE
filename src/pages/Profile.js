@@ -107,8 +107,8 @@ const Profile = () => {
           <ProfileCard>
             <PetImg></PetImg>
             <Text margin="20px 0">반려견 정보가 없습니다!</Text>
-            <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "30px",paddingBottom:"20px"}} onClick={()=> {history.replace("/profilewrite")}}>
-              <p>나의 반려견 정보 입력하기</p>
+            <BtnBox style={{textAlign:"center", border: "2px solid #ffd04c",margin: "20px 20px 30px",paddingBottom:"20px"}} onClick={()=> {history.replace("/profilewrite")}}>
+              <p>펫 프로필 등록하기</p>
               <FontAwesomeIcon icon={faAngleRight}/>
             </BtnBox>
             {user && (user.email?
