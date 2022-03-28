@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {actionCreators as userActions} from "../redux/modules/user";
+import {history} from "../redux/configStore"
 
 const Kakao = () => {
   const dispatch = useDispatch();

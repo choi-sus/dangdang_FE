@@ -10,7 +10,7 @@ const SET_KAKAO = "SET_KAKAO";
 
 const setUser = createAction(SET_USER,(user)=> ({user}));
 const logOut = createAction(LOG_OUT,(user)=>({user}));
-const setKakao = createAction(SET_USER,()=> ({}));
+const setKakao = createAction(SET_USER,(user)=> ({user}));
 
 const initialState = {
     user: null,
@@ -26,7 +26,8 @@ const logInDB = (userID, password) =>{
             const accessToken = "Bearer " + res.data.token;
             setCookie('is_login', `${accessToken}`);
             window.alert(res.data.success)
-            window.location.replace("/main");
+            // history.replace("/main");
+            window.location.replce("/main");
             const {userID, nickname} = jwt_decode(res.data.token)
             dispatch(
                 setUser({
@@ -117,8 +118,12 @@ const kakaoLoginDB  = (authorization_code) => {
             .then((res) => {
                 const accessToken = "Bearer " + res.data.token;
                 setCookie('is_login', `${accessToken}`);
-                window.location.replace("/main");
-                dispatch(setKakao())
+                const {nickname} = jwt_decode(res.data.token);
+                // history.replace("/main");
+                window.location.replce("/main");
+                dispatch(setKakao(
+                    {nickname: nickname}
+                ))
             })
             .catch((err) => {
                 window.alert(err.response.data.fail);
@@ -171,6 +176,7 @@ export default handleActions ({
     }),
     [SET_KAKAO]: (state, action) =>
     produce(state, (draft) => {
+        draft.user = action.payload.user;
         draft.is_login = true;
     }),
 },
