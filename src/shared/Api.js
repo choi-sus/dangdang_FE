@@ -20,7 +20,16 @@ export const api_token = axios.create({
   },
 });
 
-api_token.interceptors.request.use(
+export const instance = axios.create({
+  baseURL: "https://dengroundserver.com/",
+  headers: {
+    "content-type": "application/json;charset=UTF-8",
+    accept: "application/json,",
+    authorization: `${accessToken}`,
+  },
+});
+
+instance.interceptors.request.use(
   function (config) {
     config.headers["Authorization"] = `${accessToken}`;
     return config;
@@ -32,7 +41,7 @@ api_token.interceptors.request.use(
 );
 
 // instance token refresh
-api_token.interceptors.response.use(
+instance.interceptors.response.use(
   (response) => {
     return response;
   },
