@@ -32,6 +32,7 @@ export const api_token = axios.create({
 // instance.interceptors.request.use(
 //   function (config) {
 //     config.headers["Authorization"] = `Bearer ${accessToken}`;
+//     console.log("엑세스 토큰이야",`${accessToken}`)
 //     return config;
 //   },
 //   function (error) {
@@ -43,6 +44,7 @@ export const api_token = axios.create({
 // // instance token refresh
 // instance.interceptors.response.use(
 //   (response) => {
+//     console.log(response,"여긴 토큰 리프레쉬")
 //     return response;
 //   },
 //   (error) => {
@@ -59,7 +61,7 @@ export const api_token = axios.create({
 //       const refreshToken = `Bearer  ${accessToken}`;
 
 //       originalRequest.headers = { Authorization: refreshToken };
-//       console.log("I'mIN!!!!!", originalRequest, originalRequest.headers);
+//       console.log("나 여깄어", originalRequest, originalRequest.headers);
 //       return axios(originalRequest);
 //     }
 //     return Promise.reject(error);
