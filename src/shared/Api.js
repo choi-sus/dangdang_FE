@@ -31,7 +31,7 @@ export const instance = axios.create({
 
 instance.interceptors.request.use(
   function (config) {
-    config.headers["Authorization"] = `${accessToken}`;
+    config.headers["Authorization"] = `Bearer ${accessToken}`;
     return config;
   },
   function (error) {
@@ -56,7 +56,7 @@ instance.interceptors.response.use(
 
     if (status === 401) {
       console.log("401error", config);
-      const refreshToken = `${accessToken}`;
+      const refreshToken = `Bearer  ${accessToken}`;
 
       originalRequest.headers = { Authorization: refreshToken };
       console.log("I'mIN!!!!!", originalRequest, originalRequest.headers);
