@@ -75,7 +75,7 @@ const NavBar = styled.div`
     background-color: ${({ theme }) => theme.colors.main_2};
     border-radius: 35px 35px 0 0;
     box-sizing: border-box;
-    padding: 15px 60px 25px;;
+    padding: 15px 60px 25px;
     position: absolute;
     left: 0;
     bottom: 0px;

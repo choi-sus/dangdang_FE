@@ -31,7 +31,7 @@ const NavBar = styled.div`
     background-color: ${({ theme }) => theme.colors.main_2};
     border-radius: 35px 35px 0 0;
     box-sizing: border-box;
-    padding: 16px 65px 25px;
+    padding: 15px 60px 25px;
     position: absolute;
     left: 0;
     bottom: 0px;
@@ -72,7 +72,7 @@ const MainBtn = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 40px;
+    bottom: 35px;
     width: 108px;
     height: 108px;
     border-radius: 50%;

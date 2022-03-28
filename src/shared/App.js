@@ -63,6 +63,7 @@ function App() {
             <Route path="/userinfo" exact component={UserInfo}/>
             <Route path="/modifynick" exact component={ModifyNick}/>
             <Route path="/modifypwd" exact component={ModifyPwd}/>
+            <Route path="/a" exact component={Spinner}/>
             <Route exact component={NotFound} />
           </Switch>
         </Suspense>
