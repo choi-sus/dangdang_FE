@@ -16,7 +16,6 @@ const MobileInstall = (props) => {
       </p>
       <>
         <PwaInstall text="앱 다운로드" />
-        <span onClick={_onClick}>모바일웹 이용하기</span>
       </>
     </Content>
   );
@@ -56,25 +55,6 @@ const Content = styled.div`
     line-height: ${({ theme }) => theme.lineHeight.small};
     margin: 18% 0;
   }
-
-  & span {
-    font-family: 'Noto Sans KR', sans-serif !important;
-    display: inline-block;
-    position: relative;
-    color: #ffc710;
-    font-weight: ${({ theme }) => theme.fontWeight.Bold};
-    cursor: pointer;
-    ::before {
-      content: "";
-      width: 100%;
-      height: 1px;
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      z-index: 100;
-      background-color: transparent;
-    }
-  }
   @media only screen and (min-device-width : 320px) and (max-device-width : 374px) {
     padding-top: 20%;
     h2{
@@ -82,9 +62,6 @@ const Content = styled.div`
     }
     p{
       margin: 14% 0;
-    }
-    span{
-      font-size: ${({ theme }) => theme.fontSizes.base};
     }
   }
 `;

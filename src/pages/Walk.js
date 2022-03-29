@@ -148,8 +148,16 @@ const Walk = (props) => {
           }
         }
         const totalDistance = String(distanceBetween).substr(0, 3);
-        if(lastTime){
-          dispatch(walkActions.addWalkDB(polylinePath, lastTime, totalDistance, water, yellow, brown, danger));
+        if (updatedM < 10) {
+          if (window.confirm("10분 이하의 산책은 기록되지 않아요! 그래도 종료하실 건가요?")) {
+              history.replace("/main")
+          } else {
+              return;
+          }
+        }else {
+          if(lastTime){
+            dispatch(walkActions.addWalkDB(polylinePath, lastTime, totalDistance, water, yellow, brown, danger));
+          } 
         }
       }
 
