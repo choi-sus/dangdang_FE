@@ -276,7 +276,7 @@ const BirthInput = styled.div`
   &:not(:first-child) select {margin-left: ${({ theme }) => theme.margins.base};}
   select{
     line-height: 50px;
-    display:inline-block;
+    display: inline-block;
     width: calc(33.33% - 6.66px);
     height: 50px;
     background-color: ${({ theme }) => theme.colors.white};
@@ -284,16 +284,21 @@ const BirthInput = styled.div`
     box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
     color: ${({ theme }) => theme.colors.gray_2};
     text-align: center;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
     font-size: ${({ theme }) => theme.fontSizes.base};
     border: none;
     cursor: pointer;
-    //-webkit-appearance:none; /* for chrome */
-    //-moz-appearance:none; /*for firefox*/
-    //appearance:none;
-    //select::-ms-expand{
-    //display:none;/*for IE10,11*/
-    //}
+    -webkit-appearance:none; /*for chrome */
+    -moz-appearance:none; /* for firefox */
+    appearance:none;
+    select::-ms-expand{
+    display:none; /* for IE10,11 */
+    }
   }
+
 `;
 
 const RadioBox = styled.div`
