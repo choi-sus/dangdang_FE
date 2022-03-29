@@ -49,7 +49,7 @@ const Profile = () => {
           <ProfileCard>
             <PetImg style={{backgroundImage:`url(${petInfo.petImage})`}}></PetImg>
             <NameFrame>
-              <PetName>{petInfo.petName}</PetName>
+              <p>{petInfo.petName}</p>
               <img src={profile_edit} alt="펫 프로필 수정 아이콘" onClick={()=> {history.replace("/profilewrite");}} />
             </NameFrame>
             <PetDetail>
@@ -68,7 +68,7 @@ const Profile = () => {
             <FontAwesomeIcon icon={faAngleRight} onClick={()=> {history.replace("/walklist")}}/>
           </BtnBox>
             {!lastWalk[0] ? 
-              <LastWalk style={{display: "block", textAlign:"center"}}>
+              <LastWalk style={{display: "block", textAlign:"center", lineHeight: "30px"}}>
                 <p>산책 내역이 없어요</p>
                 <p>첫 산책을 시작해주세요!</p>
               </LastWalk>
@@ -205,14 +205,16 @@ const NameFrame = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  p {
+    font-size: ${({ theme }) => theme.fontSizes.xxxl};
+    margin: ${({ theme }) => theme.margins.base} 0;
+    font-weight: ${({ theme }) => theme.fontWeight.Medium};
+    text-indent: 34px;
+  }
   img {
     cursor: pointer;
+    margin: 0 0 0 10px;
   }
-`;
-const PetName = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.xxxl};
-  margin: ${({ theme }) => theme.margins.base};
-  font-weight: ${({ theme }) => theme.fontWeight.Medium};
 `;
 
 const PetDetail = styled.div`
@@ -272,7 +274,7 @@ const BtnBox = styled.div`
 const LogoutBtn = styled.div`
   color: ${({ theme }) => theme.colors.gray_4};
   font-size: ${({ theme }) => theme.fontSizes.base};
-  margin: ${({ theme }) => theme.margins.base} ${({ theme }) => theme.margins.xxxxl} 54px;
+  margin: ${({ theme }) => theme.margins.xl} ${({ theme }) => theme.margins.xxxxl} 54px;
   text-align: left;
   cursor: pointer;
 `;
