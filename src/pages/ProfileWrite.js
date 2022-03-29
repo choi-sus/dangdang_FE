@@ -74,9 +74,9 @@ const ProfileWrite = () => {
       setImageSrc(petInfo.petImage)
       setPetName(petInfo.petName)
       setSelGender(petInfo.petGender)
-      setSelYear(petInfo.petBirth.split("-")[0])
-      setSelMonth(petInfo.petBirth.split("-")[1])
-      setSelDay(petInfo.petBirth.split("-")[2])
+      setSelYear(petInfo.petBirth.split(" / ")[0])
+      setSelMonth(petInfo.petBirth.split(" / ")[1])
+      setSelDay(petInfo.petBirth.split(" / ")[2])
       setSelBreed(petInfo.petBreed)
     }
   },[]);
@@ -84,7 +84,7 @@ const ProfileWrite = () => {
   const petInfo = useSelector((state)=> state.profile.pet);
 
   const editPetInfo = (e) => {
-    const petBirth = selYear+"-"+selMonth+"-"+selDay;
+    const petBirth = selYear+" / "+selMonth+" / "+selDay;
     if (petName ==="" ||  selGender ==="" ||  petBirth ==="" || selBreed ==="" ){
       window.alert("입력하지 않은 항목이 있는지 확인 후 다시 시도해주세요!")
     }else{
@@ -287,12 +287,12 @@ const BirthInput = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.base};
     border: none;
     cursor: pointer;
-    -webkit-appearance:none; /* for chrome */
-    -moz-appearance:none; /*for firefox*/
-    appearance:none;
-    select::-ms-expand{
-    display:none;/*for IE10,11*/
-    }
+    //-webkit-appearance:none; /* for chrome */
+    //-moz-appearance:none; /*for firefox*/
+    //appearance:none;
+    //select::-ms-expand{
+    //display:none;/*for IE10,11*/
+    //}
   }
 `;
 
