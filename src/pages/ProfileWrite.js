@@ -124,7 +124,7 @@ const ProfileWrite = () => {
         <BirthInput>
           <h5>생일</h5>
           <div>
-            <select name="year" onChange={selectedYear} value={selYear ? selYear : setSelYear(year)} style={{margin:"0px"}}>
+            <select name="year" onChange={selectedYear} value={selYear ? selYear : setSelYear(year)}>
               {yearList.map((y) => (<option key={y} value={y}>{y}</option>))}
             </select>
             <select name="month" onChange={selectedMonth} value={selMonth ? selMonth : setSelMonth(mon)}>
@@ -273,7 +273,7 @@ const BirthInput = styled.div`
     color: ${({ theme }) => theme.colors.gray_3};
     font-weight: ${({ theme }) => theme.fontWeight.Regular};
   }
-  &:not(:first-child) select {margin-left: ${({ theme }) => theme.margins.base}; padding: 0 13% 0 0;}
+  select:not(:first-child) {margin-left: ${({ theme }) => theme.margins.base}; padding: 0 13% 0 0;}
   select{
     line-height: 50px;
     display: inline-block;
