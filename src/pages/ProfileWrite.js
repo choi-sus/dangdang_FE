@@ -273,7 +273,7 @@ const BirthInput = styled.div`
     color: ${({ theme }) => theme.colors.gray_3};
     font-weight: ${({ theme }) => theme.fontWeight.Regular};
   }
-  &:not(:first-child) select {margin-left: ${({ theme }) => theme.margins.base};}
+  &:not(:first-child) select {margin-left: ${({ theme }) => theme.margins.base}; padding: 0 10% 0 0;}
   select{
     line-height: 50px;
     display: inline-block;
@@ -283,26 +283,16 @@ const BirthInput = styled.div`
     border-radius: 10px;
     box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
     color: ${({ theme }) => theme.colors.gray_2};
-    text-align: center;
-    text-align-last: center;
-    text-align: center;
-    -ms-text-align-last: center;
-    -moz-text-align-last: center;
     font-size: ${({ theme }) => theme.fontSizes.base};
     border: none;
     cursor: pointer;
-    -webkit-appearance:none; /*for chrome */
-    -moz-appearance:none; /* for firefox */
+    direction: rtl;
+    padding: 0 13% 0 0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
     appearance:none;
     select::-ms-expand{
-    display:none; /* for IE10,11 */
-    }
-    option{
-      text-align: center;
-      text-align-last: center;
-      text-align: center;
-      -ms-text-align-last: center;
-      -moz-text-align-last: center;
+    display:none;
     }
   }
 
