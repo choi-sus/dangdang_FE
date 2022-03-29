@@ -273,7 +273,7 @@ const BirthInput = styled.div`
     color: ${({ theme }) => theme.colors.gray_3};
     font-weight: ${({ theme }) => theme.fontWeight.Regular};
   }
-  &:not(:first-child) select {margin-left: ${({ theme }) => theme.margins.base}; padding: 0 10% 0 0;}
+  &:not(:first-child) select {margin-left: ${({ theme }) => theme.margins.base}; padding: 0 13% 0 0;}
   select{
     line-height: 50px;
     display: inline-block;
@@ -287,7 +287,7 @@ const BirthInput = styled.div`
     border: none;
     cursor: pointer;
     direction: rtl;
-    padding: 0 13% 0 0;
+    padding: 0 10% 0 0;
     -webkit-appearance:none;
     -moz-appearance:none;
     appearance:none;
