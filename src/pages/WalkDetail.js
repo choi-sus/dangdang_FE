@@ -34,7 +34,7 @@ const WalkDetail = () => {
         <Grid width="auto" _onClick={() => {history.replace('/walklist')}}>
           <FontAwesomeIcon icon={faAngleLeft} />
         </Grid>
-        {walk &&( 
+        {walk &&(
           <Text center color="#4F4F4F" size="18px">{moment.tz(walk.createdAt,'Asia/seoul').format('YYYY.MM.DD')+"  ·  "+at+moment.tz(walk.createdAt,'Asia/seoul').format('h:mm')}
             <img src={walk_delete} alt="산책일지 삭제 아이콘" onClick={()=>{DelWalk();}} />
           </Text>)}
@@ -92,19 +92,17 @@ const WalkDetail = () => {
 export default WalkDetail;
 
 const WalkDetailContainer = styled.div`
-  position: relative;
-  height: inherit;
-  padding: 54px 30px 30px;
+  padding: 15.5% ${({ theme }) => theme.paddings.xxxxl};
   box-sizing: border-box;
+  height: inherit;
   overflow-y: scroll;
   &::-webkit-scrollbar {
-  display: none;
+      display: none;
   }
 `;
 const Head = styled.div`
   margin-bottom: 25px;
   box-sizing: border-box;
-  padding: 0 ${({ theme }) => theme.paddings.lg};
   &::after {
     content: ""; display: block; visibility: hidden; clear: both;
   }

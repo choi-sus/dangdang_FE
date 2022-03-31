@@ -74,9 +74,9 @@ const ProfileWrite = () => {
       setImageSrc(petInfo.petImage)
       setPetName(petInfo.petName)
       setSelGender(petInfo.petGender)
-      setSelYear(petInfo.petBirth.split("-")[0])
-      setSelMonth(petInfo.petBirth.split("-")[1])
-      setSelDay(petInfo.petBirth.split("-")[2])
+      setSelYear(petInfo.petBirth.split(" / ")[0])
+      setSelMonth(petInfo.petBirth.split(" / ")[1])
+      setSelDay(petInfo.petBirth.split(" / ")[2])
       setSelBreed(petInfo.petBreed)
     }
   },[]);
@@ -84,7 +84,7 @@ const ProfileWrite = () => {
   const petInfo = useSelector((state)=> state.profile.pet);
 
   const editPetInfo = (e) => {
-    const petBirth = selYear+"-"+selMonth+"-"+selDay;
+    const petBirth = selYear+" / "+selMonth+" / "+selDay;
     if (petName ==="" ||  selGender ==="" ||  petBirth ==="" || selBreed ==="" ){
       window.alert("입력하지 않은 항목이 있는지 확인 후 다시 시도해주세요!")
     }else{
@@ -124,7 +124,7 @@ const ProfileWrite = () => {
         <BirthInput>
           <h5>생일</h5>
           <div>
-            <select name="year" onChange={selectedYear} value={selYear ? selYear : setSelYear(year)} style={{margin:"0px"}}>
+            <select name="year" onChange={selectedYear} value={selYear ? selYear : setSelYear(year)}>
               {yearList.map((y) => (<option key={y} value={y}>{y}</option>))}
             </select>
             <select name="month" onChange={selectedMonth} value={selMonth ? selMonth : setSelMonth(mon)}>
@@ -273,27 +273,29 @@ const BirthInput = styled.div`
     color: ${({ theme }) => theme.colors.gray_3};
     font-weight: ${({ theme }) => theme.fontWeight.Regular};
   }
-  &:not(:first-child) select {margin-left: ${({ theme }) => theme.margins.base};}
+  select:not(:first-child) {margin-left: ${({ theme }) => theme.margins.base}; padding: 0 13% 0 0;}
   select{
     line-height: 50px;
-    display:inline-block;
+    display: inline-block;
     width: calc(33.33% - 6.66px);
     height: 50px;
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 10px;
     box-shadow: 0 1px 4px 0 rgba(158, 158, 158, 0.25);
     color: ${({ theme }) => theme.colors.gray_2};
-    text-align: center;
     font-size: ${({ theme }) => theme.fontSizes.base};
     border: none;
     cursor: pointer;
-    -webkit-appearance:none; /* for chrome */
-    -moz-appearance:none; /*for firefox*/
+    direction: rtl;
+    padding: 0 10% 0 0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
     appearance:none;
     select::-ms-expand{
-    display:none;/*for IE10,11*/
+    display:none;
     }
   }
+
 `;
 
 const RadioBox = styled.div`

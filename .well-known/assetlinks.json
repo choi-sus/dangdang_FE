@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "denground.com",
+                     "sha256_cert_fingerprints": ["A9:9A:9B:EB:F3:13:E0:31:C1:9E:0D:3A:31:D1:37:76:92:A8:23:1B:52:8E:BF:34:46:17:30:5D:72:C1:5C:D0"] }
+      }
+]
