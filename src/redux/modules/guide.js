@@ -16,7 +16,7 @@ const guideDB = () => {
     return async (dispatch, getState, { history }) => {
         await api.get(`/guides`)
         .then((res) => {
-            dispatch(getGuide(res.data))
+            dispatch(getGuide(res.data)) 
           })
           .catch((err) => {
             console.error(err)

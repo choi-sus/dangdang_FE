@@ -17,7 +17,7 @@ const Guide = () => {
 
     const guide_list = useSelector((state) => state.guide.list);
     const rewalk = useSelector((state) => state.walk.pauseWalk);
-    const nowLoca = rewalk.path;
+    const nowLoca = rewalk.path; 
     return(
         <GuideContainer>
             <Head>

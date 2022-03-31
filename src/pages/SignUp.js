@@ -162,7 +162,7 @@ input[type="checkbox"] + label{
   position: relative;
   margin-right: ${({ theme }) => theme.margins.xxxxl};
   float: left;
-  box-sizing: border-box;
+  box-sizing: border-box; 
   cursor: pointer;
 }
 input[id="check"]:checked + label::after,

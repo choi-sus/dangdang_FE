@@ -13,7 +13,7 @@ const MainMap = (props)=> {
       isLoading: true,
   })
   const [draggable, setDraggable] = useState(false)
-  const [zoomable, setZoomable] = useState(false)
+  const [zoomable, setZoomable] = useState(false) 
 
   useEffect(() => {
     if (navigator.geolocation) {

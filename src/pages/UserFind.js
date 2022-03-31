@@ -80,7 +80,7 @@ const Head = styled.div`
     content: ""; display: block; visibility: hidden; clear: both;
   }
   & > div {
-    float: left;
+    float: left;  
   }
   & > p {
     font-weight: ${({ theme }) => theme.fontWeight.Regular};

@@ -137,7 +137,7 @@ const NavInner = styled.div`
     box-shadow: 0 0 6px 0 rgb(0 0 0 / 25%);
     background-color: ${({ theme }) => theme.colors.main_1};
     z-index: 1;
-    transition: bottom 0.8s ease-in-out;
+    transition: bottom 0.8s ease-in-out; 
 
     &.trans_nav{
         bottom: -72px;;

@@ -32,7 +32,7 @@ const logInDB = (userID, password) =>{
             dispatch(
                 setUser({
                     userID: userID,
-                    nickname: nickname
+                    nickname: nickname 
                 })
             )
         })

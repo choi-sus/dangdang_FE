@@ -19,7 +19,7 @@ const UserInfo = () => {
   const user = useSelector((state)=> state.user.user);
   
   return (
-    <UserContainer>
+    <UserContainer> 
       <Head>
         <Grid width="auto" _onClick={()=> {history.replace("/profile")}}>
           <FontAwesomeIcon icon={faAngleLeft}/>

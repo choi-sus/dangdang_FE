@@ -15,7 +15,7 @@ const MobileInstall = (props) => {
         앱 다운로드하고 <br /> 매일 가는 산책길, 새롭게 즐겨보세요!
       </p>
       <>
-        <PwaInstall text="앱 다운로드" />
+        <PwaInstall text="앱 다운로드" /> 
       </>
     </Content>
   );

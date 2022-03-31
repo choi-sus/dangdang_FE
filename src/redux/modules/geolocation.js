@@ -18,7 +18,7 @@ export default handleActions ({
 initialState
 );
 
-const actionCreators = {
+const actionCreators = { 
     setPath
 }
 

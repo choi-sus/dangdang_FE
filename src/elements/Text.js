@@ -31,7 +31,7 @@ const P = styled.p`
   font-weight: ${(props) => (props.bold? "600" : "400")};
   ${(props) => (props.margin? `margin: ${props.margin};` : `margin: 0;`)}
   ${(props) => (props.right ? `text-align: right;` : "")}
-  ${(props) => (props.center ? `text-align: center;` : "")}
+  ${(props) => (props.center ? `text-align: center;` : "")} 
 `;
 
 export default Text;

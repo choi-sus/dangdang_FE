@@ -33,17 +33,8 @@ const Inner = styled.div`
   animation: bounce .3s ease infinite alternate;
   font-size: 45px;
   font-weight: ${({theme}) => theme.fontWeight.Bold};
-  color: ${({ theme }) => theme.colors.main_3};
-  text-shadow: 0 1px 0 #fde08e,
-               0 2px 0 #fde08e,
-               0 3px 0 #fde08e,
-               0 4px 0 #fde08e,
-               0 5px 0 #fde08e,
-               0 6px 0 transparent,
-               0 7px 0 transparent,
-               0 8px 0 transparent,
-               0 9px 0 transparent,
-               0 10px 10px rgba(0, 0, 0, .4);
+  color: ${({ theme }) => theme.colors.main_2};
+  text-shadow: 0 10px 10px rgba(0, 0, 0, .4);
   }
 
   div > span:nth-child(2) { animation-delay: .1s; }
@@ -54,16 +45,7 @@ const Inner = styled.div`
   @keyframes bounce {
     100% {
       top: -20px;
-      text-shadow: 0 1px 0 #fde08e,
-                   0 2px 0 #fde08e,
-                   0 3px 0 #fde08e,
-                   0 4px 0 #fde08e,
-                   0 5px 0 #fde08e,
-                   0 6px 0 #fde08e,
-                   0 7px 0 #fde08e,
-                   0 8px 0 #fde08e,
-                   0 9px 0 #fde08e,
-                   0 50px 25px rgba(0, 0, 0, .2);
+      text-shadow: 0 50px 25px rgba(0, 0, 0, .2);
     }
   }
 `

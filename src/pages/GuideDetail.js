@@ -83,7 +83,7 @@ const Head = styled.div`
   }
   svg{
     font-size: ${({ theme }) => theme.fontSizes.xxl};
-    color: ${({ theme }) => theme.colors.gray_4};
+    color: ${({ theme }) => theme.colors.gray_4}; 
     cursor: pointer;
   }
 `

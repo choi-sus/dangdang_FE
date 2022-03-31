@@ -187,6 +187,6 @@ margin: 5px 0;
   }
   p {
     font-size: 32px;
-    font-weight: ${({ theme }) => theme.fontWeight.Medium};
+    font-weight: ${({ theme }) => theme.fontWeight.Medium}; 
   }
 `;

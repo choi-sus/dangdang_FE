@@ -24,7 +24,7 @@ Button.defaultProps = {
   _onClick: () => {},
   margin: false,
   width: '100%',
-  padding: "15px 0px",
+  padding: "15px 0px", 
 }
 
 const ElButton = styled.button`

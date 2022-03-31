@@ -51,7 +51,7 @@ const ModifyPwd = () => {
           <input type="password" placeholder="새 비밀번호 확인" value={confirmPwd} onChange={changeConfirmPwd} onFocus={focusConfirmPwd} onBlur={blurConfirmPwd}></input>
           <p style={{display: inputConfirmPwd? (newPwd===confirmPwd ? "none": null ): "none", color:"#b80a45"}}>새 비밀번호와 일치하지 않습니다.</p>
       </TextInput>
-      <Button width="calc(100% - 80px)" margin="40px" _onClick={()=>{sendNewPwd()}}>변경하기</Button>
+      <Button width="calc(100% - 80px)" margin="40px" _onClick={()=>{sendNewPwd()}}>변경하기</Button> 
     </Container>  
   )
 }

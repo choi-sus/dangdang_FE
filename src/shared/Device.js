@@ -28,7 +28,7 @@ const Device = ({ children }) => {
             <>
               <MobileInstall
                 _onClick={() => {
-                  setWebView(false);
+                  setWebView(false); 
                 }}
               />
             </>

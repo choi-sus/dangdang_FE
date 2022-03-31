@@ -50,7 +50,7 @@ const IconContent = styled.div`
   z-index: 5;
   width: 100%;
   padding: 0 5%;
-  box-sizing: border-box;
+  box-sizing: border-box; 
   
   &::after {
     content: ""; display: block; visibility: hidden; clear: both;

@@ -18,7 +18,7 @@ const Loding = () => {
 
     useEffect(() => {
         timeout();
-        return () => {clearTimeout(timeout);};
+        return () => {clearTimeout(timeout);}; 
     });
 
     return (

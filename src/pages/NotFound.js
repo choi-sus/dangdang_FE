@@ -22,7 +22,7 @@ const NotFound = (props) => {
     );
 };
   
-export default NotFound;
+export default NotFound; 
 
 const NotContainer = styled.div`
     height: inherit;

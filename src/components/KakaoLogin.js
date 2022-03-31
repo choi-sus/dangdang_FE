@@ -13,7 +13,7 @@ const KakaoLogin = () => {
     )
 }
 
-export default KakaoLogin;
+export default KakaoLogin; 
 
 const Kakao = styled.div`
   display: flex;

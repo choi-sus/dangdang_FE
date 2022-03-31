@@ -151,7 +151,7 @@ const UserConfirm = styled.div`
 `
 
 const ConfirmList = styled.p`
-    font-size: ${({ theme }) => theme.fontSizes.base};
+    font-size: ${({ theme }) => theme.fontSizes.base}; 
     color: ${({ theme }) => theme.colors.gray_4};
     margin: 0px;
     &:not(:last-child){

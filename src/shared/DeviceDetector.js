@@ -43,4 +43,4 @@ function detectMobileDevice(agent) {
   const isIPhone = detectIphoneDevice(window.navigator.userAgent);
   
   
-  export { isMobile, isIPhone, isInapp };
+  export { isMobile, isIPhone, isInapp }; 

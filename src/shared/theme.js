@@ -1,4 +1,4 @@
-const calcRem = (size) => `${size / 16}rem`;
+const calcRem = (size) => `${size / 16}rem`; 
 
 const fontSizes = {
   ssmall: calcRem(12),

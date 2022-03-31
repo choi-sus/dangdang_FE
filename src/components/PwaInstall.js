@@ -77,7 +77,7 @@ const WebInstallButton = styled.div`
     content: "";
     width: 25px;
     height: 25px;
-    background: url(${download});
+    background: url(${download}); 
     background-size: cover;
     background-position: 0%, 0%;
     background-repeat: no-repeat;

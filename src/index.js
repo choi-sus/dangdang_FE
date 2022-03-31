@@ -20,7 +20,7 @@ import theme from "./shared/theme";
 import "./index.css";
 
 // -- components --
-import Device from "./shared/Device";
+import Device from "./shared/Device"; 
 
 ReactDOM.render(
   <React.StrictMode>

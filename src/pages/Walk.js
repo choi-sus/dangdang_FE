@@ -152,7 +152,7 @@ const Walk = (props) => {
           if (window.confirm("10분 이하의 산책은 기록되지 않아요! 그래도 종료하실 건가요?")) {
               history.replace("/main")
           } else {
-              return;
+              return; 
           }
         }else {
           if(lastTime){

@@ -29,7 +29,7 @@ const Main = () => {
                 </MyPage>
                 <MainBtn>
                     <Link to={{pathname:'/walk', state:{nowLoca}}}>
-                        <img src={nav_homebtn} alt="산책하기 버튼" />
+                        <img src={nav_homebtn} alt="산책하기 버튼" /> 
                     </Link>
                 </MainBtn>
             </NavBar>

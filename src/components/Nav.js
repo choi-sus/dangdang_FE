@@ -35,7 +35,7 @@ const NavBar = styled.div`
     position: absolute;
     left: 0;
     bottom: 0px;
-    z-index: 5;
+    z-index: 5; 
     &::after {
         content: ""; display: block; visibility: hidden; clear: both;
     }

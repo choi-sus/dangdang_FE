@@ -148,7 +148,7 @@ const HeadColor = styled.div`
   margin: 0px 0px -168px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: ${({ theme }) => theme.colors.bg};
+  background-color: ${({ theme }) => theme.colors.bg}; 
 `;
 const Head = styled.div`
   margin-bottom: 25px;

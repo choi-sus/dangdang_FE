@@ -260,7 +260,7 @@ const NameInput = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.base};
     font-family: inherit;
     &::placeholder {
-    color: ${({ theme }) => theme.colors.gray_2};
+    color: ${({ theme }) => theme.colors.gray_2}; 
     }
   }
 `;

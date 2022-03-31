@@ -19,7 +19,7 @@ const ModifyNick = () => {
 
   const changeNickname = (e) => {setNickname(e.target.value)};
   const focusNick = () => {setInputNick(true)};
-  const blurNick = () => {setInputNick(false)};
+  const blurNick = () => {setInputNick(false)}; 
 
   const newNick = ()=> {
     if (nickname ===""){

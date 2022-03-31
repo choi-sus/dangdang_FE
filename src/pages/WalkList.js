@@ -20,7 +20,7 @@ const WaliList = () => {
 
   const walkList = useSelector((state)=> state.walk.walkList)
   const petImage = useSelector((state)=> state.profile.pet.petImage)
-  const is_login = useSelector((state) => state.user.is_login);
+  const is_login = useSelector((state) => state.user.is_login); 
 
   if(!walkList[0]){
     return(
