@@ -17,7 +17,7 @@ const MobileInstall = (props) => {
       <>
         <PwaInstall text="앱 다운로드" /> 
       </>
-    </Content>
+    </Content> 
   );
 };
 

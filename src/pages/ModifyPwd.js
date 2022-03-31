@@ -43,7 +43,7 @@ const ModifyPwd = () => {
       <TextInput>
           <label>현재 비밀번호</label>
           <input type="password" placeholder="현재 비밀번호" value={oldPwd} onChange={changeOldPwd}></input>
-      </TextInput>
+      </TextInput> 
       <TextInput>
           <label>새 비밀번호</label>
           <input type="password" placeholder="새 비밀번호" value={newPwd} onChange={changeNewPwd} onFocus={focusNewPwd} onBlur={blurNewPwd}></input>

@@ -18,7 +18,7 @@ const NotFound = (props) => {
                 <Text margin="16px" color="#bdbdbd">화면을 불러오지 못했어요</Text>
                 <Button width="calc(100% - 80px)" margin= "0 40px"_onClick={()=> {history.replace("/main")}} text="메인으로 돌아가기"></Button>
             </Grid>
-        </NotContainer>
+        </NotContainer> 
     );
 };
   

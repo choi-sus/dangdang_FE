@@ -16,6 +16,6 @@ export const api_token = axios.create({
   headers: {
     "content-type": "application/json;charset=UTF-8",
     accept: "application/json,",
-    authorization: `${accessToken}`, 
+    authorization: `${accessToken}`,  
   },
 });

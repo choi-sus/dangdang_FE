@@ -86,7 +86,7 @@ const addWalkDB = (path, time, distance, water, yellow, brown, danger) => {
             history.replace('/walklist');
           })
           .catch((err)=>{
-            window.alert(err.response.data.fail); 
+            window.alert(err.response.data.fail);  
           })
      }
  }

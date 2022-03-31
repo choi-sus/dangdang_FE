@@ -40,7 +40,7 @@ const Inner = styled.div`
   div > span:nth-child(2) { animation-delay: .1s; }
   div > span:nth-child(3) { animation-delay: .2s; }
   div > span:nth-child(4) { animation-delay: .3s; }
-  div > span:nth-child(5) { animation-delay: .4s; }
+  div > span:nth-child(5) { animation-delay: .4s; } 
 
   @keyframes bounce {
     100% {

@@ -187,4 +187,4 @@ margin: 5px 0;
     font-size: 32px;
     font-weight: ${({ theme }) => theme.fontWeight.Medium}; 
   }
-`;
+`; 

@@ -45,7 +45,7 @@ export default WalkTop
 const IconContent = styled.div`
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); 
   top: 140px;
   z-index: 5;
   width: 100%;

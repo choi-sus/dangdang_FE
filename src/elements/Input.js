@@ -43,7 +43,7 @@ const ElInput = styled.input`
   font-family: inherit;
   font-size: ${({ theme }) => theme.fontSizes.base};
   &::placeholder {
-    color: ${({ theme }) => theme.colors.gray_2};
+    color: ${({ theme }) => theme.colors.gray_2}; 
     font-family: inherit; 
   }
 `;

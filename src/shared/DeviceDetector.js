@@ -40,7 +40,7 @@ function detectMobileDevice(agent) {
   const isInapp = detectInAppBrowser(window.navigator.userAgent);
   
   const isMobile = detectMobileDevice(window.navigator.userAgent);
-  const isIPhone = detectIphoneDevice(window.navigator.userAgent);
+  const isIPhone = detectIphoneDevice(window.navigator.userAgent); 
   
   
   export { isMobile, isIPhone, isInapp }; 

@@ -27,7 +27,7 @@ const Profile = lazy(() => import("../pages/Profile"));
 const ProfileWrite = lazy(() => import("../pages/ProfileWrite"));
 const UserInfo = lazy(() => import("../pages/UserInfo"));
 const ModifyNick = lazy(() => import("../pages/ModifyNick"));
-const ModifyPwd = lazy(() => import("../pages/ModifyPwd"));
+const ModifyPwd = lazy(() => import("../pages/ModifyPwd")); 
 const NotFound = lazy(() => import("../pages/NotFound")); 
 
 function App() {

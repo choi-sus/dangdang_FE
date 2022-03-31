@@ -12,7 +12,7 @@ const initialState = {
 export default handleActions ({
     [SET_PATH]: (state, action) =>
     produce(state, (draft) => {
-        draft.polylinePath.push(action.payload.path)
+        draft.polylinePath.push(action.payload.path) 
     }),
 },
 initialState

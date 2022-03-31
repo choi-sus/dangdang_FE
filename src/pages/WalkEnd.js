@@ -51,7 +51,7 @@ const WalkEnd = () => {
                     <IconArea>
                         <img src={marker_yellow} alt="소변 아이콘" />
                         <Text color="#4f4f4f" size="16px" margin="0 0 15px 0" center>소변</Text>
-                        {walk_list && <IconNum>{walk_list.yellow}</IconNum>} 
+                        {walk_list && <IconNum>{walk_list.yellow}</IconNum>}  
                     </IconArea>
                     <IconArea>
                         <img src={marker_brown} alt="대변 아이콘" />                

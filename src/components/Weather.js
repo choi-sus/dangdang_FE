@@ -147,7 +147,7 @@ const UserConfirm = styled.div`
     border-radius: 6px;
     box-shadow: 0 1px 6px 0 rgba(171, 171, 171, 0.25);
     background-color: ${({ theme }) => theme.colors.white};
-    margin-bottom: ${({ theme }) => theme.margins.xxxxl};
+    margin-bottom: ${({ theme }) => theme.margins.xxxxl}; 
 `
 
 const ConfirmList = styled.p`

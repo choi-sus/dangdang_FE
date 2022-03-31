@@ -25,13 +25,13 @@ const Main = () => {
                 </WalkList>
                 <MyPage onClick={()=> {history.replace("/profile")}}>
                     <img src={nav_profile} alt="프로필 아이콘" />
-                    <Text color="#fff" size="14px">프로필</Text>
+                    <Text color="#fff" size="14px">프로필</Text> 
                 </MyPage>
                 <MainBtn>
                     <Link to={{pathname:'/walk', state:{nowLoca}}}>
                         <img src={nav_homebtn} alt="산책하기 버튼" /> 
                     </Link>
-                </MainBtn>
+                </MainBtn> 
             </NavBar>
         </MapContainer>
     )

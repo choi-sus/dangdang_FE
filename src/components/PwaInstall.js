@@ -70,7 +70,7 @@ const WebInstallButton = styled.div`
   font-family: "NotoSansKR", sans-serif !important;
   padding-left: 30px;
   position: relative;
-  display: inline-block;
+  display: inline-block; 
   line-height: 54px;
 
   &::before {

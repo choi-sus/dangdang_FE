@@ -17,7 +17,7 @@ const MainMap = (props)=> {
 
   useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
+      navigator.geolocation.getCurrentPosition( 
         (position) => {
           setState((prev) => ({
             ...prev,

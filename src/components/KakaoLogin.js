@@ -17,7 +17,7 @@ export default KakaoLogin;
 
 const Kakao = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
 `;
 

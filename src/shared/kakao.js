@@ -10,7 +10,7 @@ const Kakao = () => {
     dispatch(userActions.kakaoLoginDB(authorization_code))
   }, []); 
   return (
-    <React.Fragment></React.Fragment>
+    <React.Fragment></React.Fragment> 
   )
 }
 export default Kakao; 

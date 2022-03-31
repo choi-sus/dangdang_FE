@@ -77,7 +77,7 @@ const TextOter = styled.p`
         position: absolute;
         left: 0;
         top: 50%;
-        transform: translateY(-50%); 
+        transform: translateY(-50%);  
     }
     &:after {
         content:"";

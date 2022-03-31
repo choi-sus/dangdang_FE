@@ -57,7 +57,7 @@ const StyledSwiper = styled(Swiper)`
         background-image: url(${slide_walk});
     }
     & .swiper-slide:nth-child(3) > .ImgArea{
-        background-image: url(${slide_guide}); 
+        background-image: url(${slide_guide});  
     }
 `
 

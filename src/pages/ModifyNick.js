@@ -15,7 +15,7 @@ const ModifyNick = () => {
 
   const oldNick = location.state.nickname;
   const [nickname,setNickname] = useState(oldNick);
-  const [inputNick,setInputNick] = useState(false);
+  const [inputNick,setInputNick] = useState(false); 
 
   const changeNickname = (e) => {setNickname(e.target.value)};
   const focusNick = () => {setInputNick(true)};

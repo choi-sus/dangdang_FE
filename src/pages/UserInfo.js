@@ -16,7 +16,7 @@ const UserInfo = () => {
     dispatch(userActions.loginCheckDB());
   }, []);
 
-  const user = useSelector((state)=> state.user.user);
+  const user = useSelector((state)=> state.user.user); 
   
   return (
     <UserContainer> 

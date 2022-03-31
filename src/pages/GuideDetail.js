@@ -79,7 +79,7 @@ const Head = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.lg};
     line-height: ${({ theme }) => theme.lineHeight.base};
     letter-spacing: -0.5px;
-    color: ${({ theme }) => theme.colors.gray_4};
+    color: ${({ theme }) => theme.colors.gray_4}; 
   }
   svg{
     font-size: ${({ theme }) => theme.fontSizes.xxl};

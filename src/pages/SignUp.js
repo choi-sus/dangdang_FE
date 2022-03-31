@@ -160,7 +160,7 @@ input[type="checkbox"] + label{
   height: 24px;
   border: 2px solid ${({ theme }) => theme.colors.main_2};
   position: relative;
-  margin-right: ${({ theme }) => theme.margins.xxxxl};
+  margin-right: ${({ theme }) => theme.margins.xxxxl}; 
   float: left;
   box-sizing: border-box; 
   cursor: pointer;

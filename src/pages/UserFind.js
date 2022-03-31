@@ -77,7 +77,7 @@ const Head = styled.div`
   box-sizing: border-box;
   padding: 0 ${({ theme }) => theme.paddings.lg};
   &::after {
-    content: ""; display: block; visibility: hidden; clear: both;
+    content: ""; display: block; visibility: hidden; clear: both; 
   }
   & > div {
     float: left;  
