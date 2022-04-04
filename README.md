@@ -54,9 +54,9 @@
 <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521375-6c58c412-8f57-4e2f-aef9-7b2346b93a06.PNG'>
 </details>
 
-### 3. 가이드 시스템
+### 3. 돌발 가이드 시스템
 <details>
-  <summary></summary>
+  <summary>산책 중 돌발상황에 대처하기 위한 산책 가이드를 제시합니다.</summary>
   <br>
 <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521366-722d51b4-f418-47bb-81e3-bec3c737db18.PNG'>
 </details>
