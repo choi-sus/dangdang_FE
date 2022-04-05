@@ -11,7 +11,6 @@
   <img src='https://img.shields.io/badge/Axios-v0.26.0-pink?'/>
   <br>
   <img src='https://img.shields.io/badge/CloudFront-red?'/>
-
   <img src="https://img.shields.io/badge/Route53-E68B49">
   <img src="https://img.shields.io/badge/AWS S3-569A31">
 </p>
@@ -62,8 +61,6 @@
 </details>
 
 
-
-
 <br>
 
 
@@ -73,7 +70,7 @@
 <details markdown="1">
   <summary>서비스 아키텍처</summary>
   <br>
-  <img width='600px' src='https://user-images.githubusercontent.com/97425636/161535277-d10c7520-981f-4ab2-ad89-8d27c2b81b25.png'>
+  <img width="80%" alt="스크린샷 2022-04-05 오후 10 34 24" src="https://user-images.githubusercontent.com/97425636/161765922-0159b5c5-ffc1-40c8-a15b-2a2cf6187f75.png">
 </details>
 
 <details markdown="2">
@@ -98,6 +95,7 @@
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
 <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
+<img src="https://img.shields.io/badge/Axios-pink?style=for-the-badge&logo=Axios&logoColor=black">
 <br>
 <img src="https://img.shields.io/badge/CloudFront-D05C4B?style=for-the-badge&logo=CloudFront&logoColor=white">
 <img src="https://img.shields.io/badge/Route53-E68B49?style=for-the-badge&logo=Route53s&logoColor=white">
