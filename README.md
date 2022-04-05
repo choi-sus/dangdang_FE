@@ -1,7 +1,7 @@
 <h1 align="left">산책이 똑똑해지는 순간, 댕댕한바퀴</h1>
 <br>
 <p align='center'>
-<img width='70%' src='https://user-images.githubusercontent.com/97425636/161515470-0888cf20-6adb-446e-b05b-362a2a292b31.PNG'>
+  <img width='70%' src='https://user-images.githubusercontent.com/97425636/161515470-0888cf20-6adb-446e-b05b-362a2a292b31.PNG'>
 </p>
 <p align='center'>
   <img src='https://img.shields.io/badge/React-v17.0.2-blue?logo=React'/>
@@ -44,21 +44,21 @@
 <details>
   <summary>카카오 지도를 기반으로 실시간 경로를 기록하고, 식수, 소변, 대변, 위험구간 4가지의 지표 또한 기록됩니다.</summary>
   <br>
-<img width='300px' src='https://user-images.githubusercontent.com/97425636/161521356-18af7359-42c3-4b17-adfa-d2e1bd532eaf.PNG'>
+  <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521356-18af7359-42c3-4b17-adfa-d2e1bd532eaf.PNG'>
 </details>
 
 ### 2. 산책 일지
 <details>
-  <summary>산책 경로가 저장되어 지난 산책의 경로, 4가지 지표, 산책 시간, 산챙 거리 등을 확인할 수 있습니다.</summary>
+  <summary>산책 경로가 저장되어 지난 산책의 경로, 4가지 지표, 산책 시간, 산책 거리 등을 확인할 수 있습니다.</summary>
   <br>
-<img width='300px' src='https://user-images.githubusercontent.com/97425636/161521375-6c58c412-8f57-4e2f-aef9-7b2346b93a06.PNG'>
+  <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521375-6c58c412-8f57-4e2f-aef9-7b2346b93a06.PNG'>
 </details>
 
 ### 3. 돌발 가이드 시스템
 <details>
   <summary>산책 중 돌발상황에 대처하기 위한 산책 가이드를 제시합니다.</summary>
   <br>
-<img width='300px' src='https://user-images.githubusercontent.com/97425636/161521366-722d51b4-f418-47bb-81e3-bec3c737db18.PNG'>
+  <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521366-722d51b4-f418-47bb-81e3-bec3c737db18.PNG'>
 </details>
 
 
@@ -71,15 +71,18 @@
 
 
 <details markdown="1">
-<summary>서비스 아키텍처</summary>
-
- ![서비스 아키텍처](https://user-images.githubusercontent.com/97425636/161535277-d10c7520-981f-4ab2-ad89-8d27c2b81b25.png)
+  <summary>서비스 아키텍처</summary>
+  <br>
+  <img width='600px' src='https://user-images.githubusercontent.com/97425636/161535277-d10c7520-981f-4ab2-ad89-8d27c2b81b25.png'>
 </details>
 
 <details markdown="2">
-<summary>API 명세서</summary>
-  
-
+  <summary>API 명세서</summary>
+  <br>
+  <img width="650px" alt="스크린샷 2022-04-05 오후 9 34 44" src="https://user-images.githubusercontent.com/97425636/161757957-d4122d8f-7117-41ec-88e3-b70a6f86bd68.png">
+  <img width="650px" alt="스크린샷 2022-04-05 오후 9 36 01" src="https://user-images.githubusercontent.com/97425636/161758708-d9fd4867-47d2-48de-b649-d695561c1efe.png">
+  <img width="650px" alt="스크린샷 2022-04-05 오후 9 37 06" src="https://user-images.githubusercontent.com/97425636/161758776-4e4dc203-70bb-4f9d-895e-6ce43a29d703.png">
+  <img width="650px" alt="스크린샷 2022-04-05 오후 9 33 40" src="https://user-images.githubusercontent.com/97425636/161758851-e1712c27-1c00-47ed-8b78-686b38c6ffa0.png">
 </details>
 
 <br>
