@@ -70,7 +70,7 @@
 <details markdown="1">
   <summary>서비스 아키텍처</summary>
   <br>
-  <img width="80%" alt="스크린샷 2022-04-05 오후 10 34 24" src="https://user-images.githubusercontent.com/97425636/161765922-0159b5c5-ffc1-40c8-a15b-2a2cf6187f75.png">
+  <img width="70%" src="https://user-images.githubusercontent.com/97425636/161782356-f04b5e61-5211-4eca-b338-d6b8357fdb84.PNG">
 </details>
 
 <details markdown="2">
@@ -116,4 +116,4 @@
 | 심호선     | -                                  | 디자인     |
 | 엄세희     | -                                  | 디자인     |
 
-<br />
+<br>
