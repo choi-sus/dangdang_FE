@@ -1,4 +1,4 @@
-<h1 align="left">산책이 똑똑해지는 순간, 댕댕한바퀴</h1>
+<h1 align="left"> 🐕 산책이 똑똑해지는 순간, 댕댕한바퀴</h1>
 <br>
 <p align='center'>
   <img width='70%' src='https://user-images.githubusercontent.com/97425636/161515470-0888cf20-6adb-446e-b05b-362a2a292b31.PNG'>
@@ -17,7 +17,7 @@
 <br>
 
 
-## 📌 바로가기
+## 📍 바로가기
 - 사이트 바로가기 : https://denground.com
 - 프론트엔드 GitHub Repository : https://github.com/choi-sus/dangdang_FE
 - 백엔드 GitHub Respository : https://github.com/spirit-B/dangdang_BE
@@ -25,19 +25,19 @@
 
 <br>
 
-## 프로젝트 기간
->2월25일~4월8일(6주)
+## 🗓 프로젝트 기간
+- 2022년 2월 25일 ~ 4월 8일 (6주)
 
 <br>
 
-## 🐕 댕댕한바퀴 소개
+## 🐶 댕댕한바퀴 소개
 ### 
-> - 반려견과의 산책 경험에 도움을 주는 서비스를 제공하고자 시작하게 된 프로젝트로, 카카오 지도를 기반으로 한 경로 기록을 통해 산책 기록과 산책 가이드 기능 구현에 힘을 쏟았으니, 그 부분을 중점적으로 봐주시면 좋을 것 같습니다 :)
+- 반려견과의 산책 경험에 도움을 주는 서비스를 제공하고자 시작하게 된 프로젝트로, 카카오 지도를 기반으로 한 경로 기록을 통해 산책 기록과 산책 가이드 기능 구현에 힘을 쏟았으니, 그 부분을 중점적으로 봐주시면 좋을 것 같습니다 :)
 
 
 
 
-## 주요 기능
+## 📌 주요 기능
 
 ### 1. 실시간 산책 경로 기록
 <details>
@@ -64,8 +64,7 @@
 <br>
 
 
-## 프로젝트 구조
-
+## 🏛 프로젝트 구조
 
 <details markdown="1">
   <summary>서비스 아키텍처</summary>
@@ -84,8 +83,7 @@
 
 <br>
 
-## 기술스택
-> #### 프론트엔드
+## 💠 프론트엔드 기술 스택
 <p align="center">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/github actions-2088FF?style=for-the-badge&logo=github actions&logoColor=white">  
@@ -104,7 +102,7 @@
 <br>
 <br>
 
-## 팀원소개
+## 🃏 팀원소개
 
 | Name     | GitHub                             | Position  |
 | -------- | ---------------------------------- | --------- |
