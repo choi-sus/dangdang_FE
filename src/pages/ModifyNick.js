@@ -35,7 +35,7 @@ const ModifyNick = () => {
         <Grid width="auto" _onClick={()=> {history.replace("/userinfo")}}>
           <FontAwesomeIcon icon={faAngleLeft}/>
         </Grid>
-        <Text center color="#4F4F4F" size="18px">닉네임 변경</Text>
+        <Text center>닉네임 변경</Text>
       </Head>
       <TextInput>
         <label>닉네임</label>

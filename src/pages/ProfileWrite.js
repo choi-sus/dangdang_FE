@@ -104,9 +104,9 @@ const ProfileWrite = () => {
           <FontAwesomeIcon icon={faAngleLeft}/>
         </Grid>
         {(petInfo ? 
-          <Text center color="#4F4F4F" size="18px">펫 프로필 수정</Text>
+          <Text center>펫 프로필 수정</Text>
         : 
-          <Text center color="#4F4F4F" size="18px">펫 프로필 설정</Text>
+          <Text center>펫 프로필 설정</Text>
         )}
       </Head>
       <Grid>

@@ -42,7 +42,7 @@ const Profile = () => {
       <ProfileContainer> 
         <HeadColor>
           <Head>
-            <Text center color="#4F4F4F" size="18px">펫 프로필</Text>
+            <Text center>펫 프로필</Text>
           </Head>
         </HeadColor>
         <ProfileWrap>
@@ -100,7 +100,7 @@ const Profile = () => {
     <ProfileContainer>
         <HeadColor>
           <Head>
-            <Text center color="#4F4F4F" size="18px">펫 프로필</Text>
+            <Text center>펫 프로필</Text>
           </Head>
         </HeadColor>
         <ProfileWrap>
@@ -129,7 +129,7 @@ const Profile = () => {
         <NotList>
           <p>로그인이 필요한 서비스입니다.</p>
           <p>로그인 후 이용해주세요.</p>
-          <Button margin= "58px 0 0" _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
+          <Button _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
         </NotList>
         <Nav></Nav>
       </ProfileContainer>
@@ -166,7 +166,7 @@ const Head = styled.div`
   & > p {
     font-weight: ${({ theme }) => theme.fontWeight.Regular};
     font-size: ${({ theme }) => theme.fontSizes.lg};
-    line-height: ${({ theme }) => theme.lineHeight.lg};
+    line-height: ${({ theme }) => theme.lineHeight.base};
     letter-spacing: -0.5px;
     color: ${({ theme }) => theme.colors.gray_4};
   }
@@ -286,4 +286,10 @@ const NotList = styled.div`
   width: calc(100% - 60px);
   text-align: center;
   color: ${({ theme }) => theme.colors.gray_2};
+  p{
+    line-height: ${({ theme }) => theme.lineHeight.xxxl};
+  }
+  button{
+    margin: 50px 0 0;
+  }
 `;

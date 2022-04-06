@@ -38,7 +38,7 @@ const ModifyPwd = () => {
         <Grid width="auto" _onClick={()=> {history.replace("/userinfo")}}>
           <FontAwesomeIcon icon={faAngleLeft}/>
         </Grid>
-          <Text center color="#4F4F4F" size="18px">비밀번호 변경</Text>
+          <Text center>비밀번호 변경</Text>
       </Head>
       <TextInput>
           <label>현재 비밀번호</label>

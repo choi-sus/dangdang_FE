@@ -23,7 +23,7 @@ const GuideDetail = (props) => {
                   <FontAwesomeIcon icon={faAngleLeft}/>
                 </Grid>
                 {guide_detail &&
-                    <Text center color="#4F4F4F" size="18px">{guide_detail.guideTitle}</Text>
+                    <Text center>{guide_detail.guideTitle}</Text>
                 }
             </Head>
             <DetailContent>

@@ -27,7 +27,7 @@ const WalkEnd = () => {
                 <Grid width="auto" _onClick={()=> {history.replace("/main")}}>
                   <FontAwesomeIcon icon={faAngleLeft}/>
                 </Grid>
-                <Text center color="#4F4F4F" size="18px">산책 종료</Text>
+                <Text center>산책 종료</Text>
             </Head>
             <ImgContent>
                 <img src={walkend_dog} alt="산책끝난 강아지 이미지" />

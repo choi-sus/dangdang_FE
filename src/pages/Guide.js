@@ -24,7 +24,7 @@ const Guide = () => {
                 <Link to={{pathname:'/walk', state:{nowLoca, rewalk}}}>
                   <FontAwesomeIcon icon={faAngleLeft}/>
                 </Link>
-                <Text center color="#4F4F4F" size="18px">가이드북</Text>
+                <Text center>가이드북</Text>
             </Head>
             <GuideContent>
             {guide_list &&

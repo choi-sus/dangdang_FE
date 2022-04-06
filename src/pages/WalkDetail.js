@@ -35,7 +35,7 @@ const WalkDetail = () => {
           <FontAwesomeIcon icon={faAngleLeft} />
         </Grid>
         {walk &&(
-          <Text center color="#4F4F4F" size="18px">{moment.tz(walk.createdAt,'Asia/seoul').format('YYYY.MM.DD')+"  ·  "+at+moment.tz(walk.createdAt,'Asia/seoul').format('h:mm')}
+          <Text center>{moment.tz(walk.createdAt,'Asia/seoul').format('YYYY.MM.DD')+"  ·  "+at+moment.tz(walk.createdAt,'Asia/seoul').format('h:mm')}
             <img src={walk_delete} alt="산책일지 삭제 아이콘" onClick={()=>{DelWalk();}} />
           </Text>)}
       </Head>

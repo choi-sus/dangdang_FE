@@ -29,13 +29,13 @@ const WaliList = () => {
           <NotList>
             <p>반려견과 함께한 산책기록이 없으시군요?</p>
             <p>지금 산책하러 갈까요?</p>
-            <Button margin= "58px 0 0"_onClick={()=> {history.replace("/main")}} text="산책하러 가기"></Button>
+            <Button _onClick={()=> {history.replace("/main")}} text="산책하러 가기"></Button>
           </NotList>
         : 
           <NotList>
             <p>로그인이 필요한 서비스입니다.</p>
             <p>로그인 후 이용해주세요.</p>
-            <Button margin= "58px 0 0" _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
+            <Button  _onClick={()=> {history.replace("/login")}} text="로그인하기"></Button>
           </NotList>
         }
         <Nav></Nav>
@@ -45,7 +45,7 @@ const WaliList = () => {
     return(
       <ListContainer>
         <Head>
-          <Text center color="#4F4F4F" size="18px">산책 일지</Text>
+          <Text>산책 일지</Text>
         </Head>
         <ListWrap>
           {walkList.map((e,i) => {
@@ -99,6 +99,12 @@ const NotList = styled.div`
   width: calc(100% - 60px);
   text-align: center;
   color: ${({ theme }) => theme.colors.gray_2};
+  p{
+    line-height: ${({ theme }) => theme.lineHeight.xxxl};
+  }
+  button{
+    margin: 50px 0 0;
+  }
 `;
 const ListWrap = styled.div`
   height: calc(100% - 50px);

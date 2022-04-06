@@ -24,7 +24,7 @@ const UserInfo = () => {
         <Grid width="auto" _onClick={()=> {history.replace("/profile")}}>
           <FontAwesomeIcon icon={faAngleLeft}/>
         </Grid>
-          <Text center color="#4F4F4F" size="18px">회원정보</Text>
+          <Text center>회원정보</Text>
       </Head>
       <InfoWrap>
         <div>
