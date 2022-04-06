@@ -34,32 +34,43 @@
 ### 
 - 반려견과의 산책 경험에 도움을 주는 서비스를 제공하고자 시작하게 된 프로젝트로, 카카오 지도를 기반으로 한 경로 기록을 통해 산책 기록과 산책 가이드 기능 구현에 힘을 쏟았으니, 그 부분을 중점적으로 봐주시면 좋을 것 같습니다 :)
 
-
-
+<br>
 
 ## 📌 주요 기능
+### 1. 사용자 위치 확인/ 날씨 확인
+> + Kakao Maps API의 geolocation을 이용해 GPS 기능으로 사용자의 현재 위치를 표시합니다.
+> + Openweathermap API를 이용해 현재 사용자가 있는 지역의 지명과 기온, 날씨를 보여줍니다.
+> <details>
+>  <summary>  산책 전, 내가 산책을 하는 지역의 이름과 날씨, 기온이 홈 화면에 표시됩니다.</summary>
+>  <br>
+>  <img width='300px' src='https://user-images.githubusercontent.com/97425636/161939888-c68ccb9a-bc30-46d9-ba55-72498c9eac45.PNG'>
+> </details>
 
-### 1. 실시간 산책 경로 기록
-<details>
-  <summary>카카오 지도를 기반으로 실시간 경로를 기록하고, 식수, 소변, 대변, 위험구간 4가지의 지표 또한 기록됩니다.</summary>
-  <br>
-  <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521356-18af7359-42c3-4b17-adfa-d2e1bd532eaf.PNG'>
-</details>
+### 2. 실시간 산책 경로 기록
+> + Kakao Maps API의 geolocation으로 5초마다 사용자의 위치를 위 · 경도값을 저장합니다.
+> + Kakao Maps API의 Polyline을 이용하여 사용자의 실시간 산책경로를 선으로 그려냅니다.
+> <details>
+>  <summary>  카카오 지도를 기반으로 실시간 경로를 기록하고, 식수, 소변, 대변, 위험구간 4가지의 지표 또한 기록됩니다.</summary>
+>  <br>
+>
+>  <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521356-18af7359-42c3-4b17-adfa-d2e1bd532eaf.PNG'>
+> </details>
 
-### 2. 산책 일지
-<details>
-  <summary>산책 경로가 저장되어 지난 산책의 경로, 4가지 지표, 산책 시간, 산책 거리 등을 확인할 수 있습니다.</summary>
-  <br>
-  <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521375-6c58c412-8f57-4e2f-aef9-7b2346b93a06.PNG'>
-</details>
+### 3. 산책 일지
+> + 서버에서 전송 받은 데이터 중 전체 위 · 경도값을 받아 Kakao Maps API를 이용해 지도를 나타냅니다.
+> + Kakao Maps API의 Polyline을 이용하여 사용자의 실시간 산책경로를 선으로 그려냅니다.
+> <details>
+>   <summary>산책 경로가 저장되어 지난 산책의 경로, 4가지 지표, 산책 시간, 산책 거리 등을 확인할 수 있습니다.</summary>
+>   <br>
+>   <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521375-6c58c412-8f57-4e2f-aef9-7b2346b93a06.PNG'>
+> </details>
 
-### 3. 돌발 가이드 시스템
-<details>
-  <summary>산책 중 돌발상황에 대처하기 위한 산책 가이드를 제시합니다.</summary>
-  <br>
-  <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521366-722d51b4-f418-47bb-81e3-bec3c737db18.PNG'>
-</details>
-
+### 4. 돌발 가이드 시스템
+> <details>
+>   <summary>산책 중 돌발상황에 대처하기 위한 산책 가이드를 제시합니다.</summary>
+>   <br>
+>   <img width='300px' src='https://user-images.githubusercontent.com/97425636/161521366-722d51b4-f418-47bb-81e3-bec3c737db18.PNG'>
+> </details>
 
 <br>
 
@@ -104,14 +115,14 @@
 
 ## 🃏 팀원소개
 
-| Name     | GitHub                             | Position  |
+| Name     | GitHub & Email                     | Position  |
 | -------- | ---------------------------------- | --------- |
 | 최연서🔰   | https://github.com/choi-sus        | 프론트엔드   |
 | 정혜인     | https://github.com/h-cir           | 프론트엔드  |
 | 반장훈🔰   | https://github.com/spirit-B        | 백엔드     |
 | 나기탁     | https://github.com/nagitak         | 백엔드     |
 | 이동주     | https://github.com/DZOOOOO         | 백엔드     |
-| 심호선     | -                                  | 디자인     |
-| 엄세희     | -                                  | 디자인     |
+| 심호선     | simho763@naver.com                 | 디자인     |
+| 엄세희     | ltqmmt.sh@gmail.com                | 디자인     |
 
 <br>
