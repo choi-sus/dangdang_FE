@@ -123,9 +123,10 @@ const Head = styled.div`
   }
   img {
     color: ${({ theme }) => theme.colors.gray_4};
-    position: absolute;
-    right: 30px;
+    position: relative;
+    right: -50px;
     cursor: pointer;
+    vertical-align: bottom;
   }
 `;
 

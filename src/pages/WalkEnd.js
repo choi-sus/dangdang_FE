@@ -142,7 +142,7 @@ const Record = styled.div`
     p:nth-child(1){
         font-size: 30px;
         color: ${({ theme }) => theme.colors.gray_5};
-        width: 65%;
+        width: 62%;
     }
     p:nth-child(1) span{
         font-size: ${({ theme }) => theme.fontSizes.small};
