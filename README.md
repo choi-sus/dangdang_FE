@@ -21,9 +21,15 @@
 - 사이트 바로가기 : https://denground.com
 - 프론트엔드 GitHub Repository : https://github.com/choi-sus/dangdang_FE
 - 백엔드 GitHub Respository : https://github.com/spirit-B/dangdang_BE
-- 시연 발표 영상 보러가기: https://youtu.be/0JcDixFHq-c
+- 프로젝트 발표 영상 : https://youtu.be/0JcDixFHq-c
+- <details>
+  <summary> 프로젝트 시연 영상</summary>
+  <br>
+  
+  https://user-images.githubusercontent.com/97425636/162681642-9d3d3816-a727-4a9c-8cea-e5751234fb88.mp4
+  
+</details>
 
-https://user-images.githubusercontent.com/97425636/162681642-9d3d3816-a727-4a9c-8cea-e5751234fb88.mp4
 <br>
 
 ## 🗓 프로젝트 기간
